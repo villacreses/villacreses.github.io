@@ -21,10 +21,12 @@
     max-height: $max_radius;
     border: .5rem solid rgba(255,255,255,.2);
     border-radius: 50%;
+    margin-bottom: 0.5rem;
   }
 
   ul {
     margin: 0;
+    padding: 0;
     width: 100%;
     list-style: none;
 

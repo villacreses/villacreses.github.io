@@ -1,0 +1,78 @@
+@import './_shared.scss';
+
+section {
+  min-height: 100vh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 3rem;
+}
+
+hr {
+  background: none;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+h1,
+h2,
+h3,
+.black {
+  color: #343a40;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 !important;
+}
+
+h1 {
+  margin: 0;
+  font-size: 6rem !important;
+  text-transform: uppercase;
+  line-height: 5.5rem;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &.lead {
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+}
+
+.social-icons {
+  a {
+    display: inline-block;
+    margin-right: 1rem;
+
+    $radius: 3.5rem;
+    height: $radius;
+    width: $radius;
+    line-height: $radius;
+    border-radius: 100%;
+    background-color: #495057;
+
+    text-align: center;
+    font-size: $radius - 1.5rem;
+    color: #fff;
+
+    &:hover {
+      background-color: #195e8e;
+    }
+  }
+}
+
+.blue {
+  color: $primary_color;
+}
