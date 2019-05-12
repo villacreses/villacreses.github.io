@@ -16,12 +16,38 @@ const ResumeItem = props => {
           <h3>{heading}</h3>
           {subheading && <div className="subheading">{subheading}</div>}
         </div>
-        {paragraphs.map(({ key, content, opener }) => (
-          <p key={key}>
-            {opener && <span className="opener">{opener + ': '}</span>}
-            <span>{content}</span>
-          </p>
-        ))}
+        {paragraphs.map(pData => {
+          const { key, content, opener, type } = pData;
+
+          switch (type) {
+            case 'HREF_LIST':
+              return (
+                <div key={key}>
+                  <label for={key}>{opener}</label>
+                  <ul id={key}>
+                    {pData.liArr.map(({ href, text }) => (
+                      <li key={href}>
+                        {href ? (
+                          <a href={href} target="_blank" rel="noopener noreferrer">
+                            {text}
+                          </a>
+                        ) : (
+                          <span>{text}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            default:
+              return (
+                <p key={key}>
+                  {opener && <span className="opener">{opener + ': '}</span>}
+                  <span>{content}</span>
+                </p>
+              );
+          }
+        })}
       </div>
       <div className="resume-date">{date}</div>
     </div>
