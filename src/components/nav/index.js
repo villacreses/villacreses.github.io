@@ -14,6 +14,10 @@ const Nav = () => {
 
   return (
     <nav id="sidebar">
+      <img
+        className="profile-circle"
+        src="http://mariovillacreses.com/img/profile.jpg"
+      />
       <ul>
         {links.map(({ text, href }) => (
           <li key={href}>

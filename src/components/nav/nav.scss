@@ -15,6 +15,14 @@
 
   background-color: $primary_color;
 
+  img.profile-circle {
+    $max_radius: 10rem;
+    max-width: $max_radius;
+    max-height: $max_radius;
+    border: .5rem solid rgba(255,255,255,.2);
+    border-radius: 50%;
+  }
+
   ul {
     margin: 0;
     width: 100%;
@@ -48,5 +56,4 @@
       }
     }
   }
-
 }
