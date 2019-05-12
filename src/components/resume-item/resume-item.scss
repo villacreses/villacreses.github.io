@@ -1,0 +1,35 @@
+@import '../_shared.scss';
+
+.resume-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3rem;
+
+  .heading-wrapper {
+    margin-bottom: 1rem;
+
+    .subheading {
+      margin: 0;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .resume-content {
+    flex: 1;
+
+    p {
+      .opener {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .resume-date {
+    color: $primary_color;
+    min-width: 10rem;
+    text-align: right;
+  }
+}

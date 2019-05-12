@@ -13,27 +13,89 @@ import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 import Nav from '../components/nav';
+import ResumeItem from '../components/resume-item';
+
+const iconMap = {
+  'fab fa-linkedin-in': faLinkedinIn,
+  'fab fa-github': faGithub,
+  'fab fa-stack-overflow': faStackOverflow,
+  'fab fa-medium-m': faMediumM
+};
 
 const socialIcons = [
   { 
     title: 'Add me on LinkedIn',
     href: 'https://www.linkedin.com/in/villacreses/',
-    icon: faLinkedinIn
+    iconClass: 'fab fa-linkedin-in'
   },
   {
     title: 'My GitHub profile',
     href: 'https://github.com/villacreses',
-    icon: faGithub
+    iconClass: 'fab fa-github'
   },
   {
     title: 'My StackOverflow profile',
     href: 'https://stackoverflow.com/story/villacreses',
-    icon: faStackOverflow
+    iconClass: 'fab fa-stack-overflow'
   },
   {
     title: 'My Medium profile',
     href: 'https://medium.com/@villacreses',
-    icon: faMediumM
+    iconClass: 'fab fa-medium-m'
+  }
+];
+
+const awards = [
+  {
+    date: 'September 2018',
+    heading: 'Graph Hacks 2018: Buzzword Bingo Hackathon',
+    subheading: 'Winner: Most Complete Project',
+    paragraphs: [
+      {
+        key: 'desc1',
+        content: 'A recipe recommendation engine built with React, Axios.js, Python 3, and Neo4j graph database platform.',
+      }
+    ]
+  },
+  {
+    date: 'August 2018',
+    heading: 'NY Sextech Hackathon',
+    subheading: 'Winner: First Place',
+    paragraphs: [
+      {
+        key: 'desc1',
+        content: 'I collaborated with UI/UX Designers and a certified health education teacher to develop a health education video streaming platform for high schools, built using Firebase & React. The NY Board of Education is considering adoption within select schools.'
+      }
+    ]
+  }
+];
+
+const education = [
+  {
+    date: 'May 2018',
+    heading: 'Fullstack Academy of Code',
+    paragraphs: [
+      {
+        key: 'desc1',
+        content: 'Software engineering immersive focused on full-stack web development using Node, Express, React, Redux, Sequelize, and PostgreSQL; additional instruction on data structures and algorithms.'
+      }
+    ]
+  },
+  {
+    date: 'May 2016',
+    heading: 'Queens College, City University of New York',
+    paragraphs: [
+      {
+        key: 'desc1',
+        opener: 'CS Courses',
+        content: ' Algorithms, OOP in Java, OOP in C++, Data Structures, Computer Organization & Assembly Language'
+      },
+      {
+        key: 'desc1',
+        opener: 'Mathematics Courses',
+        content: 'Linear Programming, Nonlinear Programming, Advanced Linear Algebra, Number theory, Game theory, Mathematical Problem Solving, Probability & Statistics, Chaotic Dynamical Systems, Advanced Calculus, Differential Geometry'
+      },
+    ]
   }
 ];
 
@@ -41,7 +103,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <section>
+      <section id="about">
         <h1>Mario <span className="blue">Villacreses</span></h1>
         <div className="subheading">
           <span>
@@ -62,19 +124,27 @@ const IndexPage = () => {
           My resume is available in the following formats:
         </p>
         <div className="social-icons">
-          {socialIcons.map(({ title, href, icon }) => (
+          {socialIcons.map(({ title, href, iconClass }) => (
             <a key={href} href={href} title={title} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={icon} />
+              <FontAwesomeIcon icon={iconMap[iconClass]} />
             </a>
           ))}
         </div>
       </section>
       <hr />
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
+
+      <section id="awards">
+        <h2>Awards</h2>
+        {awards.map(props => <ResumeItem {...props} />)}
+      </section>
+      <hr />
+
+      <section id="education">
+        <h2>Education</h2>
+        {education.map(props => <ResumeItem {...props} />)}
+      </section>
+      <hr />
+
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   );
