@@ -1,32 +1,39 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Scrollspy from 'react-scrollspy';
+
 import './nav.scss';
 
-const Nav = () => {
-  const links = [
-    { text: 'About me', href: '#about' },
-    { text: 'Awards', href: '#awards' },
-    { text: 'Education', href: '#education' },
-    { text: 'Skills', href: '#skills' },
-    { text: 'Portfolio', href: '#portfolio' },
-    { text: 'Interests', href: '#interests' },
-  ];
+const links = [
+  { text: 'About me', section: 'about' },
+  { text: 'Awards', section: 'awards' },
+  { text: 'Education', section: 'education' },
+  { text: 'Skills', section: 'skills' },
+  { text: 'Portfolio', section: 'portfolio' },
+  { text: 'Interests', section: 'interests' },
+];
 
+const items = links.map(({ section }) => section);
+
+const Nav = () => {
   return (
     <nav id="sidebar">
       <img
         className="profile-circle"
         src="http://mariovillacreses.com/img/profile.jpg"
       />
-      <ul>
-        {links.map(({ text, href }) => (
-          <li key={href}>
-            <Link to={href}>
+      <Scrollspy
+        items={items}
+        currentClassName="active"
+      >
+        {links.map(({ text, section }) => (
+          <li key={section}>
+            <a href={`#${section}`}>
               {text}
-            </Link>
+            </a>
           </li>
         ))}
-      </ul>
+      </Scrollspy>
     </nav>
   );
 };
