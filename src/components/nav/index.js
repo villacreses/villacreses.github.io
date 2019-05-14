@@ -6,17 +6,6 @@ import Img from "gatsby-image"
 
 import "./nav.scss"
 
-const links = [
-  { text: "About me", section: "about" },
-  { text: "Awards", section: "awards" },
-  { text: "Education", section: "education" },
-  { text: "Skills", section: "skills" },
-  { text: "Portfolio", section: "portfolio" },
-  { text: "Interests", section: "interests" }
-]
-
-const items = links.map(({ section }) => section)
-
 const query = graphql`
   query {
     profileImage: file(relativePath: { eq: "profile.jpg" }) {
@@ -29,7 +18,24 @@ const query = graphql`
   }
 `;
 
-const Nav = () => {
+const MenuSection = props => 
+  <div>
+    <Link to={`/${props.location}`}>{props.title}</Link>
+    {props.target === props.location && props.links && (
+      <Scrollspy 
+        items={props.links.map(({ section }) => section)} 
+        currentClassName="active"
+      >
+        {props.links.map(({ text, section }) => (
+          <li key={section}>
+            <a href={`#${section}`}>{text}</a>
+          </li>
+        ))}
+      </Scrollspy>
+    )}
+  </div>
+
+const Nav = props => {
   return (
     <StaticQuery
       query={query}
@@ -40,13 +46,24 @@ const Nav = () => {
               fluid={data.profileImage.childImageSharp.fluid} 
               className="profile-circle"
             />
-            <Scrollspy items={items} currentClassName="active">
-              {links.map(({ text, section }) => (
-                <li key={section}>
-                  <a href={`#${section}`}>{text}</a>
-                </li>
-              ))}
-            </Scrollspy>
+            <MenuSection
+              title="About Me"
+              location={props.location}
+              target=""
+              links={[
+                { text: "About me", section: "about" },
+                { text: "Awards", section: "awards" },
+                { text: "Education", section: "education" },
+                { text: "Skills", section: "skills" },
+                { text: "Projects", section: "projects" },
+                { text: "Interests", section: "interests" }
+              ]}
+            />
+            <MenuSection
+              title="My portfolio"
+              location={props.location}
+              target="portfolio"
+            />
           </nav>
         )
       }}

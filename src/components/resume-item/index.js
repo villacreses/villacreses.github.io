@@ -23,7 +23,7 @@ const ResumeItem = props => {
             case 'HREF_LIST':
               return (
                 <div key={key}>
-                  <label for={key}>{opener}</label>
+                  <label htmlFor={key}>{opener}</label>
                   <ul id={key}>
                     {pData.liArr.map(({ href, text }) => (
                       <li key={href}>

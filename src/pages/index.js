@@ -28,9 +28,9 @@ const iconMap = {
   'fab fa-medium-m': faMediumM
 };
 
-const IndexPage = () => {
+const IndexPage = props => {
   return (
-    <Layout>
+    <Layout location={props['*']}>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <section id="about">
         <h1>Mario <span className="blue">Villacreses</span></h1>
@@ -79,6 +79,12 @@ const IndexPage = () => {
         <div className="subheading">
           Programming Languages &amp; Tools
         </div>
+      </section>
+      <hr />
+
+      <section id="projects">
+        <h2>Select Projects</h2>
+        <Link to="/portfolio">See More</Link>
       </section>
       <hr />
 
