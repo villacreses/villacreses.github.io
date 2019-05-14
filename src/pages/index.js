@@ -11,7 +11,7 @@ import {
 
 import Layout from "../components/layout";
 import Image from "../components/image";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Nav from '../components/nav';
 import ResumeItem from '../components/resume-item';
 
@@ -31,8 +31,8 @@ const iconMap = {
 const IndexPage = props => {
   return (
     <Layout location={props['*']}>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <section id="about">
+      <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <section id="intro">
         <h1>Mario <span className="blue">Villacreses</span></h1>
         <div className="subheading">
           <span>
@@ -64,13 +64,13 @@ const IndexPage = props => {
 
       <section id="awards">
         <h2>Awards</h2>
-        {awards.map(props => <ResumeItem {...props} />)}
+        {awards.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
       </section>
       <hr />
 
       <section id="education">
         <h2>Education</h2>
-        {education.map(props => <ResumeItem {...props} />)}
+        {education.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
       </section>
       <hr />
 
@@ -86,9 +86,6 @@ const IndexPage = props => {
         <h2>Select Projects</h2>
         <Link to="/portfolio">See More</Link>
       </section>
-      <hr />
-
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   );
 };

@@ -19,12 +19,13 @@ const query = graphql`
 `;
 
 const MenuSection = props => 
-  <div>
-    <Link to={`/${props.location}`}>{props.title}</Link>
+  <div className="menu-section">
+    <Link to={`/${props.target}`}>{props.title}</Link>
     {props.target === props.location && props.links && (
       <Scrollspy 
         items={props.links.map(({ section }) => section)} 
         currentClassName="active"
+        className="scroll-spy"
       >
         {props.links.map(({ text, section }) => (
           <li key={section}>
@@ -51,14 +52,13 @@ const Nav = props => {
               location={props.location}
               target=""
               links={[
-                { text: "About me", section: "about" },
+                { text: "Intro", section: "intro" },
                 { text: "Awards", section: "awards" },
                 { text: "Education", section: "education" },
-                { text: "Skills", section: "skills" },
-                { text: "Projects", section: "projects" },
-                { text: "Interests", section: "interests" }
+                { text: "Skills", section: "skills" }
               ]}
             />
+            <hr />
             <MenuSection
               title="My portfolio"
               location={props.location}
