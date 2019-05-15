@@ -4,6 +4,8 @@ import Scrollspy from "react-scrollspy"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import navMenus from '../../content/nav-menus';
+
 import "./nav.scss"
 
 const query = graphql`
@@ -18,23 +20,26 @@ const query = graphql`
   }
 `;
 
-const MenuSection = props => 
-  <div className="menu-section">
-    <Link to={`/${props.target}`}>{props.title}</Link>
-    {props.target === props.location && props.links && (
-      <Scrollspy 
-        items={props.links.map(({ section }) => section)} 
-        currentClassName="active"
-        className="scroll-spy"
-      >
-        {props.links.map(({ text, section }) => (
-          <li key={section}>
-            <a href={`#${section}`}>{text}</a>
-          </li>
-        ))}
-      </Scrollspy>
-    )}
-  </div>
+const MenuSection = props => {
+  return (
+    <div className="menu-section">
+      <Link to={`/${props.target}`}>{props.title}</Link>
+      {props.target === props.location && props.links && (
+        <Scrollspy
+          items={props.links.map(({ section }) => section)}
+          currentClassName="active"
+          className="scroll-spy"
+        >
+          {props.links.map(({ text, section }) => (
+            <li key={section}>
+              <a href={`#${section}`}>{text}</a>
+            </li>
+          ))}
+        </Scrollspy>
+      )}
+    </div>
+  );
+};
 
 const Nav = props => {
   return (
@@ -47,23 +52,17 @@ const Nav = props => {
               fluid={data.profileImage.childImageSharp.fluid} 
               className="profile-circle"
             />
-            <MenuSection
-              title="About Me"
-              location={props.location}
-              target=""
-              links={[
-                { text: "Intro", section: "intro" },
-                { text: "Awards", section: "awards" },
-                { text: "Education", section: "education" },
-                { text: "Skills", section: "skills" }
-              ]}
-            />
-            <hr />
-            <MenuSection
-              title="My portfolio"
-              location={props.location}
-              target="portfolio"
-            />
+            {navMenus.map(({ title, target, links }, i) => (
+              <>
+                <MenuSection
+                  title={title}
+                  location={props.location}
+                  target={target}
+                  links={links}
+                />
+                {(props.location === target) && <hr /> }
+              </>
+            ))}
           </nav>
         )
       }}

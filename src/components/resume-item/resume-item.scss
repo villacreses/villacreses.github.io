@@ -32,4 +32,12 @@
     min-width: 10rem;
     text-align: right;
   }
+
+  @media (max-width: $top_nav_width) {
+    flex-direction: column;
+
+    .resume-date {
+      text-align: left;
+    }
+  }
 }

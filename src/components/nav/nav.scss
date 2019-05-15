@@ -15,8 +15,7 @@
   left: 0;
 
   height: 100vh;
-  width: 17rem;
-
+  width: $nav_width_desktop;
   background-color: $primary_color;
 
   .profile-circle {
@@ -49,7 +48,6 @@
     @include aligned;
   }
 
-
   ul {
     @include aligned;
 
@@ -72,6 +70,18 @@
           color: #fff !important;
         }
       }
+    }
+  }
+
+  @media (max-width: $shorten_nav) {
+    width: $nav_width_tablet;
+  }
+
+  @media (max-width: $top_nav_width) {
+    width: 100vw;
+    height: $nav_height;
+
+    .profile-circle {
     }
   }
 }
