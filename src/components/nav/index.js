@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import Scrollspy from "react-scrollspy"
 import { StaticQuery, graphql } from "gatsby"
@@ -49,24 +49,27 @@ const Nav = props => {
         return (
           <nav id="sidebar">
             <Img
-              fluid={data.profileImage.childImageSharp.fluid} 
+              fluid={data.profileImage.childImageSharp.fluid}
               className="profile-circle"
             />
-            {navMenus.map(({ title, target, links }, i) => (
-              <div key={title}>
-                <MenuSection
-                  title={title}
-                  location={props.location}
-                  target={target}
-                  links={links}
-                />
-                {(props.location === target) && <hr /> }
-              </div>
-            ))}
+            <div className="nav-main-menu">
+              {navMenus.map(({ title, target, links }) => (
+                <Fragment key={title}>
+                  <MenuSection
+                    title={title}
+                    location={props.location}
+                    target={target}
+                    links={links}
+                  />
+                  {(props.location === target) && <hr /> }
+                </Fragment>
+              ))}
+            </div>
           </nav>
-        )
+        );
       }}
     />
-  )
-}
-export default Nav
+  );
+};
+
+export default Nav;
