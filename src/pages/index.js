@@ -40,7 +40,12 @@ const IndexPage = props => {
           </span>
           {' '}
           <span className="blue">
-            MarioVillacreses@outlook.com
+            <span className="desktop">
+              MarioVillacreses@outlook.com
+            </span>
+            <span className="mobile">
+              M
+            </span>
           </span>
         </div>
         <p className="lead">
