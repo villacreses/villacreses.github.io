@@ -8,6 +8,7 @@ import {
   faStackOverflow,
   faMediumM
 } from '@fortawesome/free-brands-svg-icons';
+import { faFileWord, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from "../components/layout";
 import Image from "../components/image";
@@ -55,7 +56,15 @@ const IndexPage = props => {
           After having managed databases for various small businesses for several years, I've decided to take my career to the next level. I've switched over to full-stack web development and have been thoroughly enjoying it. Having graduated with a BA in Applied Mathematics, I'm particularly interested in analytics and security, though my passion for problem solving shines through in whatever tasks are given to me.
         </p>
         <p>
-          My resume is available in the following formats:
+          <span>My resume is available in the following formats:</span>
+          <a download href="#">
+            <FontAwesomeIcon icon={faFileWord} />
+            Word
+          </a>
+          <a download href="#" >
+            <FontAwesomeIcon icon={faFilePdf} />
+            PDF
+          </a>
         </p>
         <div className="social-icons">
           {socialIcons.map(({ title, href, iconClass }) => (

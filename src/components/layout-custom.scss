@@ -107,10 +107,22 @@ p {
   }
 }
 
+a[download] {
+  font-size: 0.85rem;
+  color: #fff;
+  background-color: $primary_color + #111;
+  padding: 3px;
+  margin: 1px 3px;
+  text-decoration: none;
+  border-radius: 1px;
+  font-weight: bold;
+}
+
 .social-icons {
   a {
     display: inline-block;
     margin-right: 1rem;
+    margin-bottom: 1rem;
 
     $radius: 3.5rem;
     height: $radius;

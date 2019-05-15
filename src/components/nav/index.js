@@ -53,7 +53,7 @@ const Nav = props => {
               className="profile-circle"
             />
             {navMenus.map(({ title, target, links }, i) => (
-              <>
+              <div key={title}>
                 <MenuSection
                   title={title}
                   location={props.location}
@@ -61,7 +61,7 @@ const Nav = props => {
                   links={links}
                 />
                 {(props.location === target) && <hr /> }
-              </>
+              </div>
             ))}
           </nav>
         )
