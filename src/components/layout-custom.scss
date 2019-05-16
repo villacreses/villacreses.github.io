@@ -51,6 +51,16 @@ h1 {
   font-size: 6rem !important;
   line-height: 5.5rem;
 
+  // surname break
+  @media (max-width: 655px) {
+    $surname_length: 12vw;
+    line-height: $surname_length;
+
+    span.blue {
+      font-size: $surname_length;
+    }
+  }
+
   @media (max-width: $width_mobile) {
     $h1_size: 4rem;
     font-size: $h1_size !important;
@@ -116,6 +126,11 @@ a[download] {
   text-decoration: none;
   border-radius: 1px;
   font-weight: bold;
+  white-space: nowrap;
+
+  span {
+    margin-left: 2px;
+  }
 }
 
 .social-icons {

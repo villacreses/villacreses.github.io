@@ -59,11 +59,11 @@ const IndexPage = props => {
           <span>My resume is available in the following formats:</span>
           <a download href="#">
             <FontAwesomeIcon icon={faFileWord} />
-            Word
+            <span>Word</span>
           </a>
           <a download href="#" >
             <FontAwesomeIcon icon={faFilePdf} />
-            PDF
+            <span>PDF</span>
           </a>
         </p>
         <div className="social-icons">
