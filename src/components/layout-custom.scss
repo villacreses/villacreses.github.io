@@ -51,28 +51,30 @@ h1 {
   font-size: 6rem !important;
   line-height: 5.5rem;
 
+  span.blue {
+    white-space: nowrap;
+  }
+
   // surname break
   @media (max-width: 655px) {
     $surname_length: 12vw;
     line-height: $surname_length;
+    font-size: $surname_length + 1vw;
 
     span.blue {
       font-size: $surname_length;
     }
   }
 
-  @media (max-width: $width_mobile) {
-    $h1_size: 4rem;
-    font-size: $h1_size !important;
-    line-height: $h1_size - 1rem;
+  // surname break 2
+  @media (max-width: 480px) {
+    font-size: 18vw !important;
     text-align: center;
-    padding: 1.5rem 0;
+    padding-bottom: 1.5rem;
+  }
 
-    span.blue {
-      $span_size: 2.5rem;
-      font-size: $span_size;
-      line-height: $span_size - 1rem;
-    }
+  @media (max-width: $width_mobile) {
+    padding-top: 1.5rem;
   }
 }
 
