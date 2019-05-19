@@ -19,8 +19,8 @@ section {
   justify-content: center;
   padding: 5rem 3rem;
 
-  @media (max-width: $width_mobile) {
-    padding: 3rem 1.5rem;
+  @media (max-width: $surname_break_2) {
+    padding: 3rem 1rem;
   }
 }
 
@@ -47,17 +47,18 @@ h3 {
 }
 
 h1 {
+  left: 0;
+  right: 0;
   margin: 0;
-  font-size: 6rem !important;
+  font-size: 6rem;
   line-height: 5.5rem;
 
   span.blue {
     white-space: nowrap;
   }
 
-  // surname break
-  @media (max-width: 655px) {
-    $surname_length: 12vw;
+  @media (max-width: $surname_break_1) {
+    $surname_length: 13vw;
     line-height: $surname_length;
     font-size: $surname_length + 1vw;
 
@@ -66,15 +67,14 @@ h1 {
     }
   }
 
-  // surname break 2
-  @media (max-width: 480px) {
-    font-size: 18vw !important;
+  @media (max-width: $surname_break_2) {
     text-align: center;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 0;
+    font-size: 17vw;
   }
 
   @media (max-width: $width_mobile) {
-    padding-top: 1.5rem;
+    font-size: 20vw;
   }
 }
 
@@ -96,14 +96,28 @@ h2 {
     }
   }
 
-  @media (max-width: $width_mobile) {
-    span.blue {
-      .desktop {
-        display: none;
-      }
+  #intro & {
+    // email line break
+    @media (max-width: 480px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
 
-      .mobile {
-        display: inline-block;
+      span.blue {
+        .desktop {
+          display: none;
+        }
+
+        .mobile {
+          display: inline-block;
+          text-decoration: none;
+          font-size: 0.8em;
+          color: #fff;
+          background-color: $primary_color;
+          padding: 4px 10px;
+          border-radius: 3px;
+          white-space: nowrap;
+        }
       }
     }
   }
@@ -119,19 +133,33 @@ p {
   }
 }
 
-a[download] {
-  font-size: 0.85rem;
-  color: #fff;
-  background-color: $primary_color + #111;
-  padding: 5px;
-  margin: 1px 3px;
-  text-decoration: none;
-  border-radius: 1px;
-  font-weight: bold;
-  white-space: nowrap;
+#resume-list {
+  a[download] {
+    font-size: 0.85rem;
+    color: #fff;
+    background-color: $primary_color + #111;
+    padding: 5px;
+    margin: 1px 3px;
+    text-decoration: none;
+    border-radius: 1px;
+    font-weight: bold;
+    white-space: nowrap;
 
-  span {
-    margin-left: 2px;
+    span {
+      margin-left: 2px;
+    }
+  }
+
+  @media(max-width: 492px) {
+    display: flex;
+    margin: 8px 0;
+    justify-content: center;
+
+    a[download] {
+      padding: 0.4rem 1rem;
+      text-align: center;
+      font-size: 1rem;
+    }
   }
 }
 

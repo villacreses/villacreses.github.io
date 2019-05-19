@@ -8,7 +8,7 @@ import {
   faStackOverflow,
   faMediumM
 } from '@fortawesome/free-brands-svg-icons';
-import { faFileWord, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faFileWord, faFilePdf, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from "../components/layout";
 import Image from "../components/image";
@@ -29,24 +29,28 @@ const iconMap = {
   'fab fa-medium-m': faMediumM
 };
 
+const email = 'MarioVillacreses@outlook.com';
+
 const IndexPage = props => {
   return (
     <Layout location={props['*']}>
       <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <section id="intro">
         <h1>Mario <span className="blue">Villacreses</span></h1>
-        <div className="subheading">
+        <div className="main subheading">
           <span>
             Boston, MA
           </span>
           {' '}
           <span className="blue">
             <span className="desktop">
-              MarioVillacreses@outlook.com
+              {email}
             </span>
-            <span className="mobile">
-              M
-            </span>
+            <a href={`mailto:${email}`} className="mobile">
+              <FontAwesomeIcon icon={faEnvelope} />
+              {' '}
+              <span>Contact</span>
+            </a>
           </span>
         </div>
         <p className="lead">
@@ -57,14 +61,16 @@ const IndexPage = props => {
         </p>
         <p>
           <span>My resume is available in the following formats:</span>
-          <a download href="#">
-            <FontAwesomeIcon icon={faFileWord} />
-            <span>Word</span>
-          </a>
-          <a download href="#" >
-            <FontAwesomeIcon icon={faFilePdf} />
-            <span>PDF</span>
-          </a>
+          <span id="resume-list">
+            <a download href="#">
+              <FontAwesomeIcon icon={faFileWord} />
+              <span>Word</span>
+            </a>
+            <a download href="#" >
+              <FontAwesomeIcon icon={faFilePdf} />
+              <span>PDF</span>
+            </a>
+          </span>
         </p>
         <div className="social-icons">
           {socialIcons.map(({ title, href, iconClass }) => (
