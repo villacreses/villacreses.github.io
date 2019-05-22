@@ -14,6 +14,7 @@ const education = [
     key: 'education-qc',
     date: 'May 2016',
     heading: 'Queens College, City University of New York',
+    subheading: 'Bachelor of Arts - Applied Mathematics',
     paragraphs: [
       {
         key: 'desc2',

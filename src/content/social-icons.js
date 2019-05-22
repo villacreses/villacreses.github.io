@@ -18,6 +18,11 @@ const socialIcons = [
     title: 'My Medium profile',
     href: 'https://medium.com/@villacreses',
     iconClass: 'fab fa-medium-m'
+  },
+  {
+    title: 'My HackerRank Profile',
+    href: 'https://hackerrank.com/mario970v',
+    iconClass: 'fab fa-hackerrank'
   }
 ];
 

@@ -6,14 +6,14 @@ import {
   faLinkedinIn,
   faGithub,
   faStackOverflow,
-  faMediumM
+  faMediumM,
+  faHackerrank
 } from '@fortawesome/free-brands-svg-icons';
 import { faFileWord, faFilePdf, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import Layout from "../components/layout";
-import Image from "../components/image";
-import Seo from "../components/seo";
-import Nav from '../components/nav';
+import Layout from '../components/layout';
+import Image from '../components/image';
+import Seo from '../components/seo';
 import ResumeItem from '../components/resume-item';
 
 import {
@@ -26,7 +26,8 @@ const iconMap = {
   'fab fa-linkedin-in': faLinkedinIn,
   'fab fa-github': faGithub,
   'fab fa-stack-overflow': faStackOverflow,
-  'fab fa-medium-m': faMediumM
+  'fab fa-medium-m': faMediumM,
+  'fab fa-hackerrank': faHackerrank
 };
 
 const email = 'MarioVillacreses@outlook.com';
@@ -103,8 +104,8 @@ const IndexPage = props => {
       <hr />
 
       <section id="projects">
-        <h2>Select Projects</h2>
-        <Link to="/portfolio">See More</Link>
+        <h2>See More</h2>
+        <Link to="/portfolio">My Portfolio</Link>
       </section>
     </Layout>
   );
