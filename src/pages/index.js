@@ -28,7 +28,8 @@ const iconMap = {
   'fab fa-github': faGithub,
   'fab fa-stack-overflow': faStackOverflow,
   'fab fa-medium-m': faMediumM,
-  'fab fa-hackerrank': faHackerrank
+  'fab fa-hackerrank': faHackerrank,
+  'far fa-file-word': faFileWord
 };
 
 const email = 'MarioVillacreses@outlook.com';
@@ -39,7 +40,7 @@ const IndexPage = props => {
       <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <section id="intro">
         <h1>Mario <span className="blue">Villacreses</span></h1>
-        <div className="main subheading">
+        <div className="subheading">
           <span>
             Boston, MA
           </span>
@@ -55,24 +56,12 @@ const IndexPage = props => {
             </a>
           </span>
         </div>
+    
         <p className="lead">
           I'm a software developer currently based in the Greater Boston Area.
         </p>
         <p>
           After having managed databases for various small businesses for several years, I've decided to take my career to the next level. I've switched over to full-stack web development and have been thoroughly enjoying it. Having graduated with a BA in Applied Mathematics, I'm particularly interested in analytics and security, though my passion for problem solving shines through in whatever tasks are given to me.
-        </p>
-        <p>
-          <span>My resume is available in the following formats:</span>
-          <span id="resume-list">
-            <a download href="#">
-              <FontAwesomeIcon icon={faFileWord} />
-              <span>Word</span>
-            </a>
-            <a download href="#" >
-              <FontAwesomeIcon icon={faFilePdf} />
-              <span>PDF</span>
-            </a>
-          </span>
         </p>
         <div className="social-icons">
           {socialIcons.map(({ title, href, iconClass }) => (

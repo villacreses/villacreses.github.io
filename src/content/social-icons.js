@@ -1,4 +1,9 @@
 const socialIcons = [
+  {
+    title: 'Download my resume (.docx)',
+    href: 'https://onedrive.live.com/download?resid=D017ED93F9509B7%211741&amp;authkey=%21AJSoPBBLAtuHhCg&amp;em=2&amp;wdStartOn=1',
+    iconClass: 'far fa-file-word'
+  },
   { 
     title: 'Add me on LinkedIn',
     href: 'https://www.linkedin.com/in/villacreses/',
