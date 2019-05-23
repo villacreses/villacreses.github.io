@@ -1,4 +1,4 @@
-const awards = [
+const content = [
   {
     key: 'award-graph-hacks',
     date: 'September 2018',
@@ -41,5 +41,11 @@ const awards = [
     ]
   }
 ];
+
+const awards = {
+  id: 'awards',
+  heading: 'Awards',
+  content
+};
 
 export default awards;

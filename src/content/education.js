@@ -1,4 +1,4 @@
-const education = [
+const content = [
   {
     key: 'education-fullstack',
     date: 'May 2018',
@@ -29,5 +29,11 @@ const education = [
     ]
   }
 ];
+
+const education = {
+  id: 'education',
+  heading: 'Education',
+  content
+}
 
 export default education;

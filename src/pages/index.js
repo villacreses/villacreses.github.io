@@ -18,8 +18,7 @@ import ResumeItem from '../components/resume-item';
 
 import {
   socialIcons,
-  awards,
-  education
+  resumeSections
 } from '../content';
 
 const iconMap = {
@@ -83,17 +82,15 @@ const IndexPage = props => {
       </section>
       <hr />
 
-      <section id="awards">
-        <h2>Awards</h2>
-        {awards.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-      </section>
-      <hr />
-
-      <section id="education">
-        <h2>Education</h2>
-        {education.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-      </section>
-      <hr />
+      {resumeSections.map(({ id, heading, content }) => (
+        <>
+          <section id={id}>
+            <h2>{heading}</h2>
+            {content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
+          </section>
+          <hr />
+        </>
+      ))}
 
       <section id="skills">
         <h2>Skills</h2>
