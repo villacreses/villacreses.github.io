@@ -108,12 +108,6 @@ const IndexPage = props => {
           Programming Languages &amp; Tools
         </div>
       </section>
-      <hr />
-
-      <section id="projects">
-        <h2>See More</h2>
-        <Link to="/portfolio">My Portfolio</Link>
-      </section>
     </Layout>
   );
 };

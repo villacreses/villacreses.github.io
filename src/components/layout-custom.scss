@@ -193,3 +193,11 @@ p {
 .blue {
   color: $primary_color;
 }
+
+footer {
+  font-size: 0.8rem;
+  color: #868e96 + #333;
+  a {
+    color: inherit;
+  }
+}
