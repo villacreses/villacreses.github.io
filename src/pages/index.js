@@ -63,9 +63,6 @@ const IndexPage = props => {
         <p>
           After having managed databases for various small businesses for several years, I've decided to take my career to the next level. I've switched over to full-stack web development and have been thoroughly enjoying it. Having graduated with a BA in Applied Mathematics, I'm particularly interested in analytics and security, though my passion for problem solving shines through in whatever tasks are given to me.
         </p>
-        <p>
-          My portfolio
-        </p>
         <div className="social-icons">
           {socialIcons.map(({ title, href, iconClass }) => (
             <a key={href} href={href} title={title} target="_blank" rel="noopener noreferrer">
