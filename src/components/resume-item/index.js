@@ -25,8 +25,8 @@ const ResumeItem = props => {
                 <div key={key}>
                   <label htmlFor={key}>{opener}</label>
                   <ul id={key}>
-                    {pData.liArr.map(({ href, text }) => (
-                      <li key={href}>
+                    {pData.liArr.map(({ key, href, text }) => (
+                      <li key={key}>
                         {href ? (
                           <a href={href} target="_blank" rel="noopener noreferrer">
                             {text}

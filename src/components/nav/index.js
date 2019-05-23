@@ -23,7 +23,7 @@ const query = graphql`
 const MenuSection = props => {
   return (
     <div className="menu-section">
-      <Link to={`/${props.target}`}>{props.title}</Link>
+      {props.title && <Link to={`/${props.target}`}>{props.title}</Link>}
       {props.target === props.location && props.links && (
         <Scrollspy
           items={props.links.map(({ section }) => section)}
@@ -56,12 +56,10 @@ const Nav = props => {
               {navMenus.map(({ title, target, links }) => (
                 <Fragment key={title}>
                   <MenuSection
-                    title={title}
                     location={props.location}
                     target={target}
                     links={links}
                   />
-                  {(props.location === target) && <hr /> }
                 </Fragment>
               ))}
             </div>

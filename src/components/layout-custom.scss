@@ -201,3 +201,30 @@ footer {
     color: inherit;
   }
 }
+
+.skill-logo-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+
+  .skill-logo {
+    $size: 70px;
+    height: $size;
+    width: $size;
+    margin: 3px 12px 10px;
+    justify-content: center;
+
+    img {
+      object-fit: contain !important;
+    }
+
+    &.node {
+      width: $size + 50px;
+    }
+
+    &.html-html5-css-css3{
+      width: $size + 50px;
+    }
+  }
+}
