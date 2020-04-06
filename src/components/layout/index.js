@@ -33,7 +33,7 @@ const Layout = ({ children, location }) => (
       }
     `}
     render={data => (
-      <div>
+      <>
         <Nav location={location} />
         <main>{children}</main>
         <footer>
@@ -41,7 +41,7 @@ const Layout = ({ children, location }) => (
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </>
     )}
   />
 );

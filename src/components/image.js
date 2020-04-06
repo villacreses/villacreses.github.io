@@ -27,13 +27,9 @@ const query = graphql`
 const Image = () => (
   <StaticQuery
     query={query}
-  render={data => {
-    console.log('e', data.placeholderImage.childImageSharp.fluid)
-    return (
-    <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-    )
-  }
-  }
+    render={data => (
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+    )}
   />
 )
 export default Image

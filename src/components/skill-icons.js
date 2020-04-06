@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -86,29 +86,22 @@ const query = graphql`
   }
 `;
 
-const key = ({ src }) => src.slice(src.lastIndexOf('/') + 1, src.lastIndexOf('.'));
-
 const SkillLogos = () => (
   <StaticQuery
     query={query}
-    render={data => {
-      const images = Object.values(data).map(({ childImageSharp: { fluid } }) => fluid);
-      const keyMap = images.map(key);
-      return (
-        <div className="skill-logo-container">
-          {images.map((fluidData, i) => {
-            return (
-              <Img
-                key={keyMap[i]}
-                className={`skill-logo ${keyMap[i]}`}
-                fluid={fluidData}
-              />
-            );
-          })}
-        </div>
-      );
-      }
-    }
+    render={data => (
+      <div className="skill-logo-container">
+        {Object.entries(data).map(
+          ([ key, { childImageSharp: { fluid } } ]) => (
+            <Img
+              key={key}
+              className={`skill-logo ${key}`}
+              fluid={fluid}
+            />
+          )
+        )}
+      </div>
+    )}
   />
 );
 
