@@ -1,6 +1,6 @@
-@import '../_shared.scss';
+@import '../../_shared.scss';
 
-.resume-item {
+.ResumeItem {
   display: flex;
   flex-direction: row;
   margin-bottom: 3rem;
@@ -28,7 +28,7 @@
     }
   }
 
-  .resume-content {
+  .resume-main {
     flex: 1;
 
     p {

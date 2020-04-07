@@ -1,9 +1,8 @@
 import React from 'react';
-import './resume-item.scss';
+import SchemaRenderer from '../SchemaRenderer';
 
 const BulletList = data => (
   <div>
-    {console.log('data', data)}
     <label htmlFor={data.key}>{data.opener}</label>
     <ul id={data.key}>
       {data.liArr.map(({ key, href, text }) => (
@@ -35,14 +34,20 @@ const map = {
 const ResumeItem = ({ heading, subheading, paragraphs, date }) => (
   <div className="resume-item">
     <div className="resume-content">
-      <div className="heading-wrapper">
-        <h3>{heading}</h3>
-        {subheading && <div className="subheading">{subheading}</div>}
-      </div>
-      {paragraphs.map(data => {
-        const Display = map[data.type] || Paragraph;
-        return <Display key={data.key} {...data} />
-      })}
+      {heading && (
+        <div className="heading-wrapper">
+          <h3>{heading}</h3>
+          {subheading && <div className="subheading">{subheading}</div>}
+        </div>
+      )}
+      <SchemaRenderer
+        schema={paragraphs}
+        componentMap={{
+          BulletList,
+          Paragraph,
+          default: Paragraph
+        }}
+      />
     </div>
     <div className="resume-date">{date}</div>
   </div>

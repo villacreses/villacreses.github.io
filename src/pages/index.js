@@ -16,12 +16,16 @@ import SkillIcons from '../components/skill-icons';
 import Seo from '../components/seo';
 import ResumeItem from '../components/resume-item';
 
+import SchemaRenderer from '../components/SchemaRenderer';
+import ResumeSection from '../components/resume/ResumeSection'
+
 import {
   socialIcons,
   awards,
   education,
-  experience
+  experience,
 } from '../content';
+import resume from '../content/resume';
 
 const iconMap = {
   'fab fa-linkedin-in': faLinkedinIn,
@@ -72,23 +76,32 @@ const IndexPage = props => (
     </section>
     <hr />
 
-        <section id={experience.id}>
-          <h2>{experience.heading}</h2>
-          {experience.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-        </section>
-        <hr />
+    <SchemaRenderer
+      schema={resume}
+      componentMap={{
+        ResumeSection
+      }}
+    />
 
-        <section id={awards.id}>
-          <h2>{awards.heading}</h2>
-          {awards.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-        </section>
-        <hr />
+    {/*
+    <section id={experience.id}>
+      <h2>{experience.heading}</h2>
+      {experience.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
+    </section>
+    <hr />
 
-        <section id={education.id}>
-          <h2>{education.heading}</h2>
-          {education.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-        </section>
-        <hr />
+    <section id={awards.id}>
+      <h2>{awards.heading}</h2>
+      {awards.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
+    </section>
+    <hr />
+
+    <section id={education.id}>
+      <h2>{education.heading}</h2>
+      {education.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
+    </section>
+    <hr />
+    */}
 
     <section id="skills">
       <h2>Skills</h2>
