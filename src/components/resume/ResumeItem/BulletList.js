@@ -2,10 +2,10 @@ import React from 'react';
 
 const BulletList = data => (
   <div>
-    <label htmlFor={data.key}>{data.opener}</label>
-    <ul id={data.key}>
-      {data.items.map(({ key, href, text }) => (
-        <li key={key}>
+    {data.opener && <label htmlFor={data.id}>{data.opener}</label>}
+    <ul id={data.id}>
+      {data.items.map(({ id, href, text }) => (
+        <li key={id}>
           {href ? (
             <a href={href} target="_blank" rel="noopener noreferrer">
               {text}
