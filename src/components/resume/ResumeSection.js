@@ -1,6 +1,7 @@
 import React from 'react';
 import SchemaRenderer from '../SchemaRenderer';
 import ResumeItem from './ResumeItem';
+import SkillIcons from '../skill-icons';
 
 const ResumeSection = props => (
   <>
@@ -8,8 +9,10 @@ const ResumeSection = props => (
       <SchemaRenderer
         schema={props.schema}
         componentMap={{
-          h2: ({ text }) => <h2>{text}</h2>,
+          h2: ({ text, ...props }) => <h2 {...props}>{text}</h2>,
+          div: props => <div {...props} />,
           ResumeItem,
+          SkillIcons,
         }}
       />
     </section>

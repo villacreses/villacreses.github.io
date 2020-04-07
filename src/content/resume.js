@@ -226,6 +226,34 @@ const resume = [
       ],
     }
   },
+  {
+    id: 'skills',
+    component: 'ResumeSection',
+    props: {
+      hideHr: true,
+      schema: [
+        {
+          id: 'section-heading',
+          component: 'h2',
+          props: {
+            text: 'Skills',
+          }
+        },
+        {
+          id: 'subheading',
+          component: 'div',
+          props: {
+            className: 'subheading',
+            children: 'Programming Languages & Tools',
+          }
+        },
+        {
+          id: 'icons',
+          component: 'SkillIcons'
+        }
+      ],
+    },
+  }
 ];
 
 export default resume;

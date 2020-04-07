@@ -14,17 +14,11 @@ import { faFileWord, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SkillIcons from '../components/skill-icons';
 import Seo from '../components/seo';
-import ResumeItem from '../components/resume-item';
 
 import SchemaRenderer from '../components/SchemaRenderer';
 import ResumeSection from '../components/resume/ResumeSection'
 
-import {
-  socialIcons,
-  awards,
-  education,
-  experience,
-} from '../content';
+import { socialIcons } from '../content';
 import resume from '../content/resume';
 
 const iconMap = {
@@ -75,19 +69,10 @@ const IndexPage = props => (
       </div>
     </section>
     <hr />
-
     <SchemaRenderer
       schema={resume}
       componentMap={{ ResumeSection }}
     />
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div className="subheading">
-        Programming Languages &amp; Tools
-      </div>
-      <SkillIcons />
-    </section>
   </Layout>
 );
 
