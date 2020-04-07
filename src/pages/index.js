@@ -78,30 +78,8 @@ const IndexPage = props => (
 
     <SchemaRenderer
       schema={resume}
-      componentMap={{
-        ResumeSection
-      }}
+      componentMap={{ ResumeSection }}
     />
-
-    {/*
-    <section id={experience.id}>
-      <h2>{experience.heading}</h2>
-      {experience.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-    </section>
-    <hr />
-
-    <section id={awards.id}>
-      <h2>{awards.heading}</h2>
-      {awards.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-    </section>
-    <hr />
-
-    <section id={education.id}>
-      <h2>{education.heading}</h2>
-      {education.content.map(({ key, ...data }) => <ResumeItem key={key} {...data} />)}
-    </section>
-    <hr />
-    */}
 
     <section id="skills">
       <h2>Skills</h2>

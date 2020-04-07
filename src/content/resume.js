@@ -178,8 +178,52 @@ const resume = [
           props: {
             text: 'Education',
           }
-        }
-      ]
+        },
+        {
+          id: 'fullstack',
+          component: 'ResumeItem',
+          props: {
+            heading: 'Fullstack Academy of Code',
+            date: 'May 2018',
+            schema: [
+              {
+                id: 'desc',
+                component: 'Paragraph',
+                props: {
+                  text: 'Software engineering immersive focused on full-stack web development using Node, Express, React, Redux, Sequelize, and PostgreSQL; additional instruction on data structures and algorithms.',
+                },
+              },
+            ],
+          },
+        },
+        {
+          id: 'queens-college',
+          component: 'ResumeItem',
+          props: {
+            heading: 'Queens College, City University of New York',
+            subheading: 'Bachelor of Arts - Applied Mathematics',
+            date: 'May 2016',
+            schema: [
+              {
+                id: 'courses-cs',
+                component: 'Paragraph',
+                props: {
+                  opener: 'CS Courses',
+                  text: 'Algorithms, OOP in Java, OOP in C++, Data Structures, Computer Organization & Assembly Language'
+                },
+              },
+              {
+                id: 'courses-math',
+                component: 'Paragraph',
+                props: {
+                  opener: 'Mathematics Courses',
+                  text: 'Linear Programming, Nonlinear Programming, Advanced Linear Algebra, Number theory, Game theory, Mathematical Problem Solving, Probability & Statistics, Chaotic Dynamical Systems, Advanced Calculus, Differential Geometry',
+                }
+              }
+            ],
+          },
+        },
+      ],
     }
   },
 ];
