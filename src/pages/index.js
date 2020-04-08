@@ -15,8 +15,8 @@ import SocialIcons from '../components/social-icons';
 
 const email = 'MarioVillacreses@outlook.com';
 
-const IndexPage = props => (
-  <Layout location={props['*']}>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <section id="intro">
       <header>
