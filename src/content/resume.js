@@ -12,6 +12,33 @@ const resume = [
           }
         },
         {
+          id: 'docai',
+          component: 'ResumeItem',
+          props: {
+            heading: 'doc.ai',
+            subheading: 'Software Engineer, Apps Team',
+            date: 'February 2020 - present',
+            schema: [
+              {
+                id: 'docai-impact',
+                component: 'BulletList',
+                props: {
+                  items: [
+                    {
+                      id: 'docai-impact-1',
+                      text: 'Refactored mobile app codebase, simplifying component structures for greater readability',
+                    },
+                    { 
+                      id: 'docai-impact-2',
+                      text: 'Built csv-to-geojson converter to display realtime visualization of COVID-19 outbreak',
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+        },
+        {
           id: 'knovva',
           component: 'ResumeItem',
           props: {
