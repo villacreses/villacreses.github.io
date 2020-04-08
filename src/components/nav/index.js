@@ -20,54 +20,49 @@ const query = graphql`
   }
 `;
 
-const MenuSection = props => {
-  return (
-    <div className="menu-section">
-      {props.title && <Link to={`/${props.target}`}>{props.title}</Link>}
-      {props.target === props.location && props.links && (
-        <Scrollspy
-          items={props.links.map(({ section }) => section)}
-          currentClassName="active"
-          className="scroll-spy"
-        >
-          {props.links.map(({ text, section }) => (
-            <li key={section}>
-              <a href={`#${section}`}>{text}</a>
-            </li>
-          ))}
-        </Scrollspy>
-      )}
-    </div>
-  );
-};
+const MenuSection = props => (
+  <div className="menu-section">
+    {props.title && <Link to={props.target}>{props.title}</Link>}
+    {props.target === props.location.pathname && (
+      <Scrollspy
+        items={props.links.map(({ section }) => section)}
+        currentClassName="active"
+        className="scroll-spy"
+      >
+        {props.links.map(({ text, section }) => (
+          <li key={section}>
+            <a href={`#${section}`}>{text}</a>
+          </li>
+        ))}
+      </Scrollspy>
+    )}
+  </div>
+);
 
-const Nav = props => {
-  return (
-    <StaticQuery
-      query={query}
-      render={data => {
-        return (
-          <nav id="sidebar">
-            <Img
-              fluid={data.profileImage.childImageSharp.fluid}
-              className="profile-circle"
-            />
-            <div className="nav-main-menu">
-              {navMenus.map(({ title, target, links }) => (
-                <Fragment key={title}>
-                  <MenuSection
-                    location={props.location}
-                    target={target}
-                    links={links}
-                  />
-                </Fragment>
-              ))}
-            </div>
-          </nav>
-        );
-      }}
-    />
-  );
-};
+const Nav = ({ location }) => (
+  <StaticQuery
+    query={query}
+    render={data => (
+      <nav id="sidebar">
+        <Img
+          fluid={data.profileImage.childImageSharp.fluid}
+          className="profile-circle"
+        />
+        {console.log('navMenus', navMenus)}
+        <div className="nav-main-menu">
+          {navMenus.map(({ title, target, links }) => (
+            <Fragment key={title}>
+              <MenuSection
+                location={location}
+                target={target}
+                links={links}
+              />
+            </Fragment>
+          ))}
+        </div>
+      </nav>
+    )}
+  />
+);
 
 export default Nav;

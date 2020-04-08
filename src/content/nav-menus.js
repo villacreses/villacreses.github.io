@@ -1,7 +1,7 @@
 const navMenus = [
   {
     title: 'About Me',
-    target: '',
+    target: '/',
     links: [
       { text: 'Intro', section: 'intro'  },
       { text: 'Experience', section: 'experience' },
@@ -10,11 +10,6 @@ const navMenus = [
       { text: 'Skills', section: 'skills'  }
     ]
   },
-  {
-    title: 'Portfolio',
-    target: 'portfolio',
-    links: []
-  }
 ];
 
 export default navMenus;
