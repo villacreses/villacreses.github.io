@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SchemaRenderer = ({ componentMap, schema }) => (
-  schema.map(({ id, component, props, wrapper, wrapperProps }) => {
+const SchemaRenderer = ({ componentMap, schema, wrapper }) => (
+  schema.map(({ id, component, props, wrapperProps }) => {
     const Component = componentMap[component] || componentMap.default;
     const Wrapper = componentMap[wrapper];
 
@@ -11,8 +11,8 @@ const SchemaRenderer = ({ componentMap, schema }) => (
 
     if (Wrapper) {
       return (
-        <Wrapper {...wrapperProps}>
-          <Component key={id} id={id} {...props} />
+        <Wrapper key={id} {...wrapperProps}>
+          <Component id={id} {...props} />
         </Wrapper>
       );
     }

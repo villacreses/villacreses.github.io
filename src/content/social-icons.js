@@ -2,32 +2,32 @@ const socialIcons = [
   {
     title: 'Download my resume (.docx)',
     href: 'https://onedrive.live.com/download?resid=D017ED93F9509B7%211741&amp;authkey=%21AJSoPBBLAtuHhCg&amp;em=2&amp;wdStartOn=1',
-    iconClass: 'far fa-file-word'
+    icon: 'msWord'
   },
   { 
     title: 'Add me on LinkedIn',
     href: 'https://www.linkedin.com/in/villacreses/',
-    iconClass: 'fab fa-linkedin-in'
+    icon: 'linkedin'
   },
   {
     title: 'My GitHub profile',
     href: 'https://github.com/villacreses',
-    iconClass: 'fab fa-github'
+    icon: 'github'
   },
   {
     title: 'My StackOverflow profile',
     href: 'https://stackoverflow.com/story/villacreses',
-    iconClass: 'fab fa-stack-overflow'
+    icon: 'stackOverflow'
   },
   {
     title: 'My Medium profile',
     href: 'https://medium.com/@villacreses',
-    iconClass: 'fab fa-medium-m'
+    icon: 'medium'
   },
   {
     title: 'My HackerRank Profile',
     href: 'https://hackerrank.com/mario970v',
-    iconClass: 'fab fa-hackerrank'
+    icon: 'hackerRank'
   }
 ];
 
