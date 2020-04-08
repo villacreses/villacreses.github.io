@@ -1,5 +1,3 @@
-import BulletList from "../components/resume/ResumeItem/BulletList";
-
 const resume = [
   {
     id: 'experience',
