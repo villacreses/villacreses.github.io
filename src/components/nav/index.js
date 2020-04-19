@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import Scrollspy from "react-scrollspy"
 import { graphql, useStaticQuery } from "gatsby"
 
-
 import "./nav.scss"
 
 const query = graphql`
@@ -22,8 +21,29 @@ const query = graphql`
   }
 `;
 
-const Nav = () => {
+const ref = React.createRef();
+
+const Nav = ({ location }) => {
   const data = useStaticQuery(query);
+
+  // Since the Scrollspy component doesn't accept any ARIA attributes as props,
+  // they're set manually here every time the user navigates to a new page.
+  // Location prop doesn't change on click of <a href="#"> links
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.setAttribute('aria-hidden', 'true');
+      ref.current.setAttribute('aria-expanded', 'false');
+    }
+
+    const activeScrollSpy = document.querySelector('.currentPage')
+
+    if (activeScrollSpy) {
+      activeScrollSpy.nextElementSibling.setAttribute('aria-hidden', 'false');
+      activeScrollSpy.nextElementSibling.setAttribute('aria-expanded', 'true');
+    }
+
+    ref.current = activeScrollSpy;
+  }, [location])
 
   return (
     <nav
@@ -42,7 +62,7 @@ const Nav = () => {
             </Link>
             {menu.links && (
               <Scrollspy
-                className="scoll-spy"
+                className="scroll-spy"
                 items={menu.links.map(({ slug }) => slug)}
                 currentClassName="active-section"
               >

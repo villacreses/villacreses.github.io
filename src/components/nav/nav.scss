@@ -12,8 +12,11 @@ $color_active: #fff;
   width: $nav_width_desktop;
   background-color: $primary_color;
   
-  a {
+  .scroll-spy {
+    display: none;
+  }
 
+  a {
     padding: 0.5rem;
     letter-spacing: 0.05rem;
     text-decoration: none;
@@ -23,6 +26,10 @@ $color_active: #fff;
 
     &.currentPage {
       color: $color_active;
+
+      & + .scroll-spy {
+        display: block;
+      }
     }
   }
 
