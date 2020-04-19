@@ -1,0 +1,63 @@
+[
+  {
+    "slug": "javascript",
+    "title": "Javascript",
+    "alt": "Javascript",
+    "image": "../images/javascript.png"
+  },
+  {
+    "slug": "node",
+    "title": "node.js",
+    "alt": "Node",
+    "image": "../images/node.png"
+
+  },
+  {
+    "slug": "html-html5-css-css3",
+    "title": "HTML5 and CSS3",
+    "alt": "HTML5 and CSS3",
+    "image": "../images/html-html5-css-css3.png"
+  },
+  {
+    "slug": "sass",
+    "title": "SASS (CSS preprocessor)",
+    "alt": "SASS preprocessor",
+    "image": "../images/sass.png"
+  },
+  {
+    "slug": "react",
+    "title": "React",
+    "alt": "React.js",
+    "image": "../images/react.png"
+  },
+  {
+    "slug": "redux",
+    "title": "Redux",
+    "alt": "Redux",
+    "image": "../images/redux.png"
+  },
+  {
+    "slug": "git",
+    "title": "Git",
+    "alt": "Git version control",
+    "image": "../images/git.png"
+  },
+  {
+    "slug": "sql",
+    "title": "SQL",
+    "alt": "SQL",
+    "image": "../images/sql.png"
+  },
+  {
+    "slug": "postgres",
+    "title": "PostgreSQL",
+    "alt": "PostgreSQL",
+    "image": "../images/postgres.png"
+  },
+  {
+    "slug": "mongo",
+    "title": "MongoDB",
+    "alt": "MongoDB",
+    "image": "../images/mongo.png"
+  }
+]

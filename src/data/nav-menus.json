@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "index",
+    "title": "Home",
+    "target": "/",
+    "links": [
+      {
+        "slug": "intro",
+        "text": "Intro"
+      },
+      {
+        "slug": "experience",
+        "text": "Experience"
+      },
+      {
+        "slug": "awards",
+        "text": "Awards"
+      },
+      {
+        "slug": "education",
+        "text": "Education"
+      },
+      {
+        "slug": "skills",
+        "text": "Skills"
+      }
+    ]
+  }
+]
