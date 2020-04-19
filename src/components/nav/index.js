@@ -23,26 +23,38 @@ const query = graphql`
 
 const ref = React.createRef();
 
+const resetScrollMenu = menu => {
+  menu.setAttribute('aria-hidden', 'true');
+  menu.setAttribute('aria-expanded', 'false');
+}; 
+
 const Nav = ({ location }) => {
   const data = useStaticQuery(query);
+
+  useEffect(() => {
+    const pageLinks = document.querySelectorAll('.page-link');
+    pageLinks.forEach(link => {
+      const title = link.attributes.getNamedItem('data-menu-title').nodeValue;
+      link.nextElementSibling.setAttribute('aria-label', `${title} submenu`);
+      resetScrollMenu(link.nextElementSibling);
+    })
+  }, [])
 
   // Since the Scrollspy component doesn't accept any ARIA attributes as props,
   // they're set manually here every time the user navigates to a new page.
   // Location prop doesn't change on click of <a href="#"> links
   useEffect(() => {
     if (ref.current) {
-      ref.current.setAttribute('aria-hidden', 'true');
-      ref.current.setAttribute('aria-expanded', 'false');
+      resetScrollMenu(ref.current);
     }
 
-    const activeScrollSpy = document.querySelector('.currentPage')
+    const activePageLink = document.querySelector('.currentPage')
 
-    if (activeScrollSpy) {
-      activeScrollSpy.nextElementSibling.setAttribute('aria-hidden', 'false');
-      activeScrollSpy.nextElementSibling.setAttribute('aria-expanded', 'true');
+    if (activePageLink) {
+      activePageLink.nextElementSibling.setAttribute('aria-hidden', 'false');
+      activePageLink.nextElementSibling.setAttribute('aria-expanded', 'true');
+      ref.current = activePageLink.nextElementSibling;
     }
-
-    ref.current = activeScrollSpy;
   }, [location])
 
   return (
@@ -55,8 +67,10 @@ const Nav = ({ location }) => {
           <li key={menu.slug}>
             <Link
               to={menu.target}
-              aria-haspopup={!!menu.links}
+              className="page-link"
               activeClassName="currentPage"
+              aria-haspopup={!!menu.links}
+              data-menu-title={menu.title}
             >
               {menu.title}
             </Link>
@@ -75,6 +89,7 @@ const Nav = ({ location }) => {
             )}
           </li>
         ))}
+        <li><Link to="/404">404</Link></li>
       </ul>
     </nav>
   );
