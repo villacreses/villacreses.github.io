@@ -89,7 +89,6 @@ const Nav = ({ location }) => {
             )}
           </li>
         ))}
-        <li><Link to="/404">404</Link></li>
       </ul>
     </nav>
   );
