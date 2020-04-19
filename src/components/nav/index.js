@@ -1,7 +1,9 @@
-import React, { useEffect } from "react"
-import { Link } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Scrollspy from "react-scrollspy"
-import { graphql, useStaticQuery } from "gatsby"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faBars } from '@fortawesome/free-solid-svg-icons';
 
 import "./nav.scss"
 
@@ -30,6 +32,7 @@ const resetScrollMenu = menu => {
 
 const Nav = ({ location }) => {
   const data = useStaticQuery(query);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const pageLinks = document.querySelectorAll('.page-link');
@@ -57,38 +60,55 @@ const Nav = ({ location }) => {
     }
   }, [location])
 
+  const mainNavClass = open ? 'main-nav open' : 'main-nav';
+
   return (
     <nav
       id="sidebar"
-      className="flex-col justify-center align-center"
+      className="flex-col justify-center"
     >
-      <ul aria-label="main navigation">
-        {data.menus.nodes.map(menu => (
-          <li key={menu.slug}>
-            <Link
-              to={menu.target}
-              className="page-link"
-              activeClassName="currentPage"
-              aria-haspopup={!!menu.links}
-              data-menu-title={menu.title}
-            >
-              {menu.title}
-            </Link>
-            {menu.links && (
-              <Scrollspy
-                className="scroll-spy"
-                items={menu.links.map(({ slug }) => slug)}
-                currentClassName="active-section"
+      <button
+        className="burger"
+        onClick={() => setOpen(!open)}
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <ul className={mainNavClass} aria-label="main navigation">
+        {data.menus.nodes.map(menu => {
+          const menuClass = menu.target === location.pathname ? 'current' : '';
+
+          return (
+            <li key={menu.slug} className={`page-menu ${menuClass}`}>
+              <Link
+                to={menu.target}
+                className="page-link"
+                activeClassName="currentPage"
+                aria-haspopup={!!menu.links}
+                data-menu-title={menu.title}
               >
-                {menu.links.map(({ slug, text }) => (
-                  <li key={slug}>
-                    <a href={`#${slug}`}>{text}</a>
-                  </li>
-                ))}
-              </Scrollspy>
-            )}
-          </li>
-        ))}
+                {menu.title}
+              </Link>
+              {menu.links && (
+                <Scrollspy
+                  className="scroll-spy"
+                  items={menu.links.map(({ slug }) => slug)}
+                  currentClassName="active-section"
+                >
+                  {menu.links.map(({ slug, text }) => (
+                    <li key={slug} className="scroll-link">
+                      <a
+                        href={`#${slug}`}
+                        onClick={() => { if (open) setOpen(false) }}
+                      >
+                        {text}
+                      </a>
+                    </li>
+                  ))}
+                </Scrollspy>
+              )}
+            </li>
+          )}
+        )}
       </ul>
     </nav>
   );

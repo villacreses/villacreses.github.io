@@ -1,14 +1,15 @@
 @import '../_shared.scss';
 
-body {
+#___gatsby {
   padding-left: $nav_width_desktop;
 
-  @media (max-width: $shorten_nav) {
+  @media (max-width: $nav_breakpoint_desktop_small) {
     padding-left: $nav_width_tablet;
   }
 
-  @media (max-width: $top_nav_width) {
+  @media (max-width: $nav_breakpoint_tablet) {
     padding-left: 0;
+    padding-top: $nav_height_mobile;
   }
 }
 
@@ -214,6 +215,8 @@ footer {
     width: $size;
     margin: 3px 12px 10px;
     justify-content: center;
+    z-index: -1;
+
 
     img {
       object-fit: contain !important;

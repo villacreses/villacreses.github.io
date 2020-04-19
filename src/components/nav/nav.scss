@@ -3,26 +3,73 @@
 $color_default: rgba(#fff, 0.75);
 $color_active: #fff;
 
+%margin-replace {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 #sidebar {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
 
-  height: 100vh;
+  height: 100%;
   width: $nav_width_desktop;
+
   background-color: $primary_color;
+
+  button.burger {
+    display: none;
+
+    margin-left: 20px;
+    padding: 4px 5px;
+    height: 50px;
+    width: 50px;
+
+    background: none;
+
+
+    border: 2px solid #fff;
+    border-radius: 7px;
+
+    svg {
+      color: #fff;
+      width: 80%;
+      height: 80%;
+    }
+
+    @media (max-width: $nav_breakpoint_tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+  }
   
   .scroll-spy {
     display: none;
   }
 
   a {
-    padding: 0.5rem;
     letter-spacing: 0.05rem;
     text-decoration: none;
     color: $color_default;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
+
+    display: block;
+    padding: 4px 0;
+
+    &.page-link {
+      @extend %margin-replace;
+
+      font-size: 1.2rem;
+      line-height: 2rem;
+      font-weight: 800;
+    }
 
     &.currentPage {
       color: $color_active;
@@ -37,14 +84,65 @@ $color_active: #fff;
     list-style: none;
     padding: 0;
     margin: 0;
+
+    &.main-nav {
+      z-index: 500;
+      margin: 0 1rem;
+    }
   }
 
+
   li {
+    &.scroll-link {
+      margin-bottom: 0;
+      padding-top: calc(1.45rem / 4);
+      padding-bottom: calc(1.45rem / 4);
+      padding-left: 1rem;
+    }
+
     &.active-section {
+      @extend %margin-replace;
+      padding-left: 2rem;
+
+      background-color: lighten($primary_color, 15%);
+
       a {
         color: $color_active;
       }
     }
 
+    &.current {
+      background-color: lighten($primary_color, 6%);
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+
+  }
+
+  @media (max-width: $nav_breakpoint_desktop_small) {
+    width: $nav_width_tablet;
+  }
+
+  @media (max-width: $nav_breakpoint_tablet) {
+    height: $nav_height_mobile;
+    width: 100vw;
+
+    ul.main-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+
+      max-height: 80vh;
+      overflow-y: scroll;
+
+      margin: 0;
+      padding: 0 1rem;
+
+      &.open {
+        display: block;
+      }
+    }
   }
 }

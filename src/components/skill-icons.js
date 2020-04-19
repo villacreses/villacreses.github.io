@@ -28,7 +28,7 @@ const SkillLogos = () => {
         <Image
           {...imageProps}
           key={slug}
-          className={`skill-logo ${imageProps.key}`}
+          className={`skill-logo ${slug}`}
           fluid={image.childImageSharp.fluid}
         />
       ))}
