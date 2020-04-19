@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedinIn,
@@ -9,36 +10,39 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faFileWord } from '@fortawesome/free-solid-svg-icons';
 
-import socialIcons from '../content/social-icons';
+const query = graphql`
+  query {
+    allSocialIconsJson {
+      nodes {
+        title
+        slug
+        href
+      }
+    }
+  }
+`;
 
-const IconRenderer = ({ schema, iconMap }) => schema.map(
-  ({ title, href, icon }) => (
-    <a
-      key={href}
-      href={href}
-      title={title}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <FontAwesomeIcon icon={iconMap[icon]} />
-    </a>
-  )
-);
+const map = {
+  linkedin: faLinkedinIn,
+  github: faGithub,
+  stackOverflow: faStackOverflow,
+  medium: faMediumM,
+  hackerRank: faHackerrank,
+  msWord: faFileWord,
+};
 
-const SocialIcons = () => (
-  <div className="social-icons">
-    <IconRenderer
-      schema={socialIcons}
-      iconMap={{
-        linkedin: faLinkedinIn,
-        github: faGithub,
-        stackOverflow: faStackOverflow,
-        medium: faMediumM,
-        hackerRank: faHackerrank,
-        msWord: faFileWord,
-      }}
-    />
-  </div>
-);
+const SocialIcons = () => {
+  const data = useStaticQuery(query);
+
+  return (
+    <div className="social-icons">
+      {data.allSocialIconsJson.nodes.map(({ slug, ...linkProps }) => (
+        <a key={slug} target="_blank" rel="noopener noreferrer" {...linkProps}>
+          <FontAwesomeIcon icon={map[slug]} />
+        </a>
+      ))}
+    </div>
+  );
+}
 
 export default SocialIcons;
