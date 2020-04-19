@@ -1,68 +1,63 @@
-import React, { Fragment } from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import Scrollspy from "react-scrollspy"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
 
-import navMenus from '../../content/nav-menus';
 
 import "./nav.scss"
 
 const query = graphql`
   query {
-    profileImage: file(relativePath: { eq: "profile.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
+    menus: allNavMenusJson {
+      nodes {
+        slug
+        title
+        target
+        links {
+          slug
+          text
         }
       }
     }
   }
 `;
 
-const MenuSection = props => (
-  <div className="menu-section">
-    {props.title && <Link to={props.target}>{props.title}</Link>}
-    {props.target === props.location.pathname && (
-      <Scrollspy
-        items={props.links.map(({ section }) => section)}
-        currentClassName="active"
-        className="scroll-spy"
-      >
-        {props.links.map(({ text, section }) => (
-          <li key={section}>
-            <a href={`#${section}`}>{text}</a>
+const Nav = () => {
+  const data = useStaticQuery(query);
+
+  return (
+    <nav
+      id="sidebar"
+      className="flex-col justify-center align-center"
+    >
+      <ul aria-label="main navigation">
+        {data.menus.nodes.map(menu => (
+          <li key={menu.slug}>
+            <Link
+              to={menu.target}
+              aria-haspopup={!!menu.links}
+              activeClassName="currentPage"
+            >
+              {menu.title}
+            </Link>
+            {menu.links && (
+              <Scrollspy
+                className="scoll-spy"
+                items={menu.links.map(({ slug }) => slug)}
+                currentClassName="active-section"
+              >
+                {menu.links.map(({ slug, text }) => (
+                  <li key={slug}>
+                    <a href={`#${slug}`}>{text}</a>
+                  </li>
+                ))}
+              </Scrollspy>
+            )}
           </li>
         ))}
-      </Scrollspy>
-    )}
-  </div>
-);
-
-const Nav = ({ location }) => (
-  <StaticQuery
-    query={query}
-    render={data => (
-      <nav id="sidebar">
-        <Img
-          fluid={data.profileImage.childImageSharp.fluid}
-          className="profile-circle"
-        />
-        {console.log('navMenus', navMenus)}
-        <div className="nav-main-menu">
-          {navMenus.map(({ title, target, links }) => (
-            <Fragment key={title}>
-              <MenuSection
-                location={location}
-                target={target}
-                links={links}
-              />
-            </Fragment>
-          ))}
-        </div>
-      </nav>
-    )}
-  />
-);
+      </ul>
+    </nav>
+  );
+};
 
 export default Nav;
