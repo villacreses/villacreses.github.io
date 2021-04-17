@@ -1,21 +1,15 @@
-import React from "react";
-// import { Link } from "gatsby"
+import React, { Fragment } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-
-import SchemaRenderer from '../components/SchemaRenderer';
-import ResumeSection from '../components/resume/ResumeSection'
-
-import resume from '../content/resume.yaml'
-import intro from '../content/intro.yaml'
-
+import ResumeItem from '../components/ResumeItem';
 import SocialIcons from '../components/social-icons';
 
-const email = 'MarioVillacreses@outlook.com';
+import resume from '../content/resume.yaml';
+import intro from '../content/intro.yaml';
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
@@ -52,8 +46,14 @@ const IndexPage = ({ location }) => (
       <SocialIcons />
     </section>
     <hr />
-    {resume.map(({ id, ...resProps }) => (
-      <ResumeSection key={id} {...resProps} />
+    {resume.map(({ id, heading, items = [], hideHr }) => (
+      <Fragment key={id}>
+        <section id={id}>
+          {heading && <h2 id="section-heading">{heading}</h2>}
+          {items.map(item => <ResumeItem key={item.id} {...item} />)}
+        </section>
+        {!hideHr && <hr />}
+      </Fragment>
     ))}
   </Layout>
 );
