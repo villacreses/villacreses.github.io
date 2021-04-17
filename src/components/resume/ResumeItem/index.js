@@ -17,13 +17,10 @@ const ResumeItem = props => (
           )}
         </div>
       )}
-      <SchemaRenderer
-        schema={props.schema}
-        componentMap={{
-          BulletList,
-          Paragraph,
-        }}
-      />
+      {props.description
+        && props.description.map(paragraph => <Paragraph {...paragraph} />)
+      }
+      {props.impact && <BulletList {...props.impact} />}
     </div>
     {props.date && <div className="resume-date">{props.date}</div>}
   </div>

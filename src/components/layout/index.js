@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Nav from '../nav'
 
@@ -21,30 +21,30 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
 
-const Layout = ({ children, location }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
       }
-    `}
-    render={data => (
-      <>
-        <Nav location={location} />
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </>
-    )}
-  />
-);
+    }
+  }
+`;
+
+const Layout = ({ children, location }) => {
+  const data = useStaticQuery(query);
+  return (
+    <>
+      <Nav location={location} />
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </>
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

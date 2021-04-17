@@ -8,7 +8,7 @@ import {
   faMediumM,
   faHackerrank,
 } from '@fortawesome/free-brands-svg-icons';
-import { faFileWord, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faFileWord } from '@fortawesome/free-solid-svg-icons';
 
 const query = graphql`
   query {

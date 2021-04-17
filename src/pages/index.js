@@ -9,7 +9,7 @@ import Seo from '../components/seo';
 
 import SchemaRenderer from '../components/SchemaRenderer';
 import ResumeSection from '../components/resume/ResumeSection'
-import resume from '../content/resume';
+import resume from '../content/resume.yaml'
 
 import SocialIcons from '../components/social-icons';
 
