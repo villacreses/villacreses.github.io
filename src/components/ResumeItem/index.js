@@ -1,5 +1,4 @@
 import React from 'react';
-import SchemaRenderer from '../../SchemaRenderer';
 
 import BulletList from './BulletList';
 import Paragraph from './Paragraph';
@@ -17,13 +16,10 @@ const ResumeItem = props => (
           )}
         </div>
       )}
-      <SchemaRenderer
-        schema={props.schema}
-        componentMap={{
-          BulletList,
-          Paragraph,
-        }}
-      />
+      {props.description && props.description.map((paragraph, idx) => (
+        <Paragraph key={`${props.id}-desc-${idx}`} {...paragraph} />)
+      )}
+      {props.impact && <BulletList id={`${props.id}-impact`} {...props.impact} />}
     </div>
     {props.date && <div className="resume-date">{props.date}</div>}
   </div>
