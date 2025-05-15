@@ -1,8 +1,13 @@
+
 /* ======================================== 
  * ========== Baseline elements ===========
  * ======================================== */
 
 html {
+  background-color: rgb(var(--background-start-rgb));
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   height: 100vh;
 }
 
@@ -14,6 +19,8 @@ body {
     rgb(var(--background-start-rgb)),    
     rgb(var(--background-end-rgb))
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   display: flex;
   flex-direction: column;
@@ -39,6 +46,7 @@ img {
  * ========== Global components ===========
  * ======================================== */
 
+/* Top nav */
 #top-header {
   --header-gap: 1.5rem;
   
@@ -58,7 +66,6 @@ img {
 }
 #top-header nav ul {
   flex: 1;  
-  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -73,11 +80,14 @@ img {
   min-height: 148px;
 }
 
+/* Page footer*/
 #page-footer {
-  padding-top: 5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
   position: relative;
   margin-top: auto;
+
+  font-size: 0.75rem;
 }
 #page-footer > div {
   display: flex;
