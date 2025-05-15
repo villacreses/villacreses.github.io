@@ -8,11 +8,10 @@ html {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  height: 100vh;
 }
 
 body {
-  height: 100%;
+  --padding-x: 1rem;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
     to bottom,
@@ -25,7 +24,29 @@ body {
   display: flex;
   flex-direction: column;
 
-  padding: 1rem;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  
+}
+@media (min-width: 485px) {
+  body {
+    --padding-x: 1.5rem;
+  }
+}
+@media (min-width: 40rem) {
+  body {
+    --padding-x: 3.5rem;
+  }
+}
+@media (min-width: 48rem) {
+  body {
+    --padding-x: 6rem;
+  }
+}
+@media (min-width: 64rem) {
+  body {
+    --padding-x: 8rem;
+  }
 }
 
 main {
@@ -86,8 +107,6 @@ img {
   padding-bottom: 1rem;
   position: relative;
   margin-top: auto;
-
-  font-size: 0.75rem;
 }
 #page-footer > div {
   display: flex;
@@ -104,4 +123,16 @@ img {
 #page-footer small a {
   text-decoration: underline;
   cursor: not-allowed;
+}
+
+/* ======================================== 
+ * ========== Utility classes ==========
+ * ======================================== */
+.prose {
+  color: rgb(var(--text-prose-rgb));
+  padding-bottom: 1rem;
+}
+.lead {
+  margin: 1.5rem 0 .5rem 0;
+  color: rgb(var(--text-lead-rgb));
 }

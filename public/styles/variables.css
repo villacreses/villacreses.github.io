@@ -1,4 +1,5 @@
 :root {
+  /* https://tailwindcss.com/docs/colors*/
   --color-neutral: 255, 255, 255;
   --color-neutral-50: 248, 250, 252;
   --color-neutral-100: 241, 245, 249;
@@ -11,23 +12,53 @@
   --color-neutral-800: 30, 41, 59;
   --color-neutral-900: 15, 23, 42;
 
-  --color-blue-50: oklch(0.97 0.014 254.604);
-  --color-blue-100: oklch(0.932 0.032 255.585);
-  --color-blue-200: oklch(0.882 0.059 254.128);
-  --color-blue-300: oklch(0.809 0.105 251.813);
-  --color-blue-400: oklch(0.707 0.165 254.624);
-  --color-blue-500: oklch(0.623 0.214 259.815);
-  --color-blue-600: oklch(0.546 0.245 262.881);
-  --color-blue-700: oklch(0.488 0.243 264.376);
-  --color-blue-800: oklch(0.424 0.199 265.638);
-  --color-blue-900: oklch(0.379 0.146 265.522);
-  --color-blue-950: oklch(0.282 0.091 267.935);
+  --color-gray-50: 249, 250, 251;
+  --color-gray-100: 243, 244, 246;
+  --color-gray-200: 229, 231, 235;
+  --color-gray-300: 209, 213, 219;
+  --color-gray-400: 156, 163, 175;
+  --color-gray-500: 107, 114, 128;
+  --color-gray-600: 75, 85, 99;
+  --color-gray-700: 55, 65, 81;
+  --color-gray-800: 31, 41, 55;
+  --color-gray-900: 17, 24, 39;
+  --color-gray-950: 3, 7, 18;
+
+  --color-blue-50: 239, 246, 255;
+  --color-blue-100: 219, 234, 254;
+  --color-blue-200: 191, 219, 254;
+  --color-blue-300: 147, 197, 253;
+  --color-blue-400: 96, 165, 250;
+  --color-blue-500: 59, 130, 246;
+  --color-blue-600: 37, 99, 235;
+  --color-blue-700: 29, 78, 216;
+  --color-blue-800: 30, 64, 175;
+  --color-blue-900: 30, 58, 138;
+  --color-blue-950: 23, 37, 84;
+
+  /* These are just here for reference. Hopefully in the future we can
+   * use CSS variables in media queries. In the meantime, I will still
+   * try to avoid using anything beyond plain CSS.
+   */
+  --breakpoint-3xs: 365px;
+  --breakpoint-2xs: 485px;
+  --breakpoint-xs: 560px;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-xxl: 96rem;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: #F0F2F5;
   --background-end-rgb: #F0F2F5;
-  
   --link-color-rgb: 0, 100, 209; 
+
+  --text-h2-rgb: var(--color-neutral-500);
+  --text-prose-rgb: var(--color-neutral-700);
+  --text-lead-rgb: var(--color-gray-600);
+  
+  --home-img-border-rgb: var(--color-blue-100);
 }
 
 :root:has(#dark-toggle:checked) {
@@ -35,4 +66,10 @@
   --foreground-rgb: var(--color-neutral);
   --background-start-rgb: var(--color-neutral-800);
   --background-end-rgb: var(--color-neutral-900);
+  
+  --text-h2-rgb: var(--color-neutral-400);
+  --text-prose-rgb: var(--color-neutral-300);
+  --text-lead-rgb: var(--color-gray-400);
+  
+  --home-img-border-rgb: var(--color-blue-100);
 }
