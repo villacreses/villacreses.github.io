@@ -15,24 +15,24 @@
       <header id="top-header">
         <nav>
           <ul>
-            <li>
+            <li style="margin-right: auto;">
               <a href="#">
                 MV
               </a>
             </li>
-            <div>
-              <li>
-                <a href="#">Career History</a>
-              </li>
-              <li>
-                <a href="#">Now</a>
-              </li>
-            </div>
+            <li>
+              <a href="#">Career History</a>
+            </li>
+            <li>
+              <a href="#">Now</a>
+            </li>
           </ul>
           <div>
-            <input type="checkbox" id="dark-toggle" />
-            <label for="dark-mode">
-              <span>
+            <input type="checkbox" id="dark-toggle" name="dark-toggle" class="sr-only" />
+            <label for="dark-toggle" role="button" class="text-3xl">
+              <i class="fa-solid fa-sun"></i>
+              <i class="fa-solid fa-moon"></i>
+              <span class="sr-only">
                 Dark mode
               </span>
             </label>
