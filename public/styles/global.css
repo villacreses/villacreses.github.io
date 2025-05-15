@@ -1,0 +1,97 @@
+/* ======================================== 
+ * ========== Baseline elements ===========
+ * ======================================== */
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),    
+    rgb(var(--background-end-rgb))
+  );
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  color: rgb(var(--link-color-rgb));
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ======================================== 
+ * ========== Global components ===========
+ * ======================================== */
+
+#top-header {
+  --header-gap: 1.5rem;
+  
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  height: 53px;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+#top-header a {
+  font-weight: 500;
+}
+#top-header nav {
+  display: flex;
+  flex-direction: row;
+  gap: var(--header-gap);
+}
+#top-header nav ul {
+  flex: 1;  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+#top-header nav ul > div {
+  display: flex;
+  flex-direction: row;
+  gap: var(--header-gap);
+}
+.top-bumper{
+  min-height: 148px;
+}
+
+#page-footer {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  margin-top: auto;
+}
+#page-footer > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(var(--color-neutral-400));
+  opacity: .7;
+}
+#page-footer small,
+#page-footer small * {
+  color: transparent;
+  cursor: default;
+}
+#page-footer small a {
+  text-decoration: underline;
+  cursor: not-allowed;
+}
