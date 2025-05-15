@@ -23,9 +23,16 @@
   --color-blue-900: oklch(0.379 0.146 265.522);
   --color-blue-950: oklch(0.282 0.091 267.935);
 
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: #F0F2F5;
+  --background-end-rgb: #F0F2F5;
+  
+  --link-color-rgb: 0, 100, 209; 
+}
+
+:root:has(#dark-toggle:checked) {
+  --link-color-rgb: 134, 239, 172; 
   --foreground-rgb: var(--color-neutral);
   --background-start-rgb: var(--color-neutral-800);
   --background-end-rgb: var(--color-neutral-900);
-
-  --link-color-rgb: 134, 239, 172; 
 }
