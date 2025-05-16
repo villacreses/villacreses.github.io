@@ -13,6 +13,7 @@
     </head>
     <body>
       <header id="top-header">
+        <div id="navbar-blur"></div>
         <nav>
           <ul>
             <li style="margin-right: auto;">
@@ -28,7 +29,13 @@
             </li>
           </ul>
           <div>
-            <input type="checkbox" id="dark-toggle" name="dark-toggle" class="sr-only" />
+            <input
+              type="checkbox"
+              id="dark-toggle"
+              name="dark-toggle"
+              class="sr-only"
+              hidden
+            />
             <label for="dark-toggle" role="button" class="text-3xl">
               <i class="fa-solid fa-sun"></i>
               <i class="fa-solid fa-moon"></i>
@@ -55,21 +62,17 @@
               <h2 class="text-sm">Software Engineer &amp; Math Enthusiast</h2>
             </hgroup>
             <dl id="quick-stats" class="text-sm">
-              <div class="line">
-                <i class="fa-solid fa-suitcase"></i>
-                <dt class="sr-only">Current role</dt>
-                <dd>Freelance Software Engineer</dd>
-              </div>
-              <div class="line">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <dt class="sr-only">Education</dt>
-                <dd>B.A. Applied Math @ CUNY Queens College</dd>
-              </div>
-              <div class="line">
-                <i class="fa-solid fa-location-dot"></i>
-                <dt class="sr-only">Location</dt>
-                <dd>New York City</dd>
-              </div>
+              <i class="fa-solid fa-suitcase"></i>
+              <dt class="sr-only">Current role</dt>
+              <dd>Freelance Software Engineer</dd>
+              
+              <i class="fa-solid fa-graduation-cap"></i>
+              <dt class="sr-only">Education</dt>
+              <dd>B.A. Applied Math @ CUNY Queens College</dd>
+              
+              <i class="fa-solid fa-location-dot"></i>
+              <dt class="sr-only">Location</dt>
+              <dd>New York City</dd>
             </dl>
             <hr />
           </div>
@@ -89,7 +92,7 @@
               If you'd like to connect, please reach out through any of the social links provided below.
             </p>
           </section>
-          <section id="action-links" class="text-lg font-semibold">
+          <section id="action-links" class="font-semibold">
             <ul>
               <li>
                 <a href="#">

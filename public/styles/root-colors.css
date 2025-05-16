@@ -1,4 +1,4 @@
-:root {
+:root, :root:has(#dark-toggle:not(:checked)) {
   /* https://tailwindcss.com/docs/colors
    * https://tailscan.com/colors
    */
@@ -69,10 +69,10 @@
   --link-color-rgb: 0, 100, 209; 
 
   --text-h2-rgb: var(--color-neutral-500);
-  --text-prose-rgb: var(--color-neutral-700);
+  --text-prose-rgb: var(--color-slate-700);
   --text-lead-rgb: var(--color-gray-600);
   
-  --home-img-border-rgb: var(--color-blue-100);
+  --home-img-border-rgb: var(--color-slate-600);
   --home-text-stats-rgb: var(--color-gray-600)
 }
 
@@ -83,7 +83,7 @@
   --background-end-rgb: var(--color-slate-900);
   
   --text-h2-rgb: var(--color-neutral-400);
-  --text-prose-rgb: var(--color-neutral-300);
+  --text-prose-rgb: var(--color-slate-300);
   --text-lead-rgb: var(--color-gray-400);
   
   --home-img-border-rgb: var(--color-blue-100);
