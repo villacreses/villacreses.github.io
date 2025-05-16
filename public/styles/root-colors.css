@@ -64,16 +64,19 @@
   --breakpoint-xxl: 96rem;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #F0F2F5;
-  --background-end-rgb: #F0F2F5;
+  --background-start-rgb: var(--color-gray-50);
+  --background-end-rgb: var(--color-gray-50);
   --link-color-rgb: 0, 100, 209; 
+  --menu-bg-rgb: var(--background-start-rgb);
 
   --text-h2-rgb: var(--color-neutral-500);
   --text-prose-rgb: var(--color-slate-700);
   --text-lead-rgb: var(--color-gray-600);
   
   --home-img-border-rgb: var(--color-slate-600);
-  --home-text-stats-rgb: var(--color-gray-600)
+  --home-text-stats-rgb: var(--color-gray-600);
+
+  --hr-rgb: var(--color-neutral-300);
 }
 
 :root:has(#dark-toggle:checked) {
@@ -88,4 +91,5 @@
   
   --home-img-border-rgb: var(--color-blue-100);
   --home-text-stats-rgb: var(--color-gray-300);
+  --hr-rgb: var(--color-neutral-700);
 }

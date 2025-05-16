@@ -3,12 +3,17 @@
  * ========== Baseline elements ===========
  * ======================================== */
 
+:root {
+  --z-index-max: 99999;
+}
+
 html {
   background-color: rgb(var(--background-start-rgb));
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 16px;
+  padding-left: calc(100vw - 100%);
 }
 
 body {
@@ -26,8 +31,10 @@ body {
   flex-direction: column;
 
   padding-left: var(--padding-x);
-  padding-right: var(--padding-x);
-  
+  padding-right: var(--padding-x); 
+}
+body:has(#menu-toggle:checked) {
+  overflow: hidden;
 }
 @media (min-width: 485px) {
   body {
@@ -37,6 +44,9 @@ body {
 @media (min-width: 40rem) {
   body {
     --padding-x: 3.5rem;
+  }
+  body:has(#menu-toggle:checked) {
+    overflow: auto;
   }
 }
 @media (min-width: 48rem) {
@@ -64,45 +74,108 @@ img {
   max-width: 100%;
 }
 
-hr {
-  margin: 1.5rem -.75rem 0 -.75rem;
-  border-color: rgb(var(--color-neutral-700));
-  opacity: .5;
-}
-
 /* ======================================== 
  * ========== Global components ===========
  * ======================================== */
 
+
 /* Top nav */
 #top-header {
   --header-gap: 1.5rem;
-  
   padding: .5rem 1.5rem .5rem 1.5rem;
   height: 53px;
   position: fixed;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: row;
 }
 #top-header a {
   font-weight: 500;
 }
-#top-header nav {
+#navbar-blur ~ *, #top-header .container {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: var(--header-gap);
   height: 100%;
 }
-#top-header nav ul {
-  flex: 1;  
+#top-header .container {
+  display: flex; 
   padding: 0;
   margin: 0;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: var(--header-gap);
+}
+#top-header label[role=button] {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#top-header label[role=button] i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  font-size: var(--text-3xl-font-size);
+  line-height: var(--text-3xl-line-height);
+}
+#nav-links {
+  display: none;
+}
+#nav-links ul {
+  display: flex;
+}
+#top-header:has(#menu-toggle:checked) #nav-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menu-toggle-container {
+  z-index: var(--z-index-max);
+}
+@media not all and (min-width: 40rem) {
+  #top-header #nav-links {
+    position: absolute;
+    z-index: var(--z-index-max);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(var(--menu-bg-rgb), 0.8);
+    backdrop-filter: blur(5px);
+  }
+  #top-header #nav-links ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--text-2xl-font-size);
+    line-height: var(--text-2xl-line-height);
+  }
+}
+@media (min-width: 40rem) {
+  #top-header label[role=button] i {
+    font-size: var(--text-2xl-font-size);
+    line-height: var(--text-2xl-line-height);
+  }
+  #nav-links {
+    display: flex;
+  }
+  #nav-links ul.container {
+    flex-direction: row;
+    margin-right: var(--header-gap);
+  }
+  #menu-toggle-container {
+    display: none;
+  }
+}
+input[type=checkbox]:not(:checked) ~ label i.checked,
+input[type=checkbox]:checked ~ label i.unchecked {
+  display: none !important;
 }
 #navbar-blur {
   position: absolute;
@@ -149,37 +222,12 @@ hr {
   cursor: not-allowed;
 }
 
-/* Dark mode toggle */
-label[for=dark-toggle] {
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-label[for=dark-toggle] i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  font-size: var(--text-3xl-font-size);
-  line-height: var(--text-3xl-line-height);
-}
-:root:has(#dark-toggle:not(:checked)) .fa-moon,
-:root:has(#dark-toggle:checked) .fa-sun {
-  display: none;
-}
-@media (min-width: 40rem) {
-  label[for=dark-toggle] i {
-    font-size: var(--text-2xl-font-size);
-    line-height: var(--text-2xl-line-height);
-  }
-}
 
 /* ======================================== 
-* ========== Utility classes ==========
-* ======================================== */
+ * =========== Utility classes ============
+ * ======================================== */
+
+
 .prose {
   color: rgb(var(--text-prose-rgb));
   padding-bottom: .75rem;
@@ -191,4 +239,13 @@ label[for=dark-toggle] i {
   padding-bottom: .75rem;
   font-size: var(--text-xl-font-size);
   line-height: var(--text-xl-line-height);
+}
+
+.hr-substitute {
+  --stretch-length: .75rem;
+  min-height: 1px;
+  width: calc(100% + var(--stretch-length) * 2);
+  background-color: rgb(var(--hr-rgb));
+  margin-left: calc(var(--stretch-length) * -1);
+  margin-right: calc(var(--stretch-length) * -1);
 }
