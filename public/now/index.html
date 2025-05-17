@@ -4,8 +4,8 @@
         <title>Example</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="styles/homepage.css">
+        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="page.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -72,79 +72,47 @@
       <!-- END OF GLOBAL -->
       <!------------------->
       <main>
+        <header class="standard">
+          <h1>Now</h1>
+          <p class="prose">
+            Welcome to my Now page. My Now page offers a quick snapshot of where I've recently been investing my energy. If we haven't connected in the last six months, you can catch up on my latest endeavors here.
+          </p>
+          <div class="hr-substitute"></div>
+        </header>
         <article>
-          <div id="profile">
-            <img 
-              src="https://imgix.cosmicjs.com/36388d60-84ce-11ef-b5a0-93db72e2be98-mario.png"
-              alt="A picture of Mario Villacreses"
-            />
-            <hgroup> 
-              <h1 class="font-extrabold">Mario Villacreses</h1>
-              <h2 class="text-sm">Software Engineer &amp; Math Enthusiast</h2>
-            </hgroup>
-            <dl id="quick-stats" class="text-sm">
-              <i class="fa-solid fa-suitcase"></i>
-              <dt class="sr-only">Current role</dt>
-              <dd>Freelance Software Engineer</dd>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <dt class="sr-only">Education</dt>
-              <dd>B.A. Applied Math @ CUNY Queens College</dd>
-              
-              <i class="fa-solid fa-location-dot"></i>
-              <dt class="sr-only">Location</dt>
-              <dd>New York City</dd>
-            </dl>
-            <div class="hr-substitute"></div>
-          </div>
-          <section class="description">
-            <p class="lead text-xl">
-              Hello, I'm Mario! I have six years of experience in the tech industry as a software 
-              engineer, and I am currently freelancing while I pursue a master's degree in computer 
-              science.
-            </p>
+          <hgroup>
+            <h2 class="font-semibold">So what am I currently doing?</h2>
             <p class="prose">
-              Throughout my career, I've had the opportunity to work with companies of various sizes 
-              across diverse sectors, including education, healthcare, social media, and e-commerce. 
-              To explore my career journey in more detail, feel free to visit my 
-              <a href="">career history page</a>.
+              <span>Last updated:</span>
+              <time datetime="2025-02-03T22:13:00.000Z">February 2025</time>
             </p>
-            <p class="prose">
-              If you'd like to connect, please reach out through any of the social links provided below.
-            </p>
+          </hgroup>
+          <section>
+            <h3>Working on</h3>
+            <ul class="prose">
+              <li>
+                <strong>Master's Degree:</strong> I've begun my journey towards earning a Master of Computer Science at Arizona State University. Expected graduation: Spring 2026.
+              </li>
+              <li>
+                <strong>
+                  Learning Rust: 
+                </strong>
+                I'm super excited to dive into Rust after spending most of my career with JavaScript. Discovering the pax.dev project has sparked my enthusiasm since it aims to simplify modern web development and harnesses the power of WebAssembly. I can't wait to learn Rust and contribute to this game-changing initiative!
+              </li>
+            </ul>
           </section>
-          <section id="action-links" class="font-semibold">
-            <ul>
+          <section>
+            <h3>Reading</h3>
+            <ul class="prose">
               <li>
-                <a href="#">
-                  <i class="fa-regular fa-file-pdf"></i>
-                  <span>
-                    Download my resume
-                  </span>
-                </a>
+                <em>Fundamentals of Software Architecture</em>
+                by Mark Richards
               </li>
               <li>
-                <a href="#">
-                  <i class="fa-regular fa-envelope"></i>
-                  <span>
-                    Send me an email
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa-brands fa-github"></i>
-                  <span>
-                    Follow me on Github
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa-brands fa-linkedin"></i>
-                  <span>
-                    Add me on LinkedIn
-                  </span>
-                </a>
+                <em>
+                  The Power of Latino Leadership 
+                </em>
+                by Juana Bordas
               </li>
             </ul>
           </section>
