@@ -30,6 +30,7 @@ body {
 
   display: flex;
   flex-direction: column;
+  position: relative;
 
   padding-left: var(--padding-x);
   padding-right: var(--padding-x); 
@@ -262,7 +263,7 @@ input[type=checkbox]:checked ~ label i.unchecked {
 }
 #page-footer small {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
 }
 #page-footer small,
 #page-footer small * {
@@ -310,4 +311,10 @@ header.standard p {
 }
 header.standard .hr-substitute {
   margin-top: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .mobile-only {
+    display: none;
+  }
 }
