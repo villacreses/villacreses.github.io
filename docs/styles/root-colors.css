@@ -50,6 +50,11 @@
   --color-blue-900: 30, 58, 138;
   --color-blue-950: 23, 37, 84;
 
+  --color-green-rgb: 100, 255, 218;
+  --color-green-pale-rgb: 86,170,165;
+  --color-link-blue-rgb: 0, 100, 209;
+  --color-link-blue-pale-rgb: 0, 67, 158;
+
   /* These are just here for reference. Hopefully in the future we can
    * use CSS variables in media queries. In the meantime, I will still
    * try to avoid using anything beyond plain CSS.
@@ -66,21 +71,25 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: var(--color-gray-100);
   --background-end-rgb: var(--color-gray-200);
-  --link-color-rgb: 0, 100, 209; 
+  --link-color-rgb: var(--color-link-blue-rgb);
+  --link-color-pale-rgb: var(--color-link-blue-pale-rgb);
   --menu-bg-rgb: var(--background-start-rgb);
-
+  --topnav-toggle-hover-rgb: var(--color-neutral-700);
+  
   --text-h2-rgb: var(--color-slate-500);
   --text-prose-rgb: var(--color-slate-600);
   --text-lead-rgb: var(--color-gray-600);
   
   --home-img-border-rgb: var(--color-slate-600);
   --home-text-stats-rgb: var(--color-gray-600);
-
+  
   --default-rgb: var(--color-neutral-300);
 }
 
 :root:has(#dark-toggle:checked) {
-  --link-color-rgb: 134, 239, 172; 
+  --topnav-toggle-hover-rgb: var(--color-neutral-300);
+  --link-color-rgb: var(--color-green-rgb); 
+  --link-color-pale-rgb: var(--color-green-pale-rgb); 
   --foreground-rgb: var(--color-neutral);
   --background-start-rgb: 17,34,64;
   --background-end-rgb: var(--color-slate-900);

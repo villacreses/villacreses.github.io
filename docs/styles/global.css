@@ -5,6 +5,8 @@
 
 :root {
   --z-index-max: 99999;
+  --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --transform-bounce: translateY(-3px) scale(1.003);
 }
 
 html {
@@ -70,6 +72,24 @@ main.compact {
 a {
   color: rgb(var(--link-color-rgb));
   text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+}
+a:hover {
+  color: rgb(var(--link-color-pale-rgb));
+}
+p > a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  position: relative;
+  bottom: .2em;
+  background-color: rgb(var(--link-color-pale-rgb));
+  transition: var(--transition);
+}
+p > a:hover::after {
+  width: 100%;
 }
 
 h1 {
@@ -100,7 +120,6 @@ hr {
 /* ======================================== 
  * ========== Global components ===========
  * ======================================== */
-
 
 /* Top nav */
 #top-header {
@@ -147,6 +166,9 @@ hr {
   font-size: var(--text-3xl-font-size);
   line-height: var(--text-3xl-line-height);
 }
+#top-header label[role=button]:hover i {
+  color: rgb(var(--topnav-toggle-hover-rgb));
+}
 #nav-links {
   display: none;
 }
@@ -163,7 +185,7 @@ hr {
 }
 @media not all and (min-width: 40rem) {
   #top-header #nav-links {
-    position: absolute;
+    position: fixed;
     z-index: var(--z-index-max);
     left: 0;
     right: 0;
@@ -175,11 +197,16 @@ hr {
     backdrop-filter: blur(5px);
   }
   #top-header #nav-links ul {
+    --header-gap: 2.5rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: var(--text-2xl-font-size);
-    line-height: var(--text-2xl-line-height);
+    font-size: var(--text-3xl-font-size);
+    line-height: var(--text-3xl-line-height);
+  }
+  #top-header #nav-links a {
+    font-weight: 700;
+    letter-spacing: 0.05rem;
   }
 }
 @media (min-width: 40rem) {
@@ -219,9 +246,8 @@ input[type=checkbox]:checked ~ label i.unchecked {
 #page-footer {
   padding-top: 5rem;
   padding-bottom: 2.5rem;
-  position: relative;
+  /* position: relative; */
   margin-top: auto;
-  z-index: 0;
 }
 #page-footer * {
   font-size: var(--text-xs-font-size);
@@ -232,7 +258,7 @@ input[type=checkbox]:checked ~ label i.unchecked {
   flex-direction: row;
   justify-content: space-between;
   color: rgb(var(--color-neutral-400));
-  opacity: .7;
+  /* opacity: .7; */
 }
 #page-footer small {
   position: absolute;
