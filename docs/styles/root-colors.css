@@ -64,32 +64,33 @@
   --breakpoint-xxl: 96rem;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: var(--color-gray-50);
-  --background-end-rgb: var(--color-gray-50);
+  --background-start-rgb: var(--color-gray-100);
+  --background-end-rgb: var(--color-gray-200);
   --link-color-rgb: 0, 100, 209; 
   --menu-bg-rgb: var(--background-start-rgb);
 
-  --text-h2-rgb: var(--color-neutral-500);
+  --text-h2-rgb: var(--color-slate-500);
   --text-prose-rgb: var(--color-slate-600);
   --text-lead-rgb: var(--color-gray-600);
   
   --home-img-border-rgb: var(--color-slate-600);
   --home-text-stats-rgb: var(--color-gray-600);
 
-  --hr-rgb: var(--color-neutral-300);
+  --default-rgb: var(--color-neutral-300);
 }
 
 :root:has(#dark-toggle:checked) {
   --link-color-rgb: 134, 239, 172; 
   --foreground-rgb: var(--color-neutral);
-  --background-start-rgb: var(--color-slate-800);
+  --background-start-rgb: 17,34,64;
   --background-end-rgb: var(--color-slate-900);
   
-  --text-h2-rgb: var(--color-neutral-400);
-  --text-prose-rgb: var(--color-slate-300);
+  --text-h2-rgb: var(--color-slate-400);
+  --text-prose-rgb: 175,188,204;
   --text-lead-rgb: var(--color-gray-400);
   
   --home-img-border-rgb: var(--color-blue-100);
-  --home-text-stats-rgb: var(--color-gray-300);
-  --hr-rgb: var(--color-neutral-700);
+  --home-text-stats-rgb: var(--color-slate-400);
+  --hr-rgb: var(--color-slate-700);
+  --default-rgb: var(--color-neutral-300);
 }
