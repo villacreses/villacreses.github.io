@@ -68,7 +68,7 @@
   --breakpoint-xl: 80rem;
   --breakpoint-xxl: 96rem;
 
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: var(--color-neutral-800);
   --background-start-rgb: var(--color-gray-100);
   --background-end-rgb: var(--color-gray-200);
   --link-color-rgb: var(--color-link-blue-rgb);
@@ -83,15 +83,16 @@
   --home-img-border-rgb: var(--color-slate-600);
   --home-text-stats-rgb: var(--color-gray-600);
   
-  --default-rgb: var(--color-neutral-300);
-  --career-timeline-bar-rgb: var(--color-slate-600);
+  --default-slate-rgb: var(--color-slate-600);
+  --career-timeline-bar-rgb: var(--color-slate-400);
+  --bubble-bg-rgb: var(--color-gray-300);
 }
 
 :root:has(#dark-toggle:checked) {
   --topnav-toggle-hover-rgb: var(--color-neutral-300);
   --link-color-rgb: var(--color-green-rgb); 
   --link-color-pale-rgb: var(--color-green-pale-rgb); 
-  --foreground-rgb: var(--color-neutral);
+  --foreground-rgb: var(--color-neutral-200);
   --background-start-rgb: 17,34,64;
   --background-end-rgb: var(--color-slate-900);
   
@@ -102,5 +103,7 @@
   --home-img-border-rgb: var(--color-blue-100);
   --home-text-stats-rgb: var(--color-slate-400);
   --hr-rgb: var(--color-slate-700);
-  --default-rgb: var(--color-neutral-300);
+  --default-slate-rgb: var(--color-slate-300);
+  --career-timeline-bar-rgb: var(--color-slate-600);
+  --bubble-bg-rgb: var(--color-slate-700);
 }

@@ -2,9 +2,14 @@ main {
   --list-padding: 45px;
   --line-offset: -2rem;
   --circumference: 8px;
-  --line-grid: 2rem;
-
+  --line-grid: 0.75rem;
 }
+@media (min-width: 485px) {
+  main {
+    --line-grid: 2rem;
+  }
+}
+
 article {
   display: flex;
   flex-direction: column;
@@ -18,7 +23,7 @@ article {
 }
 .header-container {
   margin-bottom: 1rem;
-  color: rgb(var(--color-slate-400));
+  color: rgb(var(--home-text-stats-rgb));
 }
 .header-container * {
   align-self: center;
@@ -76,7 +81,7 @@ li.timeline-grid hgroup .date {
 }
 li.timeline-grid h3 {
   font-weight: 500;
-  color: rgb(var(--color-slate-300));
+  color: rgb(var(--default-slate-rgb));
 }
 li.timeline-grid hgroup :not(h3) {
   font-weight: 400;
@@ -102,6 +107,6 @@ li.timeline-grid:not(:last-child):before {
 li.timeline-grid::after {
   height: var(--circumference);
   width: var(--circumference);
-  background-color: rgb(var(--default-rgb));
+  background-color: rgb(var(--default-slate-rgb));
   border-radius: 50%;
 }

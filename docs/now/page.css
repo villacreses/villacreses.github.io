@@ -1,7 +1,6 @@
 h2 {
   font-size: var(--text-2xl-font-size);
   line-height: var(--text-2xl-line-height);
-  font-weight: var(--);
 }
 
 h3 {
@@ -25,7 +24,6 @@ section ul {
   list-style: disc;
   padding-left: 1rem;
 }
-
 section {
   margin-top: 2rem;
 }
@@ -33,3 +31,7 @@ section:first{
   margin-top: 1.5rem;
 }
 
+.prose {
+  font-size: var(--text-sm-font-size);
+  line-height: var(--text-sm-line-height);
+}
