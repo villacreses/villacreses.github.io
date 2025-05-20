@@ -84,6 +84,7 @@
   --home-text-stats-rgb: var(--color-gray-600);
   
   --default-rgb: var(--color-neutral-300);
+  --career-timeline-bar-rgb: var(--color-slate-600);
 }
 
 :root:has(#dark-toggle:checked) {

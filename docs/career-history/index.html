@@ -3,8 +3,9 @@
     <head>
         <title>Example</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="page.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -73,18 +74,143 @@
       <!------------------->
       <!-- END OF GLOBAL -->
       <!------------------->
-      <main>
+      <main class="compact">
+        <header class="standard">
+          <h1>Career History</h1>
+          <p class="prose">
+            This page highlights my work history, along with any significant accomplishments that shaped me as I've navigated the tech industry. Be sure to also check out my 
+            <a href="../assets/files/resume.pdf" target="_blank">
+              latest resume
+            </a>.
+          </p>
+          <hr />
+        </header>
         <article>
-          <header class="standard">
-            <h1>Career History</h1>
-            <p class="prose">
-              This page highlights my work history, along with any significant accomplishments that shaped me as I've navigated the tech industry. Be sure to also check out my 
-              <a href="../assets/files/resume.pdf" target="_blank">
-                latest resume
-              </a>.
-            </p>
-            <div class="hr-substitute"></div>
-          </header>
+          <section>
+            <div class="header-container timeline-grid">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h2>Education</h2>
+            </div>
+            <ol>
+              <li class="timeline-grid">
+                <div>
+                  <hgroup>
+                    <h3>Master of Computer Science</h3>
+                    <p>Arizona State University</p>
+                  </hgroup>
+                  <p class="prose">
+                    Expected graduation: Spring 2026. Master of Computer Science with a concentration in Big Data.
+                  </p>
+                </div>
+              </li>
+              <li class="timeline-grid">
+                <div>
+                  <hgroup>
+                    <h3>Bachelor of Arts - Applied Mathematics</h3>
+                    <p>CUNY Queens College, 2016</p>
+                  </hgroup>
+                  <p class="prose">
+                    Bachelor of Arts in Applied Mathematics with concentrations in computer science and operations research
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <section>
+            <div class="header-container timeline-grid">
+              <i class="fa-solid fa-suitcase"></i>
+              <h2>Work Experience</h2>
+            </div>
+            <ol class="work">
+              <li class="timeline-grid">
+                <div>
+                  <hgroup>
+                    <h3>Senior Software Engineer</h3>
+                    <p>GoDaddy.com</p>
+                    <p class="date">2022 - 2024</p>
+                  </hgroup>
+                  <p class="prose">
+                    Spearheaded overhaul of frontend and DevOps architectures for legacy e-commerce platform. Reengineered the pricing fee architecture to give customers the freedom to set their own custom transaction costs for their credit card terminals.
+                  </p>
+                  <ul class="bubble-list">
+                    <li>Javascript</li>
+                    <li>Typescript</li>
+                    <li>Ember.js</li>
+                    <li>MySQL</li>
+                    <li>AWS</li>
+                    <li>Github Actions</li>
+                    <li>Docker</li>
+                    <li>Express.js</li>
+                    <li>Next.js</li>
+                    <li>React</li>
+                    <li>Tailwind</li>
+                    <li>Elasticsearch</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="timeline-grid">
+                <div>
+                  <hgroup>
+                    <h3>Software Engineer</h3>
+                    <p>Meta Platforms (Facebook)</p>
+                    <p class="date">2021 - 2022</p>
+                  </hgroup>
+                  <p class="prose">
+                    Contributed to the new universal metrics platform designed to standardize metrics lookup and integration for the entire company. Enhanced backend reliability of Metric Authoring API, resulting in a 20% reduction in latency issues and improved overall performance.
+                  </p>
+                  <ul class="bubble-list">
+                    <li>Javascript</li>
+                    <li>GraphQL</li>
+                    <li>Python</li>
+                    <li>PHP/Hack </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="timeline-grid">
+                <div>
+                  <hgroup>
+                    <h3>Software Engineer - Apps Team</h3>
+                    <p>doc.ai</p>
+                    <p class="date">2020 - 2020</p>
+                  </hgroup>
+                  <p class="prose">
+                    Headed development of UI library for company's new flagship app. Created real-time geographic visualization of COVID-19 outbreak, increasing brand awareness by over 100%
+                  </p>
+                  <ul class="bubble-list">
+                    <li>React Native</li>
+                    <li>Typescript</li>
+                    <li>CSS</li>
+                    <li>Express.js</li>
+                    <li>Redux</li>
+                    <li>Styled Components</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="timeline-grid">
+                <div>
+                  <hgroup>
+                    <h3>Full Stack Engineer</h3>
+                    <p>Knovva Academy</p>
+                    <p class="date">2018 - 2020</p>
+                  </hgroup>
+                  <p class="prose">
+                    Collaborated with cloud architect to build administrative tools to streamline customer management, recruiting, and real-time analytics. Refactored existing codebase to the latest standards and optimized for scalability.
+                  </p>
+                  <ul class="bubble-list">
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>MongoDB</li>
+                    <li>GraphQL</li>
+                    <li>Express.js</li>
+                    <li>SCSS</li>
+                    <li>AWS</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+          
         </article>
       </main>
       <!--------------------->
