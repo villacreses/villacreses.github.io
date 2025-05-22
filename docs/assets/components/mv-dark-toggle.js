@@ -50,10 +50,11 @@ class DarkToggle extends HTMLElement {
     input.addEventListener('change', function () {
       DarkToggle.setThemeAttrToDark(this.checked);
     })
-
+    
     const label = document.createElement('label');
     label.htmlFor = checkboxId;
     label.role = 'button';
+    label.tabIndex = '0';
 
     const sunIcon = document.createElement('i');
     sunIcon.classList.add('fa-solid', 'fa-sun', 'unchecked');

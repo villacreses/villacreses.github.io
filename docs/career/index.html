@@ -44,7 +44,7 @@
               class="sr-only toggle-overlay-menu"
               hidden
             />
-            <label for="menu-toggle" role="button" aria-controls="nav-links">
+            <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
               <i class="fa-solid fa-bars unchecked"></i>
               <i class="fa-solid fa-xmark checked"></i>
               <span class="sr-only">
@@ -280,9 +280,9 @@
             </a>
           </p>
         </div>
-        <small>
+        <small aria-hidden="true">
           Still using Netscape? Check out my 
-          <a href="https://mario90ssite.github.io">optimized site</a>.
+          <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
         </small>
     </footer>
     </body>

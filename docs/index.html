@@ -15,7 +15,7 @@
     <body>
       <header id="top-header">
         <div id="navbar-blur"></div>
-        <nav style="margin-right:auto;flex:1" class="container">
+        <nav style="margin-right:auto;flex:1" class="container home-link">
           <a href="/">
             Mario Villacreses
           </a>
@@ -44,7 +44,7 @@
               class="sr-only toggle-overlay-menu"
               hidden
             />
-            <label for="menu-toggle" role="button" aria-controls="nav-links">
+            <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
               <i class="fa-solid fa-bars unchecked"></i>
               <i class="fa-solid fa-xmark checked"></i>
               <span class="sr-only">
@@ -141,19 +141,19 @@
       <!-- START OF GLOBAL -->
       <!--------------------->
       <footer id="page-footer" class="text-xs">
-          <div>
-            <p>© 2024 Mario Villacreses</p>
-            <p>
-              Inspired by 
-              <a href="https://blowfish.page/" target="_blank">
-                Blowfish
-              </a>
-            </p>
-          </div>
-          <small>
-            Still using Netscape? Check out my 
-            <a href="https://mario90ssite.github.io">optimized site</a>.
-          </small>
+        <div>
+          <p>© 2024 Mario Villacreses</p>
+          <p>
+            Inspired by 
+            <a href="https://blowfish.page/" target="_blank">
+              Blowfish
+            </a>
+          </p>
+        </div>
+        <small aria-hidden="true">
+          Still using Netscape? Check out my 
+          <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
+        </small>
       </footer>
     </body>
 </html>
