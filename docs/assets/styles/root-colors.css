@@ -1,4 +1,4 @@
-:root, :root:has(#dark-toggle:not(:checked)) {
+:root, :root:has(#mv-dark-toggle:not(:checked)) {
   /* https://tailwindcss.com/docs/colors
    * https://tailscan.com/colors
    */
@@ -88,7 +88,7 @@
   --bubble-bg-rgb: var(--color-gray-300);
 }
 
-:root:has(#dark-toggle:checked) {
+:root:has(#mv-dark-toggle:checked) {
   --topnav-toggle-hover-rgb: var(--color-neutral-300);
   --link-color-rgb: var(--color-green-rgb); 
   --link-color-pale-rgb: var(--color-green-pale-rgb); 

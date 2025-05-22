@@ -1,7 +1,7 @@
 const sessionStorageKey = 'mv-theme'
+const checkboxId = 'mv-dark-toggle'
 
 class DarkToggle extends HTMLElement {
-  
   constructor(){
     super();
   }
@@ -24,28 +24,27 @@ class DarkToggle extends HTMLElement {
       (theme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   }
 
+  static onPageShow() {
+    const theme = sessionStorage.getItem(sessionStorageKey);
+    const input = document.getElementById(checkboxId);
+    if (theme && input) {
+      input.checked = theme === 'DARK'
+    }
+  }
+
   connectedCallback() {
     const [input, label] = this.buildElements();
     this.input = input;
     this.label = label;
     this.appendChild(this.input);
     this.appendChild(this.label);
-
-    window.addEventListener("pageshow", () => {
-      const theme = sessionStorage.getItem(sessionStorageKey);
-      if (theme) {
-        this.input.checked = theme === 'DARK'
-      }
-    });
   }
   
   buildElements() {
-    const id = 'dark-toggle'
-    
     const input = document.createElement('input');
     input.type = 'checkbox';
-    input.id = id;
-    input.name = id;
+    input.id = checkboxId;
+    input.name = checkboxId;
     input.hidden = true;
     input.checked = DarkToggle.userPrefersDark();
     input.addEventListener('change', function () {
@@ -53,7 +52,7 @@ class DarkToggle extends HTMLElement {
     })
 
     const label = document.createElement('label');
-    label.htmlFor = id;
+    label.htmlFor = checkboxId;
     label.role = 'button';
 
     const sunIcon = document.createElement('i');
@@ -77,6 +76,10 @@ class DarkToggle extends HTMLElement {
   }
 }
 
-export const registerDarkToggle = () => {
+export const DarkToggleActions = {
+  register: () => {
     customElements.define('mv-dark-toggle', DarkToggle);
-  }
+  },
+  onPageShow: DarkToggle.onPageShow,
+}
+
