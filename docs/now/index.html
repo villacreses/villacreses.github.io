@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
+        <script type="module" src="../index.js"></script>
     </head>
     <body>
       <header id="top-header">
@@ -33,24 +34,7 @@
           </ul>
         </nav>
         <div id="nav-actions" class="container">
-          <!-- DARK MODE TOGGLE -->
-          <div id="dark-toggle-container">
-            <input
-              type="checkbox"
-              id="dark-toggle"
-              name="dark-toggle"
-              class="sr-only"
-              hidden
-              checked
-            />
-            <label for="dark-toggle" role="button" class="text-3xl">
-              <i class="fa-solid fa-sun unchecked"></i>
-              <i class="fa-solid fa-moon checked"></i>
-              <span class="sr-only">
-                Dark mode
-              </span>
-            </label>
-          </div>
+          <mv-dark-toggle></mv-dark-toggle>
           <!-- MOBILE MENU TOGGLE -->
           <div id="menu-toggle-container">
             <input
@@ -138,7 +122,6 @@
           Still using Netscape? Check out my 
           <a href="https://mario90ssite.github.io">optimized site</a>.
         </small>
-    </footer> 
-      <script type="module" src="index.js"></script>
+    </footer>
     </body>
 </html>
