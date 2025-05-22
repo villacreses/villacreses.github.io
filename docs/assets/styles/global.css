@@ -249,7 +249,7 @@ input[type=checkbox]:checked ~ label i.unchecked {
 #page-footer {
   padding-top: 5rem;
   padding-bottom: 2.5rem;
-  /* position: relative; */
+  position: relative;
   margin-top: auto;
 }
 #page-footer * {
@@ -261,7 +261,6 @@ input[type=checkbox]:checked ~ label i.unchecked {
   flex-direction: row;
   justify-content: space-between;
   color: rgb(var(--color-neutral-400));
-  /* opacity: .7; */
 }
 #page-footer small {
   position: absolute;
@@ -276,7 +275,6 @@ input[type=checkbox]:checked ~ label i.unchecked {
   text-decoration: underline;
   cursor: not-allowed;
 }
-
 
 /* ======================================== 
  * =========== Utility classes ============
