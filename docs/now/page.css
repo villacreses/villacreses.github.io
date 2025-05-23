@@ -10,24 +10,28 @@ h3 {
   letter-spacing: 0.1rem;
 }
 
-article > hgroup p {
+article>hgroup p {
   font-size: var(--text-xs-font-size);
   font-style: italic;
   margin-top: 0.25rem;
   padding-bottom: 0;
   color: rgb(var(--text-prose-rgb));
 }
-section h3 ~ * {
+
+section h3~* {
   margin-left: .75rem;
 }
+
 section ul {
   list-style: disc;
   padding-left: 1rem;
 }
+
 section {
   margin-top: 2rem;
 }
-section:first{
+
+section:first {
   margin-top: 1.5rem;
 }
 

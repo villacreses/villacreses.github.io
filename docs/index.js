@@ -13,14 +13,16 @@ function app() {
   });
 
   menuToggle.addEventListener('change', function() {
-    const selector = 'a:not(#nav-links a), label[for=mv-dark-toggle]';
-    const clickables = Array.from(document.querySelectorAll(selector))
-      .filter(({textContent}) => textContent !== 'optimized site')
-      .concat(document.querySelector('label[for=mv-dark-toggle]'));
+    const selector = [
+      'a:not(#nav-links a):not(#page-footer small a)',
+      'label[for=mv-dark-toggle]',
+    ].join(',');
     
-    clickables.forEach(a => {
-      a.setAttribute('tabindex', this.checked ? '-1' : '0');
-    })
+    Array
+      .from(document.querySelectorAll(selector))
+      .forEach(a => {
+        a.setAttribute('tabindex', this.checked ? '-1' : '0');
+      });
 
     this.setAttribute('aria-expanded', this.checked);
     ['main', '.home-link', 'footer'].forEach(selector => {

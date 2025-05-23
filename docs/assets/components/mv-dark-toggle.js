@@ -2,10 +2,10 @@ const sessionStorageKey = 'mv-theme'
 const checkboxId = 'mv-dark-toggle'
 
 class DarkToggle extends HTMLElement {
-  constructor(){
+  constructor() {
     super();
   }
-  
+
   /**
    * 
    * @param {boolean} isDark 
@@ -18,7 +18,7 @@ class DarkToggle extends HTMLElement {
     sessionStorage.setItem(sessionStorageKey, theme);
   }
 
-  static userPrefersDark () {
+  static userPrefersDark() {
     const theme = sessionStorage.getItem(sessionStorageKey);
     return theme === 'DARK' ||
       (theme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -34,12 +34,10 @@ class DarkToggle extends HTMLElement {
 
   connectedCallback() {
     const [input, label] = this.buildElements();
-    this.input = input;
-    this.label = label;
-    this.appendChild(this.input);
-    this.appendChild(this.label);
+    this.appendChild(input);
+    this.appendChild(label);
   }
-  
+
   buildElements() {
     const input = document.createElement('input');
     input.type = 'checkbox';
@@ -50,7 +48,7 @@ class DarkToggle extends HTMLElement {
     input.addEventListener('change', function () {
       DarkToggle.setThemeAttrToDark(this.checked);
     })
-    
+
     const label = document.createElement('label');
     label.htmlFor = checkboxId;
     label.role = 'button';

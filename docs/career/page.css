@@ -4,6 +4,7 @@ main {
   --circumference: 8px;
   --line-grid: 0.75rem;
 }
+
 @media (min-width: 485px) {
   main {
     --line-grid: 2rem;
@@ -21,13 +22,16 @@ article {
   grid-template-columns: var(--line-grid) 1fr;
   gap: 0.75rem;
 }
+
 .header-container {
   margin-bottom: 1rem;
   color: rgb(var(--home-text-stats-rgb));
 }
+
 .header-container * {
   align-self: center;
 }
+
 .header-container i {
   display: block;
   height: var(--line-grid);
@@ -53,6 +57,7 @@ ol {
   flex-direction: column;
   gap: var(--list-gap);
 }
+
 ol.work {
   --list-gap: 3.5rem;
   margin-top: 2rem;
@@ -62,27 +67,33 @@ li.timeline-grid {
   font-size: var(--text-xl-font-size);
   line-height: var(--text-xl-line-height);
 }
+
 li.timeline-grid * {
   grid-column: 2;
 }
+
 li.timeline-grid hgroup {
   margin-bottom: 0.25rem;
   position: relative;
 }
-li.timeline-grid hgroup ~ * {
+
+li.timeline-grid hgroup~* {
   font-size: var(--text-sm-font-size);
   line-height: var(--text-sm-line-height);
 }
+
 li.timeline-grid hgroup .date {
   position: absolute;
   top: -1.25em;
   font-size: var(--text-xs-font-size);
   line-height: var(--text-xs-line-height);
 }
+
 li.timeline-grid h3 {
   font-weight: 500;
   color: rgb(var(--default-slate-rgb));
 }
+
 li.timeline-grid hgroup :not(h3) {
   font-weight: 400;
   font-size: var(--text-base-font-size);
@@ -91,6 +102,7 @@ li.timeline-grid hgroup :not(h3) {
   letter-spacing: 0.05em;
   color: rgb(var(--color-slate-500));
 }
+
 li.timeline-grid::before,
 li.timeline-grid::after {
   content: '';
@@ -99,11 +111,13 @@ li.timeline-grid::after {
   justify-self: center;
   margin-top: 0.5em;
 }
+
 li.timeline-grid:not(:last-child):before {
   width: 1px;
   height: calc(100% + var(--list-gap));
   border-left: 1px dashed rgb(var(--career-timeline-bar-rgb));
 }
+
 li.timeline-grid::after {
   height: var(--circumference);
   width: var(--circumference);

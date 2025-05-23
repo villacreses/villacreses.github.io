@@ -1,289 +1,303 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../index.css">
-        <link rel="stylesheet" href="page.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
-        <script type="module" src="../index.js"></script>
-    </head>
-    <body>
-      <header id="top-header">
-        <div id="navbar-blur"></div>
-        <nav style="margin-right:auto;flex:1" class="container">
-          <a href="/">
-            Mario Villacreses
-          </a>
-        </nav>
-        <nav id="nav-links">
-          <ul class="container">
-            <li class="mobile-only">
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/career">Career History</a>
-            </li>
-            <li>
-              <a href="/now">Now</a>
-            </li>
-          </ul>
-        </nav>
-        <div id="nav-actions" class="container">
-          <mv-dark-toggle></mv-dark-toggle>
-          <!-- MOBILE MENU TOGGLE -->
-          <div id="menu-toggle-container">
-            <input
-              type="checkbox"
-              id="menu-toggle"
-              name="menu-toggle"
-              class="sr-only toggle-overlay-menu"
-              hidden
-            />
-            <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
-              <i class="fa-solid fa-bars unchecked"></i>
-              <i class="fa-solid fa-xmark checked"></i>
-              <span class="sr-only">
-                Open navigation menu
-              </span>
-            </label>
-          </div>
+
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="page.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
+  <script type="module" src="../index.js"></script>
+</head>
+
+<body>
+  <header id="top-header">
+    <div id="navbar-blur"></div>
+    <nav style="margin-right:auto;flex:1" class="container">
+      <a href="/">
+        Mario Villacreses
+      </a>
+    </nav>
+    <nav id="nav-links">
+      <ul class="container">
+        <li class="mobile-only">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/career">Career History</a>
+        </li>
+        <li>
+          <a href="/now">Now</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="nav-actions" class="container">
+      <mv-dark-toggle></mv-dark-toggle>
+      <!-- MOBILE MENU TOGGLE -->
+      <div id="menu-toggle-container">
+        <input type="checkbox" id="menu-toggle" name="menu-toggle" class="sr-only toggle-overlay-menu" hidden />
+        <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
+          <i class="fa-solid fa-bars unchecked"></i>
+          <i class="fa-solid fa-xmark checked"></i>
+          <span class="sr-only">
+            Open navigation menu
+          </span>
+        </label>
+      </div>
+    </div>
+  </header>
+  <div class="top-bumper"></div>
+  <!------------------->
+  <!-- END OF GLOBAL -->
+  <!------------------->
+  <main class="compact">
+    <header class="standard">
+      <h1>Career History</h1>
+      <p class="prose">
+        This page highlights my work history, along with any significant accomplishments that shaped me as I've
+        navigated the tech industry. Be sure to also check out my
+        <a href="../assets/files/resume.pdf" target="_blank">
+          latest resume
+        </a>.
+      </p>
+      <hr />
+    </header>
+    <article>
+      <section>
+        <div class="header-container timeline-grid">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h2>Education</h2>
         </div>
-      </header>
-      <div class="top-bumper"></div>
-      <!------------------->
-      <!-- END OF GLOBAL -->
-      <!------------------->
-      <main class="compact">
-        <header class="standard">
-          <h1>Career History</h1>
-          <p class="prose">
-            This page highlights my work history, along with any significant accomplishments that shaped me as I've navigated the tech industry. Be sure to also check out my 
-            <a href="../assets/files/resume.pdf" target="_blank">
-              latest resume
-            </a>.
-          </p>
-          <hr />
-        </header>
-        <article>
-          <section>
-            <div class="header-container timeline-grid">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <h2>Education</h2>
+        <ol>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Master of Computer Science</h3>
+                <p>Arizona State University</p>
+              </hgroup>
+              <p class="prose">
+                Expected graduation: Spring 2026. Master of Computer Science with a concentration in Big Data.
+              </p>
             </div>
-            <ol>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Master of Computer Science</h3>
-                    <p>Arizona State University</p>
-                  </hgroup>
-                  <p class="prose">
-                    Expected graduation: Spring 2026. Master of Computer Science with a concentration in Big Data.
-                  </p>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Fullstack Academy of Code</h3>
-                    <p>Spring 2018 cohort</p>
-                  </hgroup>
-                  <p class="prose">
-                    Full time immersive program that teaches full-stack web development using the most in-demand front-end and back-end tools.
-                  </p>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Bachelor of Arts - Applied Mathematics</h3>
-                    <p>CUNY Queens College, 2016</p>
-                  </hgroup>
-                  <p class="prose">
-                    Bachelor of Arts in Applied Mathematics with concentrations in computer science and operations research
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </section>
-          <section>
-            <div class="header-container timeline-grid">
-              <i class="fa-solid fa-suitcase"></i>
-              <h2>Work Experience</h2>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Fullstack Academy of Code</h3>
+                <p>Spring 2018 cohort</p>
+              </hgroup>
+              <p class="prose">
+                Full time immersive program that teaches full-stack web development using the most in-demand front-end
+                and back-end tools.
+              </p>
             </div>
-            <ol class="work">
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>AI Data Annotator</h3>
-                    <p>Self-Employed</p>
-                    <p class="date">2024 - Present</p>
-                  </hgroup>
-                  <p class="prose">
-                    I enhance AI systems by delivering precise data labeling, ensuring accuracy through meticulous quality checks. I efficiently manage multiple projects, meeting deadlines while safeguarding data privacy and security.
-                  </p>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Senior Software Engineer</h3>
-                    <p>GoDaddy.com</p>
-                    <p class="date">2022 - 2024</p>
-                  </hgroup>
-                  <p class="prose">
-                    Spearheaded overhaul of frontend and DevOps architectures for legacy e-commerce platform. Reengineered the pricing fee architecture to give customers the freedom to set their own custom transaction costs for their credit card terminals.
-                  </p>
-                  <ul class="bubble-list">
-                    <li>Javascript</li>
-                    <li>Typescript</li>
-                    <li>Ember.js</li>
-                    <li>MySQL</li>
-                    <li>AWS</li>
-                    <li>Github Actions</li>
-                    <li>Docker</li>
-                    <li>Express.js</li>
-                    <li>Next.js</li>
-                    <li>React</li>
-                    <li>Tailwind</li>
-                    <li>Elasticsearch</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Software Engineer</h3>
-                    <p>Meta Platforms (Facebook)</p>
-                    <p class="date">2021 - 2022</p>
-                  </hgroup>
-                  <p class="prose">
-                    Contributed to the new universal metrics platform designed to standardize metrics lookup and integration for the entire company. Enhanced backend reliability of Metric Authoring API, resulting in a 20% reduction in latency issues and improved overall performance.
-                  </p>
-                  <ul class="bubble-list">
-                    <li>Javascript</li>
-                    <li>GraphQL</li>
-                    <li>Python</li>
-                    <li>PHP/Hack </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Software Engineer - Apps Team</h3>
-                    <p>doc.ai</p>
-                    <p class="date">2020 - 2020</p>
-                  </hgroup>
-                  <p class="prose">
-                    Headed development of UI library for company's new flagship app. Created real-time geographic visualization of COVID-19 outbreak, increasing brand awareness by over 100%
-                  </p>
-                  <ul class="bubble-list">
-                    <li>React Native</li>
-                    <li>Typescript</li>
-                    <li>CSS</li>
-                    <li>Express.js</li>
-                    <li>Redux</li>
-                    <li>Styled Components</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Full Stack Engineer</h3>
-                    <p>Knovva Academy</p>
-                    <p class="date">2018 - 2020</p>
-                  </hgroup>
-                  <p class="prose">
-                    Collaborated with cloud architect to build administrative tools to streamline customer management, recruiting, and real-time analytics. Refactored existing codebase to the latest standards and optimized for scalability.
-                  </p>
-                  <ul class="bubble-list">
-                    <li>Javascript</li>
-                    <li>React</li>
-                    <li>Redux</li>
-                    <li>MongoDB</li>
-                    <li>GraphQL</li>
-                    <li>Express.js</li>
-                    <li>SCSS</li>
-                    <li>AWS</li>
-                  </ul>
-                </div>
-              </li>
-            </ol>
-          </section>
-          <section>
-            <div class="header-container timeline-grid">
-              <i class="fa-solid fa-suitcase"></i>
-              <h2>Hackathons</h2>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Bachelor of Arts - Applied Mathematics</h3>
+                <p>CUNY Queens College, 2016</p>
+              </hgroup>
+              <p class="prose">
+                Bachelor of Arts in Applied Mathematics with concentrations in computer science and operations research
+              </p>
             </div>
-            <ol class="work">
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>Neo4j's GraphHack 2018</h3>
-                    <p>1st Place Winner</p>
-                    <p class="date">September 2018</p>
-                  </hgroup>
-                  <p class="prose">
-                    Attending GraphHack 2018 was a pivotal experience in bridging my bootcamp learning with real-world application. Navigating unfamiliar tools in a fast-paced, collaborative setting strengthened my adaptability and problem-solving skills, making me more confident in tackling new technologies.
-                  </p>
-                </div>
-              </li>
-              <li class="timeline-grid">
-                <div>
-                  <hgroup>
-                    <h3>NY Sextech Hackathon 2018</h3>
-                    <p>1st Place Winner</p>
-                    <p class="date">August 2018</p>
-                  </hgroup>
-                  <p class="prose">
-                    Recognizing the need for better public education, my team built a sex education video platform, enabling youth to explore questions on human sexuality with guidance from health science educators.
-                  </p>
-                  <p class="prose">
-                    My team's efforts not only won us the competition, but also brought positive publicity to the whole event. We were featured in 
-                    <a 
-                      target="_blank" 
-                      href="https://www.bkmag.com/2018/09/06/4-brooklyn-entrepreneurs-on-how-their-style-impacts-business/">
-                      Brooklyn Magazine
-                    </a>,
-                    <a target="_blank" 
-                      href="https://www.forbes.com/sites/estrellajaramillo/2018/09/18/technology-meets-sex-to-solve-some-of-the-most-pressing-concerns-of-our-times">
-                      Forbes
-                    </a>, and
-                    <a href="https://www.menshealth.com/sex-women/a23064407/sex-tech-hackathon/">
-                      Men's Health
-                    </a>.
-                    For a brief period, our project was even considered for official curriculum integration within select NYC high schools.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </section>
-        </article>
-      </main>
-      <!--------------------->
-      <!-- START OF GLOBAL -->
-      <!--------------------->
-      <footer id="page-footer" class="text-xs">
-        <div>
-          <p>© 2024 Mario Villacreses</p>
-          <p>
-            Inspired by 
-            <a href="https://blowfish.page/" target="_blank">
-              Blowfish
-            </a>
-          </p>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <div class="header-container timeline-grid">
+          <i class="fa-solid fa-suitcase"></i>
+          <h2>Work Experience</h2>
         </div>
-        <small aria-hidden="true">
-          Still using Netscape? Check out my 
-          <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
-        </small>
-    </footer>
-    </body>
+        <ol class="work">
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>AI Data Annotator</h3>
+                <p>Self-Employed</p>
+                <p class="date">2024 - Present</p>
+              </hgroup>
+              <p class="prose">
+                I enhance AI systems by delivering precise data labeling, ensuring accuracy through meticulous quality
+                checks. I efficiently manage multiple projects, meeting deadlines while safeguarding data privacy and
+                security.
+              </p>
+            </div>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Senior Software Engineer</h3>
+                <p>GoDaddy.com</p>
+                <p class="date">2022 - 2024</p>
+              </hgroup>
+              <p class="prose">
+                Spearheaded overhaul of frontend and DevOps architectures for legacy e-commerce platform. Reengineered
+                the pricing fee architecture to give customers the freedom to set their own custom transaction costs for
+                their credit card terminals.
+              </p>
+              <ul class="bubble-list">
+                <li>Javascript</li>
+                <li>Typescript</li>
+                <li>Ember.js</li>
+                <li>MySQL</li>
+                <li>AWS</li>
+                <li>Github Actions</li>
+                <li>Docker</li>
+                <li>Express.js</li>
+                <li>Next.js</li>
+                <li>React</li>
+                <li>Tailwind</li>
+                <li>Elasticsearch</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Software Engineer</h3>
+                <p>Meta Platforms (Facebook)</p>
+                <p class="date">2021 - 2022</p>
+              </hgroup>
+              <p class="prose">
+                Contributed to the new universal metrics platform designed to standardize metrics lookup and integration
+                for the entire company. Enhanced backend reliability of Metric Authoring API, resulting in a 20%
+                reduction in latency issues and improved overall performance.
+              </p>
+              <ul class="bubble-list">
+                <li>Javascript</li>
+                <li>GraphQL</li>
+                <li>Python</li>
+                <li>PHP/Hack </li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Software Engineer - Apps Team</h3>
+                <p>doc.ai</p>
+                <p class="date">2020 - 2020</p>
+              </hgroup>
+              <p class="prose">
+                Headed development of UI library for company's new flagship app. Created real-time geographic
+                visualization of COVID-19 outbreak, increasing brand awareness by over 100%
+              </p>
+              <ul class="bubble-list">
+                <li>React Native</li>
+                <li>Typescript</li>
+                <li>CSS</li>
+                <li>Express.js</li>
+                <li>Redux</li>
+                <li>Styled Components</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Full Stack Engineer</h3>
+                <p>Knovva Academy</p>
+                <p class="date">2018 - 2020</p>
+              </hgroup>
+              <p class="prose">
+                Collaborated with cloud architect to build administrative tools to streamline customer management,
+                recruiting, and real-time analytics. Refactored existing codebase to the latest standards and optimized
+                for scalability.
+              </p>
+              <ul class="bubble-list">
+                <li>Javascript</li>
+                <li>React</li>
+                <li>Redux</li>
+                <li>MongoDB</li>
+                <li>GraphQL</li>
+                <li>Express.js</li>
+                <li>SCSS</li>
+                <li>AWS</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <div class="header-container timeline-grid">
+          <i class="fa-solid fa-suitcase"></i>
+          <h2>Hackathons</h2>
+        </div>
+        <ol class="work">
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>Neo4j's GraphHack 2018</h3>
+                <p>1st Place Winner</p>
+                <p class="date">September 2018</p>
+              </hgroup>
+              <p class="prose">
+                Attending GraphHack 2018 was a pivotal experience in bridging my bootcamp learning with real-world
+                application. Navigating unfamiliar tools in a fast-paced, collaborative setting strengthened my
+                adaptability and problem-solving skills, making me more confident in tackling new technologies.
+              </p>
+            </div>
+          </li>
+          <li class="timeline-grid">
+            <div>
+              <hgroup>
+                <h3>NY Sextech Hackathon 2018</h3>
+                <p>1st Place Winner</p>
+                <p class="date">August 2018</p>
+              </hgroup>
+              <p class="prose">
+                Recognizing the need for better public education, my team built a sex education video platform, enabling
+                youth to explore questions on human sexuality with guidance from health science educators.
+              </p>
+              <p class="prose">
+                My team's efforts not only won us the competition, but also brought positive publicity to the whole
+                event. We were featured in
+                <a target="_blank"
+                  href="https://www.bkmag.com/2018/09/06/4-brooklyn-entrepreneurs-on-how-their-style-impacts-business/">
+                  Brooklyn Magazine
+                </a>,
+                <a target="_blank"
+                  href="https://www.forbes.com/sites/estrellajaramillo/2018/09/18/technology-meets-sex-to-solve-some-of-the-most-pressing-concerns-of-our-times">
+                  Forbes
+                </a>, and
+                <a href="https://www.menshealth.com/sex-women/a23064407/sex-tech-hackathon/">
+                  Men's Health
+                </a>.
+                For a brief period, our project was even considered for official curriculum integration within select
+                NYC high schools.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </article>
+  </main>
+  <!--------------------->
+  <!-- START OF GLOBAL -->
+  <!--------------------->
+  <footer id="page-footer" class="text-xs">
+    <div>
+      <p>© 2024 Mario Villacreses</p>
+      <p>
+        Inspired by
+        <a href="https://blowfish.page/" target="_blank">
+          Blowfish
+        </a>
+      </p>
+    </div>
+    <small aria-hidden="true">
+      Still using Netscape? Check out my
+      <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
+    </small>
+  </footer>
+</body>
+
 </html>

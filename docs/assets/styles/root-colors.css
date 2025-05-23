@@ -1,4 +1,5 @@
-:root, :root:has(#mv-dark-toggle:not(:checked)) {
+:root,
+:root:has(#mv-dark-toggle:not(:checked)) {
   /* https://tailwindcss.com/docs/colors
    * https://tailscan.com/colors
    */
@@ -51,7 +52,7 @@
   --color-blue-950: 23, 37, 84;
 
   --color-green-rgb: 100, 255, 218;
-  --color-green-pale-rgb: 86,170,165;
+  --color-green-pale-rgb: 86, 170, 165;
   --color-link-blue-rgb: 0, 100, 209;
   --color-link-blue-pale-rgb: 0, 67, 158;
 
@@ -75,14 +76,14 @@
   --link-color-pale-rgb: var(--color-link-blue-pale-rgb);
   --menu-bg-rgb: var(--background-start-rgb);
   --topnav-toggle-hover-rgb: var(--color-neutral-700);
-  
+
   --text-h2-rgb: var(--color-slate-500);
   --text-prose-rgb: var(--color-slate-600);
   --text-lead-rgb: var(--color-gray-600);
-  
+
   --home-img-border-rgb: var(--color-slate-600);
   --home-text-stats-rgb: var(--color-gray-600);
-  
+
   --default-slate-rgb: var(--color-slate-600);
   --career-timeline-bar-rgb: var(--color-slate-400);
   --bubble-bg-rgb: var(--color-gray-300);
@@ -90,16 +91,16 @@
 
 :root:has(#mv-dark-toggle:checked) {
   --topnav-toggle-hover-rgb: var(--color-neutral-300);
-  --link-color-rgb: var(--color-green-rgb); 
-  --link-color-pale-rgb: var(--color-green-pale-rgb); 
+  --link-color-rgb: var(--color-green-rgb);
+  --link-color-pale-rgb: var(--color-green-pale-rgb);
   --foreground-rgb: var(--color-neutral-200);
-  --background-start-rgb: 17,34,64;
+  --background-start-rgb: 17, 34, 64;
   --background-end-rgb: var(--color-slate-900);
-  
+
   --text-h2-rgb: var(--color-slate-400);
-  --text-prose-rgb: 175,188,204;
+  --text-prose-rgb: 175, 188, 204;
   --text-lead-rgb: var(--color-gray-400);
-  
+
   --home-img-border-rgb: var(--color-blue-100);
   --home-text-stats-rgb: var(--color-slate-400);
   --hr-rgb: var(--color-slate-700);
