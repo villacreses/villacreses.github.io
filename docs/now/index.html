@@ -1,127 +1,132 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../index.css">
-        <link rel="stylesheet" href="page.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
-        <script type="module" src="../index.js"></script>
-    </head>
-    <body>
-      <header id="top-header">
-        <div id="navbar-blur"></div>
-        <nav style="margin-right:auto;flex:1" class="container">
-          <a href="/">
-            Mario Villacreses
-          </a>
-        </nav>
-        <nav id="nav-links">
-          <ul class="container">
-            <li class="mobile-only">
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/career">Career History</a>
-            </li>
-            <li>
-              <a href="/now">Now</a>
-            </li>
-          </ul>
-        </nav>
-        <div id="nav-actions" class="container">
-          <mv-dark-toggle></mv-dark-toggle>
-          <!-- MOBILE MENU TOGGLE -->
-          <div id="menu-toggle-container">
-            <input
-              type="checkbox"
-              id="menu-toggle"
-              name="menu-toggle"
-              class="sr-only toggle-overlay-menu"
-              hidden
-            />
-            <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
-              <i class="fa-solid fa-bars unchecked"></i>
-              <i class="fa-solid fa-xmark checked"></i>
-              <span class="sr-only">
-                Open navigation menu
-              </span>
-            </label>
-          </div>
-        </div>
-      </header>
-      <div class="top-bumper"></div>
-      <!------------------->
-      <!-- END OF GLOBAL -->
-      <!------------------->
-      <main class="compact">
-        <header class="standard">
-          <h1>Now</h1>
-          <p class="prose">
-            Welcome to my Now page. My Now page offers a quick snapshot of where I've recently been investing my energy. If we haven't connected in the last six months, you can catch up on my latest endeavors here.
-          </p>
-          <hr />
-        </header>
-        <article>
-          <hgroup>
-            <h2 class="font-semibold">So what am I currently doing?</h2>
-            <p>
-              <span>Last updated:</span>
-              <time datetime="2025-02-03T22:13:00.000Z">February 2025</time>
-            </p>
-          </hgroup>
-          <section>
-            <h3>Working on</h3>
-            <ul class="prose">
-              <li>
-                <strong>Master's Degree:</strong> I've begun my journey towards earning a Master of Computer Science at Arizona State University. Expected graduation: Spring 2026.
-              </li>
-              <li>
-                <strong>
-                  Learning Rust: 
-                </strong>
-                I'm super excited to dive into Rust after spending most of my career with JavaScript. Discovering the pax.dev project has sparked my enthusiasm since it aims to simplify modern web development and harnesses the power of WebAssembly. I can't wait to learn Rust and contribute to this game-changing initiative!
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h3>Reading</h3>
-            <ul class="prose">
-              <li>
-                <em>Fundamentals of Software Architecture</em>
-                by Mark Richards
-              </li>
-              <li>
-                <em>
-                  The Power of Latino Leadership 
-                </em>
-                by Juana Bordas
-              </li>
-            </ul>
-          </section>
-        </article>
-      </main>
-      <!--------------------->
-      <!-- START OF GLOBAL -->
-      <!--------------------->
-      <footer id="page-footer" class="text-xs">
-        <div>
-          <p>© 2024 Mario Villacreses</p>
-          <p>
-            Inspired by 
-            <a href="https://blowfish.page/" target="_blank">
-              Blowfish
-            </a>
-          </p>
-        </div>
-        <small aria-hidden="true">
-          Still using Netscape? Check out my 
-          <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
-        </small>
-    </footer>
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Now | Mario Villacreses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="page.css">
+  <link rel="prefetch" href="../index.html">
+  <link rel="prefetch" href="../career/index.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
+  <script type="module" src="../index.js"></script>
+</head>
+
+<body>
+  <header id="top-header">
+    <div id="navbar-blur"></div>
+    <nav style="margin-right:auto;flex:1" class="container">
+      <a href="/">
+        Mario Villacreses
+      </a>
+    </nav>
+    <nav id="nav-links">
+      <ul class="container">
+        <li class="mobile-only">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/career">Career History</a>
+        </li>
+        <li>
+          <a href="/now">Now</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="nav-actions" class="container">
+      <mv-dark-toggle></mv-dark-toggle>
+      <!-- MOBILE MENU TOGGLE -->
+      <div id="menu-toggle-container">
+        <input type="checkbox" id="menu-toggle" name="menu-toggle" class="sr-only toggle-overlay-menu" hidden />
+        <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
+          <i aria-hidden="true" class="fa-solid fa-bars unchecked"></i>
+          <i aria-hidden="true" class="fa-solid fa-xmark checked"></i>
+          <span class="sr-only">
+            Open navigation menu
+          </span>
+        </label>
+      </div>
+    </div>
+  </header>
+  <div class="top-bumper"></div>
+  <!------------------->
+  <!-- END OF GLOBAL -->
+  <!------------------->
+  <main class="compact">
+    <header class="standard">
+      <h1>Now</h1>
+      <p class="prose">
+        Welcome to my Now page. My Now page offers a quick snapshot of where I've recently been investing my energy. If
+        we haven't connected in the last six months, you can catch up on my latest endeavors here.
+      </p>
+      <hr />
+    </header>
+    <article>
+      <hgroup>
+        <h2 class="font-semibold">So what am I currently doing?</h2>
+        <p>
+          <span>Last updated:</span>
+          <time datetime="2025-02-03T22:13:00.000Z">February 2025</time>
+        </p>
+      </hgroup>
+      <section>
+        <h3>Working on</h3>
+        <ul class="prose">
+          <li>
+            <strong>Master's Degree:</strong> I've begun my journey towards earning a Master of Computer Science at
+            Arizona State University. Expected graduation: Spring 2026.
+          </li>
+          <li>
+            <strong>
+              Learning Rust:
+            </strong>
+            I'm super excited to dive into Rust after spending most of my career with JavaScript. Discovering the
+            pax.dev project has sparked my enthusiasm since it aims to simplify modern web development and harnesses the
+            power of WebAssembly. I can't wait to learn Rust and contribute to this game-changing initiative!
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Reading</h3>
+        <ul class="prose">
+          <li>
+            <em>Fundamentals of Software Architecture</em>
+            by Mark Richards
+          </li>
+          <li>
+            <em>
+              The Power of Latino Leadership
+            </em>
+            by Juana Bordas
+          </li>
+        </ul>
+      </section>
+    </article>
+  </main>
+  <!--------------------->
+  <!-- START OF GLOBAL -->
+  <!--------------------->
+  <footer id="page-footer" class="text-xs">
+    <div>
+      <p>© 2024 Mario Villacreses</p>
+      <p>
+        Inspired by
+        <a rel="noopener" target="_blank" href="https://blowfish.page/" target="_blank">
+          Blowfish
+        </a>
+      </p>
+    </div>
+    <small aria-hidden="true">
+      Still using Netscape? Check out my
+      <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
+    </small>
+  </footer>
+</body>
+
 </html>

@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-  <title>Example</title>
   <meta charset="utf-8">
+  <title>Mario Villacreses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="assets/styles/homepage.css">
+  <link rel="prefetch" href="now/index.html">
+  <link rel="prefetch" href="career/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -43,8 +45,8 @@
       <div id="menu-toggle-container">
         <input type="checkbox" id="menu-toggle" name="menu-toggle" class="sr-only toggle-overlay-menu" hidden />
         <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
-          <i class="fa-solid fa-bars unchecked"></i>
-          <i class="fa-solid fa-xmark checked"></i>
+          <i aria-hidden="true" class="fa-solid fa-bars unchecked"></i>
+          <i aria-hidden="true" class="fa-solid fa-xmark checked"></i>
           <span class="sr-only">
             Open navigation menu
           </span>
@@ -66,15 +68,20 @@
           <h2 class="text-sm">Software Engineer &amp; Math Enthusiast</h2>
         </hgroup>
         <dl id="quick-stats" class="text-sm">
-          <i class="fa-solid fa-suitcase"></i>
-          <dt class="sr-only">Current role</dt>
+          <dt>
+            <i aria-hidden="true" class="fa-solid fa-suitcase"></i>
+            <span class="sr-only">Current role</span>
+          </dt>
           <dd>Freelance Software Engineer</dd>
-          <i class="fa-solid fa-graduation-cap"></i>
-          <dt class="sr-only">Education</dt>
+          <dt>
+            <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
+            <span class="sr-only">Education</span>
+          </dt>
           <dd>B.A. Applied Math @ CUNY Queens College</dd>
-
-          <i class="fa-solid fa-location-dot"></i>
-          <dt class="sr-only">Location</dt>
+          <dt>
+            <i aria-hidden="true" class="fa-solid fa-location-dot"></i>
+            <span class="sr-only">Location</span>
+          </dt>
           <dd>New York City</dd>
         </dl>
         <hr />
@@ -99,7 +106,7 @@
         <ul>
           <li>
             <a href="assets/files/resume.pdf" target="_blank">
-              <i class="fa-regular fa-file-pdf"></i>
+              <i aria-hidden="true" class="fa-regular fa-file-pdf"></i>
               <span>
                 Download my resume
               </span>
@@ -107,23 +114,23 @@
           </li>
           <li>
             <a href="mailto:MarioVillacreses@outlook.com" target="_blank">
-              <i class="fa-regular fa-envelope"></i>
+              <i aria-hidden="true" class="fa-regular fa-envelope"></i>
               <span>
                 Send me an email
               </span>
             </a>
           </li>
           <li>
-            <a href="https://github.com/villacreses" target="_blank">
-              <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/villacreses" target="_blank" rel="noopener">
+              <i aria-hidden="true" class="fa-brands fa-github"></i>
               <span>
                 Follow me on Github
               </span>
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/villacreses" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/villacreses" target="_blank" rel="noopener">
+              <i aria-hidden="true" class="fa-brands fa-linkedin"></i>
               <span>
                 Add me on LinkedIn
               </span>
@@ -141,7 +148,7 @@
       <p>© 2024 Mario Villacreses</p>
       <p>
         Inspired by
-        <a href="https://blowfish.page/" target="_blank">
+        <a rel="noopener" target="_blank" href="https://blowfish.page/" target="_blank">
           Blowfish
         </a>
       </p>
