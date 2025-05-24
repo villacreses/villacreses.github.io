@@ -8,6 +8,9 @@ h3 {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  display: grid;
+  grid-template-columns: 1.65rem 1fr;
+  align-items: center;
 }
 
 article>hgroup p {
@@ -16,6 +19,10 @@ article>hgroup p {
   margin-top: 0.25rem;
   padding-bottom: 0;
   color: rgb(var(--text-prose-rgb));
+}
+
+article hgroup+p {
+  margin-top: 0.75rem;
 }
 
 section h3~* {
@@ -38,4 +45,19 @@ section:first {
 .prose {
   font-size: var(--text-sm-font-size);
   line-height: var(--text-sm-line-height);
+}
+
+.prose li {
+  margin-bottom: 1rem;
+}
+
+.books h4 {
+  color: rgb(var(--book-color-rgb));
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.035rem;
+  font-style: italic;
+}
+
+.books li {
+  margin-bottom: 0.85rem;
 }

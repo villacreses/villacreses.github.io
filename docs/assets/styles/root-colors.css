@@ -71,13 +71,13 @@
 
 /* Light mode */
 :root {
-  --foreground-rgb: var(--color-neutral-800);
+  --foreground-rgb: var(--color-neutral-700);
   --background-start-rgb: var(--color-gray-100);
   --background-end-rgb: var(--color-gray-200);
   --link-color-rgb: var(--color-link-blue-rgb);
   --link-color-pale-rgb: var(--color-link-blue-pale-rgb);
   --menu-bg-rgb: var(--background-start-rgb);
-  --topnav-toggle-hover-rgb: var(--color-neutral-700);
+  --topnav-toggle-hover-rgb: var(--color-neutral-500);
 
   --text-h2-rgb: var(--color-slate-500);
   --text-prose-rgb: var(--color-slate-600);
@@ -94,8 +94,8 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   /* 
-    The double negative may seem counterintuitive, but I want the styles
-    to apply whether or not the dark toggle component has rendered.
+  The double negative may seem counterintuitive, but I want the styles
+  to apply whether or not the dark toggle component has rendered.
   */
   :root:not(:has(#mv-dark-toggle:not(:checked))) {
     --topnav-toggle-hover-rgb: var(--color-neutral-300);
@@ -104,7 +104,7 @@
     --foreground-rgb: var(--color-neutral-200);
     --background-start-rgb: 17, 34, 64;
     --background-end-rgb: var(--color-slate-900);
-  
+    
     --text-h2-rgb: var(--color-slate-400);
     --text-prose-rgb: 175, 188, 204;
     --text-lead-rgb: var(--color-gray-400);
