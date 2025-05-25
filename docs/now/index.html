@@ -6,15 +6,14 @@
   <title>Now | Mario Villacreses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../index.css">
+  <link rel="preload" href="../index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="stylesheet" href="page.css">
-  <link rel="prefetch" href="../index.html">
-  <link rel="prefetch" href="../career/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
-  <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
+    rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
+  <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
   <script type="module" src="../index.js"></script>
   <meta name="title" content="Now | Mario Villacreses">
   <meta name="description"
@@ -95,7 +94,8 @@
         </p>
       </hgroup>
       <p class="prose">
-        Since leaving GoDaddy, I have been focused on advancing my education and pursuing a Master&apos;s degree in Computer
+        Since leaving GoDaddy, I have been focused on advancing my education and pursuing a Master&apos;s degree in
+        Computer
         Science. To make that possible, I&apos;ve been freelancing, which gives me the flexibility I need to focus on my
         studies.
       </p>
@@ -193,6 +193,18 @@
       <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
     </small>
   </footer>
+  <script>
+    function onAssetsLoaded() {
+      ["../index.html", "../career/index.html"].forEach(href => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = href;
+        document.head.appendChild(link);
+      })
+    }
+    
+    setTimeout(onAssetsLoaded, 0);
+  </script>
 </body>
 
 </html>

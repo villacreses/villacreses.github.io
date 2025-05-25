@@ -7,14 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="assets/styles/homepage.css">
-  <link rel="prefetch" href="now/index.html">
-  <link rel="prefetch" href="career/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
-  <script src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
+    rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
+  <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
   <script type="module" src="index.js"></script>
   <meta name="title" content="Mario Villacreses">
   <meta name="description" content="Personal website for Mario Villacreses">
@@ -73,7 +71,7 @@
   <main>
     <article>
       <div id="profile">
-        <img src="https://imgix.cosmicjs.com/36388d60-84ce-11ef-b5a0-93db72e2be98-mario.png"
+        <img src="https://imgix.cosmicjs.com/4d6b4d70-399a-11f0-b62e-c5cf00b00352-mario_small.jpg?w=144&h=144"
           alt="A picture of Mario Villacreses" />
         <hgroup>
           <h1 class="font-extrabold">Mario Villacreses</h1>
@@ -170,6 +168,18 @@
       <a href="https://mario90ssite.github.io" tabindex="-1">optimized site</a>.
     </small>
   </footer>
+  <script>
+    function onAssetsLoaded() {
+      ["career/index.html", "now/index.html"].forEach(href => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = href;
+        document.head.appendChild(link);
+      })
+    }
+
+    setTimeout(onAssetsLoaded, 0);
+  </script>
 </body>
 
 </html>

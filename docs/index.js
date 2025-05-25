@@ -1,6 +1,6 @@
-import {DarkToggleActions} from "./assets/components/mv-dark-toggle.js";
+import { DarkToggleActions } from "./assets/components/mv-dark-toggle.js";
 
-function app() {
+function onDOMLoaded() {
   DarkToggleActions.register()
   const menuToggle = document.getElementById('menu-toggle');
 
@@ -12,12 +12,12 @@ function app() {
     }
   });
 
-  menuToggle.addEventListener('change', function() {
+  menuToggle.addEventListener('change', function () {
     const selector = [
       'a:not(#nav-links a):not(#page-footer small a)',
       'label[for=mv-dark-toggle]',
     ].join(',');
-    
+
     Array
       .from(document.querySelectorAll(selector))
       .forEach(a => {
@@ -31,5 +31,5 @@ function app() {
   })
 }
 
-document.addEventListener('DOMContentLoaded', app);
+document.addEventListener('DOMContentLoaded', onDOMLoaded);
 
