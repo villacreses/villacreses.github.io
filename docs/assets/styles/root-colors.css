@@ -53,7 +53,7 @@
   --color-green-rgb: 100, 255, 218;
   --color-green-pale-rgb: 86, 170, 165;
   --color-link-blue-rgb: 0, 100, 209;
-  --color-link-blue-pale-rgb: 0, 67, 158;
+  --color-link-blue-pale-rgb: 14, 150, 276;
 
   /* These are just here for reference. Hopefully in the future we can
    * use CSS variables in media queries. In the meantime, I will still
@@ -98,7 +98,7 @@
   to apply whether or not the dark toggle component has rendered.
   */
   :root:not(:has(#mv-dark-toggle:not(:checked))) {
-    --topnav-toggle-hover-rgb: var(--color-neutral-300);
+    --topnav-toggle-hover-rgb: var(--color-neutral-400);
     --link-color-rgb: var(--color-green-rgb);
     --link-color-pale-rgb: var(--color-green-pale-rgb);
     --foreground-rgb: var(--color-neutral-200);
