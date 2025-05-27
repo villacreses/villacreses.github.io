@@ -88,6 +88,7 @@
 
   --default-slate-rgb: var(--color-slate-600);
   --career-timeline-bar-rgb: var(--color-slate-400);
+  --bubble-text-rgb: var(--color-gray-600);
   --bubble-bg-rgb: var(--color-gray-300);
 }
 
@@ -114,6 +115,7 @@
     --hr-rgb: var(--color-slate-700);
     --default-slate-rgb: var(--color-slate-300);
     --career-timeline-bar-rgb: var(--color-slate-600);
+    --bubble-text-rgb: var(--color-slate-300);
     --bubble-bg-rgb: var(--color-slate-700);
   }
 }
