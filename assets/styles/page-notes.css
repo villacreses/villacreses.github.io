@@ -1,0 +1,11 @@
+main li {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+main li a {
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+}

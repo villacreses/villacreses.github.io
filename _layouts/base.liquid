@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Mario Villacreses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/index.css">
-  {% if page.fileId %}<link rel="stylesheet" href="/assets/styles/page-{{page.fileId}}.css">{% endif %}
+  {% assign style_src = page.style_src | default: layout.style_src %}
+
+  {% if style_src %}<link rel="stylesheet" href="/assets/styles/page-{{style_src}}.css">{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
   <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
-  <script type="module" src="index.js"></script>
+  <script type="module" src="/index.js"></script>
   <meta name="title" content="Mario Villacreses">
   <meta name="description" content="Personal website for Mario Villacreses">
   <meta name="author" content="Mario Villacreses">
@@ -27,7 +28,6 @@
   <meta name="twitter:title" content="Mario Villacreses">
   <meta name="twitter:description" content="Personal website for Mario Villacreses">
 </head>
-
 <body>
   <header id="top-header">
     <div id="navbar-blur"></div>
@@ -43,6 +43,9 @@
         </li>
         <li>
           <a href="/career">Career History</a>
+        </li>
+        <li>
+          <a href="/Notes">Notes</a>
         </li>
         <li>
           <a href="/now">Now</a>
@@ -83,7 +86,7 @@
   </footer>
   <script>
     function onAssetsLoaded() {
-      ["career/index.html", "now/index.html"].forEach(href => {
+      ["/career", "/now"].forEach(href => {
         const link = document.createElement('link');
         link.rel = 'prefetch';
         link.href = href;
@@ -94,5 +97,4 @@
     setTimeout(onAssetsLoaded, 0);
   </script>
 </body>
-
 </html>

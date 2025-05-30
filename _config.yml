@@ -1,2 +1,11 @@
 exclude:
   - mv-scripts/
+
+collections_dir: writing
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title:output_ext
+  articles:
+    output: true
+    permalink: /articles/:title:output_ext

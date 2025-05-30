@@ -1,0 +1,29 @@
+---
+layout: base
+style_src: posts
+---
+<main class="compact">
+  <article>
+    <header>
+      <p>
+        <small>
+          <a href="/{{page.collection}}">{{page.collection}}</a>
+          &gt;
+        </small>
+      </p>
+      <h1>{{page.title}}</h1>
+      <dl>
+        <div class="metadata">
+          <dt class="sr-only">Published:</dt>
+          <dd>{{ page.date | date_to_long_string: "ordinal", "US" }}</dd>
+          <dt class="sr-only">Estimated reading time</dt>
+          <dd>{% include reading-time.liquid %} minute read</dd>
+        </div>
+      </dl>
+    </header>
+    <section id="main-content" class="prose">
+      {{ content }}
+    </section>
+  </article>
+</main>
+<script src="/assets/scripts/prism.js"></script>
