@@ -1,73 +1,8 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Career History | Mario Villacreses</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../index.css">
-  <link rel="stylesheet" href="page.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
-  <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
-  <script type="module" src="../index.js"></script>
-  <meta name="title" content="Career | Mario Villacreses">
-  <meta name="description" content="This page highlights my work history, along with any significant accomplishments that shaped me as I've navigated the tech industry.">
-  <meta name="author" content="Mario Villacreses">
-  <meta name="keywords" content="portfolio, software engineer">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mariovillacreses.com/career">
-  <meta property="og:site_name" content="Mario Villacreses">
-  <meta property="og:title" content="Career | Mario Villacreses">
-  <meta property="og:description" content="This page highlights my work history, along with any significant accomplishments that shaped me as I've navigated the tech industry.">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Career | Mario Villacreses">
-  <meta name="twitter:description" content="This page highlights my work history, along with any significant accomplishments that shaped me as I've navigated the tech industry.">
-</head>
-
-<body>
-  <header id="top-header">
-    <div id="navbar-blur"></div>
-    <nav style="margin-right:auto;flex:1" class="container">
-      <a href="/">
-        Mario Villacreses
-      </a>
-    </nav>
-    <nav id="nav-links">
-      <ul class="container">
-        <li class="mobile-only">
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/career">Career History</a>
-        </li>
-        <li>
-          <a href="/now">Now</a>
-        </li>
-      </ul>
-    </nav>
-    <div id="nav-actions" class="container">
-      <mv-dark-toggle></mv-dark-toggle>
-      <!-- MOBILE MENU TOGGLE -->
-      <div id="menu-toggle-container">
-        <input type="checkbox" id="menu-toggle" name="menu-toggle" class="sr-only toggle-overlay-menu" hidden />
-        <label for="menu-toggle" role="button" aria-controls="nav-links" tabindex="0">
-          <i aria-hidden="true" class="fa-solid fa-bars unchecked"></i>
-          <i aria-hidden="true" class="fa-solid fa-xmark checked"></i>
-          <span class="sr-only">
-            Open navigation menu
-          </span>
-        </label>
-      </div>
-    </div>
-  </header>
-  <div class="top-bumper"></div>
-  <!------------------->
-  <!-- END OF GLOBAL -->
-  <!------------------->
+---
+layout: base
+fileId: career
+permalink: /career
+---
   <main class="compact">
     <header class="standard">
       <h1>Career History</h1>
@@ -292,36 +227,3 @@
       </section>
     </article>
   </main>
-  <!--------------------->
-  <!-- START OF GLOBAL -->
-  <!--------------------->
-  <footer id="page-footer" class="text-xs">
-    <div>
-      <p>© 2024 Mario Villacreses</p>
-      <p>
-        Inspired by
-        <a rel="noopener" target="_blank" href="https://blowfish.page/">
-          Blowfish
-        </a>
-      </p>
-    </div>
-    <small aria-hidden="true">
-      Still using Netscape? Check out my
-      <a href="/90s" tabindex="-1">optimized site</a>.
-    </small>
-  </footer>
-  <script>
-    function onAssetsLoaded() {
-      ["../index.html", "../now/index.html"].forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'prefetch';
-        link.href = href;
-        document.head.appendChild(link);
-      })
-    }
-    
-    setTimeout(onAssetsLoaded, 0);
-  </script>
-</body>
-
-</html>
