@@ -1,5 +1,6 @@
 exclude:
   - mv-scripts/
+  - README.md
 
 collections_dir: writing
 collections:

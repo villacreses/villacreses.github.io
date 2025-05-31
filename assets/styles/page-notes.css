@@ -1,8 +1,21 @@
+main ul {
+  list-style: none;
+  padding: 0 2rem;
+  margin: auto;
+}
+
 main li {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto 1fr;
   column-gap: 1rem;
-  align-items: center;
+  margin-bottom: 1rem;
+}
+
+main li time {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  align-self: self-start;
+  margin-top: .125rem;
 }
 
 main li a {

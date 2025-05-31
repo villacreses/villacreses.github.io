@@ -1,5 +1,9 @@
 @import url('./prism.css');
 
+.top-bumper {
+  min-height: 118px;
+}
+
 main {
   width: clamp(100%, 100%, 80ch);
   align-self: stretch;
