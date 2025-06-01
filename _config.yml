@@ -1,2 +1,16 @@
 exclude:
-  mv-scripts/
+  - mv-scripts/
+  - README.md
+
+collections_dir: writing
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title:output_ext
+  articles:
+    output: true
+    permalink: /articles/:title:output_ext
+
+title: "Mario Villacreses"
+description: Personal website of Mario Villacreses
+url: https://mariovillacreses.com

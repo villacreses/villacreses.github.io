@@ -50,8 +50,44 @@
   --color-blue-900: 30, 58, 138;
   --color-blue-950: 23, 37, 84;
 
-  --color-green-rgb: 100, 255, 218;
-  --color-green-pale-rgb: 86, 170, 165;
+  --color-green-50: 240, 253, 244;
+  --color-green-100: 220, 252, 231;
+  --color-green-200: 187, 247, 208;
+  --color-green-300: 134, 239, 172;
+  --color-green-400: 74, 222, 128;
+  --color-green-500: 34, 197, 94;
+  --color-green-600: 22, 163, 74;
+  --color-green-700: 21, 128, 61;
+  --color-green-800: 22, 101, 52;
+  --color-green-900: 20, 83, 45;
+  --color-green-950: 5, 46, 22;
+
+  --color-yellow-50: 254, 252, 232;
+  --color-yellow-100: 254, 249, 195;
+  --color-yellow-200: 254, 240, 138;
+  --color-yellow-300: 253, 224, 71;
+  --color-yellow-400: 250, 204, 21;
+  --color-yellow-500: 234, 179, 8;
+  --color-yellow-600: 202, 138, 4;
+  --color-yellow-700: 161, 98, 7;
+  --color-yellow-800: 133, 77, 14;
+  --color-yellow-900: 113, 63, 18;
+  --color-yellow-950: 66, 32, 6;
+
+  --color-red-50: 254, 242, 242;
+  --color-red-100: 254, 226, 226;
+  --color-red-200: 254, 202, 202;
+  --color-red-300: 252, 165, 165;
+  --color-red-400: 248, 113, 113;
+  --color-red-500: 239, 68, 68;
+  --color-red-600: 220, 38, 38;
+  --color-red-700: 185, 28, 28;
+  --color-red-800: 153, 27, 27;
+  --color-red-900: 127, 29, 29;
+  --color-red-950: 69, 10, 10;
+
+  --color-link-green-rgb: 100, 255, 218;
+  --color-link-green-pale-rgb: 86, 170, 165;
   --color-link-blue-rgb: 0, 100, 209;
   --color-link-blue-pale-rgb: 14, 150, 276;
 
@@ -90,6 +126,24 @@
   --career-timeline-bar-rgb: var(--color-slate-400);
   --bubble-text-rgb: var(--color-gray-600);
   --bubble-bg-rgb: var(--color-gray-300);
+  --post-color-rgb: var(--color-neutral-400);
+  --blockquote-border-rgb: var(--color-neutral-500);
+
+  --note-primary-rgb: var(--color-blue-400);
+  --note-secondary-rgb: var(--color-blue-600);
+  --note-font-rgb: var(--color-blue-200);
+  
+  --tip-primary-rgb: var(--color-green-400);
+  --tip-secondary-rgb: var(--color-green-600);
+  --tip-font-rgb: var(--color-green-200);
+
+  --warning-primary-rgb: var(--color-yellow-400);
+  --warning-secondary-rgb: var(--color-yellow-500);
+  --warning-font-rgb: var(--color-yellow-100);
+
+  --important-primary-rgb: var(--color-red-400);
+  --important-secondary-rgb: var(--color-red-500);
+  --important-font-rgb: var(--color-red-200);
 }
 
 /* Dark mode */
@@ -100,8 +154,8 @@
   */
   :root:not(:has(#mv-dark-toggle:not(:checked))) {
     --topnav-toggle-hover-rgb: var(--color-neutral-400);
-    --link-color-rgb: var(--color-green-rgb);
-    --link-color-pale-rgb: var(--color-green-pale-rgb);
+    --link-color-rgb: var(--color-link-green-rgb);
+    --link-color-pale-rgb: var(--color-link-green-pale-rgb);
     --foreground-rgb: var(--color-neutral-200);
     --background-start-rgb: 17, 34, 64;
     --background-end-rgb: var(--color-slate-900);
@@ -109,7 +163,7 @@
     --text-h2-rgb: var(--color-slate-400);
     --text-prose-rgb: 175, 188, 204;
     --text-lead-rgb: var(--color-gray-400);
-  
+    
     --home-img-border-rgb: var(--color-blue-100);
     --home-text-stats-rgb: var(--color-slate-400);
     --hr-rgb: var(--color-slate-700);
@@ -117,5 +171,23 @@
     --career-timeline-bar-rgb: var(--color-slate-600);
     --bubble-text-rgb: var(--color-slate-300);
     --bubble-bg-rgb: var(--color-slate-700);
+    --post-color-rgb: var(--color-neutral-500);
+    --blockquote-border-rgb: var(--color-neutral-300);
+
+    --note-primary-rgb: var(--color-blue-400);
+    --note-secondary-rgb: var(--color-blue-800);
+    --note-font-rgb: var(--color-blue-300);
+    
+    --tip-primary-rgb: var(--color-green-400);
+    --tip-secondary-rgb: var(--color-green-800);
+    --tip-font-rgb: var(--color-green-400);
+    
+    --warning-primary-rgb: var(--color-yellow-400);
+    --warning-secondary-rgb: var(--color-yellow-700);
+    --warning-font-rgb: var(--color-yellow-400);
+    
+    --important-primary-rgb: var(--color-red-400);
+    --important-secondary-rgb: var(--color-red-800);
+    --important-font-rgb: var(--color-red-300);
   }
 }

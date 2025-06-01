@@ -1,0 +1,4 @@
+{%- capture description -%}
+{{ page.meta_description | default: heading_description | default: site.description }}
+{%- endcapture -%}
+{{description | strip | replace: "\n", ""}}
