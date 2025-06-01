@@ -1,0 +1,6 @@
+{%- assign page_title = page.title | default: site.title | truncate: 30 -%}
+{%- if page.url == "/" -%}
+{{ site.title }}
+{%- else -%}
+  {{ page_title }} | {{ site.title }}
+{%- endif -%}

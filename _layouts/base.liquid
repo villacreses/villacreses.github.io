@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mario Villacreses</title>
+  <title>{%- include meta-title.liquid -%}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/index.css">
-  {% assign style_src = page.style_src | default: layout.style_src %}
+  {%- assign style_src = page.style_src | default: layout.style_src -%}
 
-  {% if style_src %}<link rel="stylesheet" href="/assets/styles/page-{{style_src}}.css">{% endif %}
+  {%- if style_src -%}<link rel="stylesheet" href="/assets/styles/page-{{style_src}}.css">{%- endif -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,18 +15,18 @@
     rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
   <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
   <script type="module" src="/index.js"></script>
-  <meta name="title" content="Mario Villacreses">
-  <meta name="description" content="Personal website for Mario Villacreses">
+  <meta name="title" content="{%- include meta-title.liquid -%}">
+  <meta name="description" content="{%- include meta-description.liquid -%}">
   <meta name="author" content="Mario Villacreses">
   <meta name="keywords" content="portfolio, software engineer">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mariovillacreses.com/">
+  <meta property="og:url" content="https://mariovillacreses.com{{page.url}}">
   <meta property="og:site_name" content="Mario Villacreses">
-  <meta property="og:title" content="Mario Villacreses">
-  <meta property="og:description" content="Personal website for Mario Villacreses">
+  <meta property="og:title" content="{%- include meta-title.liquid -%}">
+  <meta property="og:description" content="{%- include meta-description.liquid -%}">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mario Villacreses">
-  <meta name="twitter:description" content="Personal website for Mario Villacreses">
+  <meta name="twitter:title" content="{%- include meta-title.liquid -%}">
+  <meta name="twitter:description" content="{%- include meta-description.liquid -%}">
 </head>
 <body>
   <header id="top-header">
@@ -44,9 +44,9 @@
         <li>
           <a href="/career">Career History</a>
         </li>
-        {% comment %} <li>
+        {%- comment -%} <li>
           <a href="/notes">Notes</a>
-        </li> {% endcomment %}
+        </li> {%- endcomment -%}
         <li>
           <a href="/now">Now</a>
         </li>
@@ -68,6 +68,7 @@
     </div>
   </header>
   <div class="top-bumper"></div>
+  
   {{content}}
   <footer id="page-footer" class="text-xs">
     <div>

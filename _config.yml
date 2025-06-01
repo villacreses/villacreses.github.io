@@ -10,3 +10,7 @@ collections:
   articles:
     output: true
     permalink: /articles/:title:output_ext
+
+title: "Mario Villacreses"
+description: Personal website of Mario Villacreses
+url: https://mariovillacreses.com
