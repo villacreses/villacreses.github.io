@@ -1,6 +1,8 @@
 exclude:
   - mv-scripts/
-  - README.md
+  - "**/README.md"
+  - writing/obsidian-layouts/
+  - writing/LICENSE
 
 collections_dir: writing
 collections:
