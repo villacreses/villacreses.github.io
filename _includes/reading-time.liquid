@@ -1,6 +1,6 @@
 {%- assign reading_time = content | number_of_words | divided_by: 200 -%}
 {%- if reading_time == 0 -%}
-  &lt;1
+  &lt;1&nbsp;
 {%- else -%}
-  {{ reading_time }}{{' '}}
+  {{ reading_time }}&nbsp;
 {%- endif -%}
