@@ -6,9 +6,17 @@ main ul {
 
 main li {
   display: grid;
-  grid-template-columns: auto 1fr;
   column-gap: 1rem;
-  margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  main li {
+    grid-template-columns: auto 1fr;
+    margin-bottom: 1rem;
+  }
+  
 }
 
 main li time {
