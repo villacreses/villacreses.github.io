@@ -1,4 +1,4 @@
-const sessionStorageKey = 'mv-theme'
+const sessionStorageKey = 'data-mv-theme'
 const checkboxId = 'mv-dark-toggle'
 
 class DarkToggle extends HTMLElement {

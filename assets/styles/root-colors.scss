@@ -1,3 +1,5 @@
+---
+---
 :root {
   /* https://tailwindcss.com/docs/colors
    * https://tailscan.com/colors
@@ -106,7 +108,7 @@
 }
 
 /* Light mode */
-:root {
+@mixin light-mode {
   --foreground-rgb: var(--color-neutral-700);
   --background-start-rgb: var(--color-gray-100);
   --background-end-rgb: var(--color-gray-200);
@@ -146,48 +148,58 @@
   --important-font-rgb: var(--color-red-200);
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  /* 
-  The double negative may seem counterintuitive, but I want the styles
-  to apply whether or not the dark toggle component has rendered.
-  */
-  :root:not(:has(#mv-dark-toggle:not(:checked))) {
-    --topnav-toggle-hover-rgb: var(--color-neutral-400);
-    --link-color-rgb: var(--color-link-green-rgb);
-    --link-color-pale-rgb: var(--color-link-green-pale-rgb);
-    --foreground-rgb: var(--color-neutral-200);
-    --background-start-rgb: 17, 34, 64;
-    --background-end-rgb: var(--color-slate-900);
-    
-    --text-h2-rgb: var(--color-slate-400);
-    --text-prose-rgb: 175, 188, 204;
-    --text-lead-rgb: var(--color-gray-400);
-    
-    --home-img-border-rgb: var(--color-blue-100);
-    --home-text-stats-rgb: var(--color-slate-400);
-    --hr-rgb: var(--color-slate-700);
-    --default-slate-rgb: var(--color-slate-300);
-    --career-timeline-bar-rgb: var(--color-slate-600);
-    --bubble-text-rgb: var(--color-slate-300);
-    --bubble-bg-rgb: var(--color-slate-700);
-    --post-color-rgb: var(--color-neutral-500);
-    --blockquote-border-rgb: var(--color-neutral-300);
+@mixin dark-mode {
+  --topnav-toggle-hover-rgb: var(--color-neutral-400);
+  --link-color-rgb: var(--color-link-green-rgb);
+  --link-color-pale-rgb: var(--color-link-green-pale-rgb);
+  --foreground-rgb: var(--color-neutral-200);
+  --background-start-rgb: 17, 34, 64;
+  --background-end-rgb: var(--color-slate-900);
+  
+  --text-h2-rgb: var(--color-slate-400);
+  --text-prose-rgb: 175, 188, 204;
+  --text-lead-rgb: var(--color-gray-400);
+  
+  --home-img-border-rgb: var(--color-blue-100);
+  --home-text-stats-rgb: var(--color-slate-400);
+  --hr-rgb: var(--color-slate-700);
+  --default-slate-rgb: var(--color-slate-300);
+  --career-timeline-bar-rgb: var(--color-slate-600);
+  --bubble-text-rgb: var(--color-slate-300);
+  --bubble-bg-rgb: var(--color-slate-700);
+  --post-color-rgb: var(--color-neutral-500);
+  --blockquote-border-rgb: var(--color-neutral-300);
+  --note-primary-rgb: var(--color-blue-400);
+  --note-secondary-rgb: var(--color-blue-800);
+  --note-font-rgb: var(--color-blue-300);
+  
+  --tip-primary-rgb: var(--color-green-400);
+  --tip-secondary-rgb: var(--color-green-800);
+  --tip-font-rgb: var(--color-green-400);
+  
+  --warning-primary-rgb: var(--color-yellow-400);
+  --warning-secondary-rgb: var(--color-yellow-700);
+  --warning-font-rgb: var(--color-yellow-400);
+  
+  --important-primary-rgb: var(--color-red-400);
+  --important-secondary-rgb: var(--color-red-800);
+  --important-font-rgb: var(--color-red-300);
+}
 
-    --note-primary-rgb: var(--color-blue-400);
-    --note-secondary-rgb: var(--color-blue-800);
-    --note-font-rgb: var(--color-blue-300);
+:root{
+  @include light-mode;
+  
+  &:has(#mv-dark-toggle:checked) {
+    @include dark-mode;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-mode;
     
-    --tip-primary-rgb: var(--color-green-400);
-    --tip-secondary-rgb: var(--color-green-800);
-    --tip-font-rgb: var(--color-green-400);
-    
-    --warning-primary-rgb: var(--color-yellow-400);
-    --warning-secondary-rgb: var(--color-yellow-700);
-    --warning-font-rgb: var(--color-yellow-400);
-    
-    --important-primary-rgb: var(--color-red-400);
-    --important-secondary-rgb: var(--color-red-800);
-    --important-font-rgb: var(--color-red-300);
+    &:has(#mv-dark-toggle:not(:checked)) {
+      @include light-mode;
+    }
   }
 }
