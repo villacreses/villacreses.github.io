@@ -15,7 +15,7 @@ style_src: posts
       <dl>
         <div class="metadata">
           <dt class="sr-only">Published:</dt>
-          <dd>{{ page.date | date_to_long_string: "ordinal", "US" }}</dd>
+          <dd>{{ page.date | date: "%B %d, %Y" }}</dd>
           <dt class="sr-only">Estimated reading time</dt>
           <dd>{%- include reading-time.liquid -%} minute read</dd>
         </div>
