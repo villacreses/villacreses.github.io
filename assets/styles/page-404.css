@@ -1,0 +1,7 @@
+@import url('./markdown.css');
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -42,13 +42,13 @@
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/career">Career History</a>
-        </li>
-        {%- comment -%} <li>
-          <a href="/notes">Notes</a>
-        </li> {%- endcomment -%}
-        <li>
           <a href="/now">Now</a>
+        </li>
+        <li>
+          <a href="/notes">Notes</a>
+        </li>
+        <li>
+          <a href="/career">Career</a>
         </li>
       </ul>
     </nav>
@@ -87,7 +87,7 @@
   </footer>
   <script>
     function onAssetsLoaded() {
-      ["/career", "/now"].forEach(href => {
+      ["/career", "/now", "/notes"].forEach(href => {
         const link = document.createElement('link');
         link.rel = 'prefetch';
         link.href = href;
