@@ -124,3 +124,12 @@ li.timeline-grid::after {
   background-color: rgb(var(--default-slate-rgb));
   border-radius: 50%;
 }
+
+ol.with-date {
+  --list-gap: 2.75rem;
+  margin-top: 2rem;
+}
+
+ol .bubble-list {
+  margin-bottom: 1rem;
+}

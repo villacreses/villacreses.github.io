@@ -1,13 +1,12 @@
 ---
 layout: base
 ---
-  <main class="compact">
-    <header class="standard">
-      <h1>{{page.title}}</h1>
-      <p class="prose">
-        {{page.heading_description}}
-      </p>
-    </header>
-    {{ content }}
-  </main>
-  
+<main class="compact">
+  <header class="standard">
+    <h1>{{ page.title }}</h1>
+    <div class="prose">
+      {%- include markdown.liquid content=page.heading_description -%}
+    </div>
+  </header>
+  {{ content }}
+</main>
