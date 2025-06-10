@@ -6,13 +6,13 @@
 }
 
 main {
-  width: clamp(100%, 100%, 80ch);
   align-self: stretch;
-  /* border: 1px solid red; */
+  display: flex;
 }
 
 #main-content {
   margin-left: 0.75rem;
+  max-width: 80ch;
 }
 
 article > header {
