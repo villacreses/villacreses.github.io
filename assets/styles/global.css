@@ -254,7 +254,7 @@ hr {
   align-items: center;
 }
 
-#menu-toggle-container {
+mv-nav-menu-toggle {
   z-index: var(--z-index-max);
 }
 
@@ -303,7 +303,7 @@ hr {
     margin-right: var(--header-gap);
   }
 
-  #menu-toggle-container {
+  mv-nav-menu-toggle {
     display: none;
   }
 }

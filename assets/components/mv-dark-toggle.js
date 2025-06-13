@@ -1,84 +1,48 @@
-const sessionStorageKey = 'data-mv-theme'
-const checkboxId = 'mv-dark-toggle'
+import BooleanToggle from './mv-boolean-toggle.js';
 
-class DarkToggle extends HTMLElement {
+const sessionStorageKey = 'data-mv-theme';
+
+class DarkToggle extends BooleanToggle {
+  static get inputId() { return 'mv-dark-toggle'; }
+  get uncheckedClass() { return 'fa-solid fa-sun'; }
+  get checkedClass() { return 'fa-solid fa-moon'; }
+  get accessibleTextContent() { return 'Toggle dark mode'; }
+
   constructor() {
     super();
-  }
-
-  /**
-   * 
-   * @param {boolean} isDark 
-  */
-  static setThemeAttrToDark(isDark) {
-    const root = document.querySelector('html');
-    const theme = isDark ? 'DARK' : 'LIGHT';
-
-    root.setAttribute(sessionStorageKey, theme);
-    sessionStorage.setItem(sessionStorageKey, theme);
+    this.input.checked = DarkToggle.userPrefersDark();
+    this.syncAcrossSessions();
   }
 
   static userPrefersDark() {
-    const theme = sessionStorage.getItem(sessionStorageKey);
-    return theme === 'DARK' ||
-      (theme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const theme = sessionStorage.getItem(sessionStorageKey) || null;
+    return theme === 'DARK' || (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
   }
 
-  static onPageShow() {
-    const theme = sessionStorage.getItem(sessionStorageKey);
-    const input = document.getElementById(checkboxId);
-    if (theme && input) {
-      input.checked = theme === 'DARK'
-    }
+  static _storeThemeInSession(isDark) {
+    sessionStorage.setItem(sessionStorageKey, isDark ? 'DARK' : 'LIGHT');
   }
 
-  connectedCallback() {
-    const [input, label] = this.buildElements();
-    this.appendChild(input);
-    this.appendChild(label);
+  syncAcrossSessions() {
+    window.addEventListener('storage', (event) => {
+      if (event.key === sessionStorageKey) {
+        this.input.checked = event.newValue === 'DARK';
+      }
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+      this.input.checked = event.matches;
+      this.onCheckedStateChange(event.matches);
+    });
   }
 
-  buildElements() {
-    const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.id = checkboxId;
-    input.name = checkboxId;
-    input.hidden = true;
-    input.checked = DarkToggle.userPrefersDark();
-    input.addEventListener('change', function () {
-      DarkToggle.setThemeAttrToDark(this.checked);
-    })
-
-    const label = document.createElement('label');
-    label.htmlFor = checkboxId;
-    label.role = 'button';
-    label.tabIndex = '0';
-
-    const sunIcon = document.createElement('i');
-    sunIcon.classList.add('fa-solid', 'fa-sun', 'unchecked');
-    sunIcon.ariaHidden = 'true';
-
-    const moonIcon = document.createElement('i');
-    moonIcon.classList.add('fa-solid', 'fa-moon', 'checked');
-    moonIcon.ariaHidden = 'true';
-
-    const accessibleText = document.createElement('span');
-    accessibleText.textContent = 'Toggle dark mode';
-    accessibleText.classList.add('sr-only');
-
-    label.appendChild(input)
-    label.appendChild(sunIcon);
-    label.appendChild(moonIcon);
-    label.appendChild(accessibleText);
-
-    return [input, label];
+  onCheckedStateChange(isChecked) {
+    DarkToggle._storeThemeInSession(isChecked);
   }
 }
 
-export const DarkToggleActions = {
+export default {
   register: () => {
     customElements.define('mv-dark-toggle', DarkToggle);
-  },
-  onPageShow: DarkToggle.onPageShow,
-}
-
+  }
+};
