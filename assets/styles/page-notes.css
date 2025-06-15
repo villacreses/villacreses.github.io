@@ -1,6 +1,5 @@
 main ul {
   list-style: none;
-  padding: 0 2rem;
   margin: auto;
 }
 
@@ -11,12 +10,21 @@ main li {
   margin-bottom: 1.5rem;
 }
 
+@media (min-width: 485px) {
+  main ul {
+    padding: 0 1rem;
+  }
+}
 @media (min-width: 40rem) {
   main li {
     grid-template-columns: auto 1fr;
     margin-bottom: 1rem;
   }
-  
+}
+@media (min-width: 48rem) {
+  main ul {
+    padding: 0 2rem;
+  }
 }
 
 main li time {

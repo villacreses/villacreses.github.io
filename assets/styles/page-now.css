@@ -1,3 +1,8 @@
+main {
+  --grid-icon-width: 1rem;
+  --grid-gap: 0.5rem;
+}
+
 h2 {
   font-size: var(--text-2xl-font-size);
   line-height: var(--text-2xl-line-height);
@@ -25,26 +30,19 @@ article hgroup+p {
   margin-top: 0.75rem;
 }
 
-section h3~* {
-  margin-left: .75rem;
-}
-
 section ul {
   list-style: disc;
-  padding-left: 1rem;
+}
+section li {
+  margin-left: calc(var(--grid-icon-width) + var(--grid-gap) + 1px);
 }
 
 section {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 section:first {
   margin-top: 1.5rem;
-}
-
-.prose {
-  font-size: var(--text-sm-font-size);
-  line-height: var(--text-sm-line-height);
 }
 
 .prose li {
@@ -60,4 +58,34 @@ section:first {
 
 .books li {
   margin-bottom: 0.85rem;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: var(--grid-icon-width) 1fr;
+  gap: var(--grid-gap);
+}
+
+.list-grid > i {
+  display: block;
+  font-size: 0.85rem;
+  height: var(--grid-icon-width);
+  width: var(--grid-icon-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li.list-grid * {
+  grid-column: 2;
+}
+
+li.list-grid::before,
+li.list-grid::after {
+  all: revert;
+  /* content: '';
+  display: block;
+  grid-area: 1 / 1 / 1/ 1;
+  justify-self: center;
+  margin-top: 0.5em; */
 }

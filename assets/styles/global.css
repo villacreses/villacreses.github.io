@@ -87,7 +87,7 @@ body:has(#menu-toggle:checked) main * {
 
 @media (min-width: 40rem) {
   body {
-    --padding-x: 3.5rem;
+    --padding-x: 3rem;
   }
 
   body:has(#menu-toggle:checked) {
@@ -97,11 +97,17 @@ body:has(#menu-toggle:checked) main * {
 
 @media (min-width: 48rem) {
   body {
-    --padding-x: 6rem;
+    --padding-x: 4.5rem;
   }
 }
 
 @media (min-width: 64rem) {
+  body {
+    --padding-x: 6rem;
+  }
+}
+
+@media (min-width: 80rem) {
   body {
     --padding-x: 8rem;
   }
