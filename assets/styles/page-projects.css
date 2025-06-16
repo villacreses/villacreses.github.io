@@ -37,13 +37,23 @@ th:first-of-type, tr td:first-of-type {
 }
 
 td.date {
-  --width: 10rem;
+  --width: 6rem;
   font-size: var(--text-sm-font-size);
   line-height: var(--text-sm-line-height);
   word-wrap: none;
   white-space: nowrap;
   width: var(--width);
   min-width: var(--width);
+}
+@media (min-width: 48rem) {
+  td.date {
+    --width: 7.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  td.date {
+    --width: 8rem;
+  }
 }
 
 td.details {
@@ -63,10 +73,21 @@ td.details .description {
 
 
 td.links {
-  --width: 10rem;
+  --width: 4rem;
   width: var(--width);
   min-width: var(--width);
 }
+@media (min-width: 40rem) {
+  td.links {
+    --width: 6rem;
+  }
+}
+@media (min-width: 64rem) {
+  td.links {
+    --width: 8rem;
+  }
+}
+
 td.links ul {
   font-size: var(--text-lg-font-size);
   line-height: var(--text-lg-line-height);

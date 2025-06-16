@@ -50,9 +50,12 @@
         <li>
           <a href="/career">Career</a>
         </li>
+        {%- assign stuff = site.html_pages | where: "permalink", "/projects" | first -%}
+        {%- if stuff and stuff.published != false -%}
         <li>
           <a href="/projects">Projects</a>
         </li>
+        {%- endif -%}
       </ul>
     </nav>
     <div id="nav-actions" class="container">
