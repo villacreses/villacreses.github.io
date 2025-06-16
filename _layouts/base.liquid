@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/index.css">
   {%- assign style_src = page.style_src | default: layout.style_src -%}
-
   {%- if style_src -%}<link rel="stylesheet" href="/assets/styles/page-{{style_src}}.css">{%- endif -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +14,9 @@
     rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
   <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
   <script type="module" src="/index.js"></script>
+  {% if page.omit_seo %}  
+  <meta name="robots" content="noindex, nofollow">
+  {% else %}
   <meta name="title" content="{%- include meta-title.liquid -%}">
   <meta name="description" content="{%- include meta-description.liquid -%}">
   <meta name="author" content="Mario Villacreses">
@@ -27,7 +29,8 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{%- include meta-title.liquid -%}">
   <meta name="twitter:description" content="{%- include meta-description.liquid -%}">
-  {%- include  prefetch-links.liquid -%}
+  {% endif %}
+  {% comment %} {%- include  prefetch-links.liquid -%} {% endcomment %}
 </head>
 <body>
   <header id="top-header">

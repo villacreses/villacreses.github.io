@@ -3,6 +3,12 @@
   height: 0 !important;
 }
 
+html{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+}
+
 section {
   height: 100vh;
   display: flex;
@@ -10,6 +16,9 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+
 }
 
 .qr-title {

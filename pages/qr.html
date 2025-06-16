@@ -1,15 +1,12 @@
 ---
 layout: base
 permalink: /qr
+omit_seo: true
 style_src: qr
+title: QR Links
 ---
+
 <main class="compact">
-  <section>
-    <h2 class="qr-title">LinkedIn</h2>
-    <div class="qr-container">
-      {% include qr-linkedin.html %}
-    </div>
-  </section>
   <section>
     <h2 class="qr-title">Resume</h2>
     <div class="qr-container">
@@ -23,3 +20,28 @@ style_src: qr
     </div>
   </section>
 </main>
+<script>
+  window.addEventListener('scroll', () => {
+  clearTimeout(window.snapTimeout);
+  window.snapTimeout = setTimeout(() => {
+    const sections = document.querySelectorAll('main > section');
+    const scrollY = window.scrollY;
+    let nearest = null;
+    let minDist = Infinity;
+
+    sections.forEach(section => {
+      const offset = section.offsetTop;
+      const dist = Math.abs(scrollY - offset);
+      if (dist < minDist) {
+        minDist = dist;
+        nearest = offset;
+      }
+    });
+
+    if (minDist < 100) { // <— custom snap sensitivity threshold
+      window.scrollTo({ top: nearest, behavior: 'smooth' });
+    }
+  }, 100);
+});
+
+</script>
