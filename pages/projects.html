@@ -1,0 +1,61 @@
+---
+published: false
+layout: feature
+style_src: projects
+permalink: /projects
+title: Projects
+<!-- meta_description:  -->
+heading_description: >
+  This page showcases a selection of my projects, including personal, academic, and professional work. Each project highlights my skills in software development, problem-solving, and innovation. For a more comprehensive view of my work, check out my <a href="/assets/files/resume.pdf" target="_blank">latest resume</a>.
+---
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Project</th>
+        <th>Links</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for project in site.data.projects -%}
+      <tr>
+        <td class="date prose">{{ project.date }}</td>
+        <td class="details">
+          <span class="title">{{ project.title }}</span>
+          {%- if project.description -%}
+          <br>
+          <span class="description">{{ project.description }}</span>
+          {%- endif -%}
+        </td>
+        <td class="links">
+          <ul>
+            {%- if project.url_github -%}
+            <li>
+              <a href="{{ project.url_github }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> 
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li>
+            {%- endif -%}
+            {%- if project.url_demo -%}
+            <li>
+              <a href="{{ project.url_demo }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-eye"></i>
+                <span class="sr-only">Demo</span>
+              </a>
+            </li>
+            {%- endif -%}
+            {%- if project.url_note -%}
+            <li>
+              <a href="{{ project.url_note }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-alt"></i>
+                <span class="sr-only">Note</span>
+              </a>
+            </li>
+            {%- endif -%}
+          </ul>
+        </td>
+      </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>

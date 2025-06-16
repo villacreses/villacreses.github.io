@@ -6,6 +6,7 @@
   --z-index-max: 99999;
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   --transform-bounce: translateY(-3px) scale(1.003);
+  --topnav-height: 53px;
 
   /* https://v3.tailwindcss.com/docs/font-size */
   --text-xs-font-size: 0.75rem;
@@ -181,7 +182,7 @@ hr {
 #top-header {
   --header-gap: 1.5rem;
   padding: .5rem 1.5rem .5rem 1.5rem;
-  height: 53px;
+  height: var(--topnav-height);
   position: fixed;
   left: 0;
   right: 0;
