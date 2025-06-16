@@ -27,6 +27,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{%- include meta-title.liquid -%}">
   <meta name="twitter:description" content="{%- include meta-description.liquid -%}">
+  {%- include  prefetch-links.liquid -%}
 </head>
 <body>
   <header id="top-header">
@@ -80,17 +81,5 @@
       <a href="/90s" tabindex="-1">optimized site</a>.
     </small>
   </footer>
-  <script>
-    function onAssetsLoaded() {
-      ["/career", "/now", "/notes"].forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'prefetch';
-        link.href = href;
-        document.head.appendChild(link);
-      })
-    }
-
-    setTimeout(onAssetsLoaded, 0);
-  </script>
 </body>
 </html>

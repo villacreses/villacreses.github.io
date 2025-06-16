@@ -1,0 +1,7 @@
+{%- assign feature_pages = site.html_pages 
+  | map: "permalink" 
+  | where_exp: "pl", "pl != page.permalink and pl != '/404.html' and pl != '/qr'"
+-%}
+{% for pl in feature_pages %}
+  <link rel="prefetch" href="{{pl}}" as="document">
+{%- endfor -%}
