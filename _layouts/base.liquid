@@ -14,9 +14,8 @@
     rel="stylesheet" media="none" onload="if(media!=='all')media='all'">
   <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
   <script type="module" src="/index.js"></script>
-  {% if page.omit_seo %}  
-  <meta name="robots" content="noindex, nofollow">
-  {% else %}
+  {% if page.omit_seo %}<meta name="robots" content="noindex, nofollow">
+  {%- else -%}
   <meta name="title" content="{%- include meta-title.liquid -%}">
   <meta name="description" content="{%- include meta-description.liquid -%}">
   <meta name="author" content="Mario Villacreses">
@@ -28,9 +27,8 @@
   <meta property="og:description" content="{%- include meta-description.liquid -%}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{%- include meta-title.liquid -%}">
-  <meta name="twitter:description" content="{%- include meta-description.liquid -%}">
-  {% endif %}
-  {% comment %} {%- include  prefetch-links.liquid -%} {% endcomment %}
+  <meta name="twitter:description" content="{%- include meta-description.liquid -%}">{% endif %}
+  {% include  prefetch-links.liquid %}
 </head>
 <body>
   <header id="top-header">
