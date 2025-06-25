@@ -8,12 +8,14 @@
     - title: Fullstack Academy of Code
       subtitle: Spring 2018 cohort
       description: |
-        Full time immersive program that teaches full-stack web development using the most in-demand front-end
-        and back-end tools.
+        Full-time immersive program focused on full-stack web development. I built several end-to-end applications using 
+        modern JavaScript frameworks and gained hands-on experience with agile workflows, pair programming, and technical 
+        interviews.
     - title: Bachelor of Arts - Applied Mathematics
       subtitle: CUNY Queens College
       description: |
-        Bachelor of Arts in Applied Mathematics with concentrations in computer science and operations research
+        Concentrations in Computer Science and Operations Research. Founded the QC Tech Club to teach fellow students 
+        mobile app development—an area underrepresented in the CS curriculum at the time.
 - heading: Work Experience
   icon: fa-solid fa-suitcase
   class: with-date
@@ -22,16 +24,19 @@
       subtitle: Self-Employed
       date: 2024 - Present
       description: |
-        I enhance AI systems by delivering precise data labeling, ensuring accuracy through meticulous quality
-        checks. I efficiently manage multiple projects, meeting deadlines while safeguarding data privacy and
-        security.
+        I support the development of English-language AI agents by evaluating and refining their responses for clarity, 
+        tone, and accessibility across varying levels of language proficiency. My work includes adjusting verbosity 
+        based on context and ensuring that AI communication remains inclusive, accurate, and socially responsible. I 
+        also review AI-generated answers to undergraduate-level math questions, verifying both accuracy and the relevance 
+        of the methods used.
     - title: Senior Software Engineer
       subtitle: GoDaddy.com
       date: 2022 - 2024
       description: |
-        Spearheaded overhaul of frontend and DevOps architectures for legacy e-commerce platform. Reengineered
-        the pricing fee architecture to give customers the freedom to set their own custom transaction costs for
-        their credit card terminals.
+        At GoDaddy, I led two major modernization efforts: migrating the frontend from Ember.js to Next.js—rolled 
+        out seamlessly with no disruption to merchants—and separately, overhauling the DevOps pipeline using Docker 
+        and GitHub Actions to improve release reliability. I also rebuilt the pricing infrastructure to give 
+        businesses greater flexibility in how they structured fees and transactions.
       skills:
         - Javascript
         - Typescript
@@ -49,9 +54,11 @@
       subtitle: Meta Platforms (Facebook)
       date: 2021 - 2022
       description: |
-        Contributed to the new universal metrics platform designed to standardize metrics lookup and integration
-        for the entire company. Enhanced backend reliability of Metric Authoring API, resulting in a 20%
-        reduction in latency issues and improved overall performance.
+        At Meta, I worked on a company-wide metrics platform that standardized how teams defined and accessed performance 
+        data. On the backend, I improved the reliability of the Metric Authoring API, reducing latency and making it 
+        easier to define and query metrics. On the frontend, I scaled the internal web portal to support growing data 
+        demands across the organization. I also mentored interns on engineering best practices, helping them navigate 
+        Meta’s internal tools and development workflows.
       skills:
         - Javascript
         - GraphQL
@@ -61,8 +68,11 @@
       subtitle: doc.ai
       date: 2020 - 2020
       description: |
-        Headed development of UI library for company's new flagship app. Created real-time geographic
-        visualization of COVID-19 outbreak, increasing brand awareness by over 100%.
+        doc.ai built a suite of AI-powered healthcare apps, and I joined the team developing their new flagship product: a 
+        medical trials app. I built a WYSIWYG editor that let pharmaceutical companies design custom journaling flows—no 
+        coding required—which trial participants could then access through the app to submit data in study-specific formats. 
+        Separately, I created a real-time map visualizing COVID-19 transmission, which significantly boosted the company’s 
+        visibility during the early pandemic.
       skills:
         - React Native
         - Typescript
@@ -74,9 +84,9 @@
       subtitle: Knovva Academy
       date: 2018 - 2020
       description: |
-        Collaborated with cloud architect to build administrative tools to streamline customer management,
-        recruiting, and real-time analytics. Refactored existing codebase to the latest standards and optimized
-        for scalability.
+        At Knovva, I built internal dashboards powered by live data to support recruiting, customer management, and analytics 
+        across the company’s international programs. I also led a major frontend refactor, applying atomic design principles 
+        to drastically reduce code duplication and improve maintainability.
       skills:
         - Javascript
         - React
@@ -90,23 +100,27 @@
   icon: fa-solid fa-robot
   class: with-date
   items:
+    - title: One Minute Hackathon – NY Tech Week 2025
+      subtitle: 1st Place Winner – Life Sciences / Healthcare Category
+      date: June 2025
+      description: |
+        In just four hours, my team designed and built Oculus AI, a healthcare-focused tool that prioritized safe handling of 
+        sensitive data using Pensar AI. It was my first real dive into working with AI tools beyond tutorials—an intense, hands-on 
+        sprint that pushed me to apply new technologies under pressure and deliver something meaningful in record time.
     - title: Neo4j's GraphHack 2018
       subtitle: 1st Place Winner
       date: September 2018
       description: |
-        Attending GraphHack 2018 was a pivotal experience in bridging my bootcamp learning with real-world
-        application. Navigating unfamiliar tools in a fast-paced, collaborative setting strengthened my
-        adaptability and problem-solving skills, making me more confident in tackling new technologies.
+        GraphHack was my second hackathon and a pivotal experience in bridging my bootcamp learning with real-world application. 
+        My team built a prototype using unfamiliar tools under tight deadlines, which sharpened my adaptability and gave me the 
+        confidence to tackle new technologies head-on.
     - title: NY Sextech Hackathon 2018
       subtitle: 1st Place Winner
       date: August 2018
       description: |
-        Recognizing the need for better public education, my team built a sex education video platform, enabling
-        youth to explore questions on human sexuality with guidance from health science educators.
-
-        My team's efforts not only won us the competition, but also brought positive publicity to the whole
-        event. We were featured in 
+        To promote better public education, my team built a video platform where youth could explore questions about human sexuality 
+        with guidance from health educators. Our project won first place and was featured in
         [Brooklyn Magazine](https://www.bkmag.com/2018/09/06/4-brooklyn-entrepreneurs-on-how-their-style-impacts-business/),
         [Forbes](https://www.forbes.com/sites/estrellajaramillo/2018/09/18/technology-meets-sex-to-solve-some-of-the-most-pressing-concerns-of-our-times),
         and [Men's Health](https://www.menshealth.com/sex-women/a23064407/sex-tech-hackathon/). 
-        For a brief period, our project was even considered for official curriculum integration within select NYC high schools.
+        For a time, it was even considered for official integration into the curricula of select NYC high schools.
