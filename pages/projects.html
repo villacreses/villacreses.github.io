@@ -11,9 +11,9 @@ heading_description: >
   <table>
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Project</th>
-        <th>Links</th>
+        <th scope="col">Date</th>
+        <th scope="col">Project</th>
+        <th scope="col">Links</th>
       </tr>
     </thead>
     <tbody>
@@ -21,35 +21,46 @@ heading_description: >
       <tr>
         <td class="date prose">{{ project.date }}</td>
         <td class="details">
-          <span class="title">{{ project.title }}</span>
+          <div class="title">{{ project.title }}</div>
           {%- if project.description -%}
-          <br>
-          <span class="description">{{ project.description }}</span>
+          <div class="description">{{ project.description }}</div>
           {%- endif -%}
         </td>
         <td class="links">
           <ul>
             {%- if project.url_github -%}
             <li>
-              <a href="{{ project.url_github }}" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i> 
-                <span class="sr-only">GitHub</span>
+              <a
+                href="{{ project.url_github }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub repo for this project"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true" role="presentation"></i> 
               </a>
             </li>
             {%- endif -%}
             {%- if project.url_demo -%}
             <li>
-              <a href="{{ project.url_demo }}" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-eye"></i>
-                <span class="sr-only">Demo</span>
+              <a
+                href="{{ project.url_demo }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Live demo"
+              >
+                <i class="fa-solid fa-eye" aria-hidden="true" role="presentation"></i>
               </a>
             </li>
             {%- endif -%}
             {%- if project.url_note -%}
             <li>
-              <a href="{{ project.url_note }}" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-alt"></i>
-                <span class="sr-only">Note</span>
+              <a
+                href="{{ project.url_note }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Note"
+              >
+                <i class="fa-solid fa-file-alt" aria-hidden="true" role="presentation"></i>
               </a>
             </li>
             {%- endif -%}

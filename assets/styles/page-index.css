@@ -6,7 +6,7 @@ article {
   text-align: center;
 }
 
-#profile img {
+article > header img {
   height: 9rem;
   width: 9rem;
   margin: 0 auto 1rem auto;
@@ -15,16 +15,13 @@ article {
   border-color: rgb(var(--home-img-border-rgb));
 }
 
-#profile hgroup {
+article > header h2 {
+  color: rgb(var(--text-h2-rgb));
   margin-bottom: 0.75rem;
 }
 
-#profile h2 {
-  color: rgb(var(--text-h2-rgb));
-}
-
 @media(min-width: 365px) {
-  #profile h2 {
+  article > header h2 {
     font-size: var(--text-lg-font-size);
     line-height: var(--text-lg-line-height);
   }

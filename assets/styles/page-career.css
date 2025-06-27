@@ -68,19 +68,22 @@ li.timeline-grid * {
   grid-column: 2;
 }
 
-li.timeline-grid hgroup {
+li.timeline-grid header {
   margin-bottom: 0.25rem;
   position: relative;
 }
 
-li.timeline-grid hgroup~* {
+li.timeline-grid header~* {
   font-size: var(--text-sm-font-size);
   line-height: var(--text-sm-line-height);
 }
 
-li.timeline-grid hgroup .date {
+li.timeline-grid header .date {
   position: absolute;
   top: -1.25em;
+}
+
+li.timeline-grid header .date * {
   font-size: var(--text-xs-font-size);
   line-height: var(--text-xs-line-height);
 }
@@ -90,7 +93,7 @@ li.timeline-grid h3 {
   color: rgb(var(--default-slate-rgb));
 }
 
-li.timeline-grid hgroup :not(h3) {
+li.timeline-grid header :not(h3) {
   font-weight: 400;
   font-size: var(--text-base-font-size);
   line-height: var(--text-base-line-height);

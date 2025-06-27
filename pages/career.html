@@ -15,31 +15,35 @@ heading_description: >
     {%- for section in site.data.career -%}
     <section>
       <div class="header-container timeline-grid">
-        <i aria-hidden="true" class="{{ section.icon }}"></i>
-        <h2>{{section.heading}}</h2>
+        <i class="{{ section.icon }}" aria-hidden="true" role="presentation"></i>
+        <h2>{{ section.heading }}</h2>
       </div>
-      <ol {% if section.class %} class="{{section.class}}"{% endif %}>
+      <ol{% if section.class %} class="{{ section.class }}"{% endif %} role="list">
         {%- for item in section.items -%}
         <li class="timeline-grid">
-          <div>
-            <hgroup>
-              <h3>{{item.title}}</h3>
-              <p>{{item.subtitle}}</p>
-              {%- if item.date -%}
-              <p class="date">{{item.date}}</p>
-              {%- endif -%}
-            </hgroup>
+          <section aria-labelledby="item-{{ forloop.index0 }}-title">
+            <header>
+              <h3 id="item-{{ forloop.index0 }}-title">{{ item.title }}</h3>
+              {% if item.subtitle %}
+                <p class="subtitle">{{ item.subtitle }}</p>
+              {% endif %}
+              {% if item.date %}
+                <p class="date">
+                  <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date }}</time>
+                </p>
+              {% endif %}
+            </header>
             <div class="prose">
-              {{item.description | markdownify}}
+              {{ item.description | markdownify }}
             </div>
-            {%- if item.skills -%}
-            <ul class="bubble-list">
-              {%- for skill in item.skills -%}
-              <li>{{skill}}</li>
-              {%- endfor -%}
+            {% if item.skills %}
+            <ul class="bubble-list" role="list">
+              {% for skill in item.skills %}
+              <li>{{ skill }}</li>
+              {% endfor %}
             </ul>
-            {%- endif -%}
-          </div>
+            {% endif %}
+          </section>
         </li>
         {%- endfor -%}
       </ol>
