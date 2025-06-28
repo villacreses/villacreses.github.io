@@ -1,0 +1,20 @@
+{% comment %}
+This include assumes you pass a variable `page_ref`:
+{% include sitemap-url.html page_ref=page %}
+{% endcomment %}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in include.items -%}
+  {%- assign ext = page.path | split: '.' | last | downcase -%}
+  
+  {%- if ext == 'html' or ext == 'md' or ext == 'markdown' -%}
+  {% if page.sitemap != false %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | xml_escape }}</loc>{% if page.last_modified_at %}
+    <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>{% endif %}
+  </url>
+  {%- endif -%}
+  {%- endif -%}
+{% endfor %}
+</urlset>
