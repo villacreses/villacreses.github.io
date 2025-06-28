@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{%- include meta-title.liquid -%}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/index.css">
   {%- assign style_src = page.style_src | default: layout.style_src -%}
@@ -15,20 +14,8 @@
   <script defer src="https://kit.fontawesome.com/496a6692f9.js" crossorigin="anonymous"></script>
   <script type="module" src="/index.js"></script>
   {% if page.omit_seo %}<meta name="robots" content="noindex, nofollow">
-  {%- else -%}
-  <meta name="title" content="{%- include meta-title.liquid -%}">
-  <meta name="description" content="{%- include meta-description.liquid -%}">
-  <meta name="author" content="Mario Villacreses">
-  <meta name="keywords" content="portfolio, software engineer">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mariovillacreses.com{{page.url}}">
-  <meta property="og:site_name" content="Mario Villacreses">
-  <meta property="og:title" content="{%- include meta-title.liquid -%}">
-  <meta property="og:description" content="{%- include meta-description.liquid -%}">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{%- include meta-title.liquid -%}">
-  <meta name="twitter:description" content="{%- include meta-description.liquid -%}">{% endif %}
-  {% include  prefetch-links.liquid %}
+  {%- else -%}{% seo %}{%- endif -%}
+  {% include prefetch-links.liquid %}
 </head>
 <body>
   <header id="top-header">

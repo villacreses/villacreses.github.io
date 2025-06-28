@@ -13,6 +13,16 @@ collections:
     output: true
     permalink: /articles/:title:output_ext
 
-title: "Mario Villacreses"
-description: Personal website of Mario Villacreses
+title: Mario Villacreses
+description: Personal website of Mario Villacreses. Software engineer, math enthusiast, and accessibility-first builder.
 url: https://mariovillacreses.com
+lang: en_US 
+author:
+  name: Mario Villacreses
+  email: MarioVillacreses@outlook.com
+social:
+  name: Mario Villacreses
+  links:
+    - https://github.com/villacreses
+    - https://linkedin.com/in/villacreses
+    - mailto:MarioVillacreses@outlook.com
