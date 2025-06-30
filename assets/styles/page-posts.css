@@ -27,6 +27,11 @@ article > header {
   margin-left: 0.5rem;
 }
 
+.metadata dd:not(:last-child)::after {
+  content: '•';
+  margin: 0 0.5em;
+}
+
 :not(pre)>code[class*=language-] {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
