@@ -47,14 +47,14 @@ class Callout extends HTMLElement {
 
     const body = document.createElement('div');
     body.className = 'callout-body';
+    body.setAttribute('markdown', '1');
 
-    // Move all child nodes to the callout body
-    while (this.firstChild) {
+    while(this.firstChild){ 
       body.appendChild(this.firstChild);
-    }
-
+    } 
     aside.append(header, body);
     return aside;
+
   }
 }
 

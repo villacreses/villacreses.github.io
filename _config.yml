@@ -3,6 +3,8 @@ exclude:
   - "**/README.md"
   - writing/obsidian-layouts/
   - writing/LICENSE
+kramdown:
+  parse_block_html: true
 
 collections_dir: writing
 collections:
