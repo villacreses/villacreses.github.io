@@ -1,0 +1,12 @@
+---
+layout: layouts/base
+---
+<main class="compact">
+  <header class="standard">
+    <h1>{{title}}</h1>
+    <div class="prose">
+      {{heading_description | markdown | safe}}
+    </div>
+  </header>
+  {{content | safe}}
+</main>
