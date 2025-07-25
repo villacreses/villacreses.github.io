@@ -1,0 +1,135 @@
+main {
+  --circumference: 8px;
+  --grid-icon-width: 0.75rem;
+}
+
+@media (min-width: 485px) {
+  main {
+    --grid-icon-width: 2rem;
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: var(--grid-icon-width) 1fr;
+  gap: 0.75rem;
+}
+
+.header-container {
+  margin-bottom: 1rem;
+  color: rgb(var(--home-text-stats-rgb));
+}
+
+.header-container * {
+  align-self: center;
+}
+
+.header-container i {
+  display: block;
+  height: var(--grid-icon-width);
+  width: var(--grid-icon-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: var(--text-lg-font-size);
+  line-height: var(--text-lg-line-height);
+}
+
+ol {
+  --list-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--list-gap);
+}
+
+ol.work {
+  --list-gap: 3.5rem;
+  margin-top: 2rem;
+}
+
+li.timeline-grid {
+  font-size: var(--text-xl-font-size);
+  line-height: var(--text-xl-line-height);
+}
+
+li.timeline-grid * {
+  grid-column: 2;
+}
+
+li.timeline-grid header {
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+
+li.timeline-grid header~* {
+  font-size: var(--text-sm-font-size);
+  line-height: var(--text-sm-line-height);
+}
+
+li.timeline-grid header .date {
+  position: absolute;
+  top: -1.25em;
+}
+
+li.timeline-grid header .date * {
+  font-size: var(--text-xs-font-size);
+  line-height: var(--text-xs-line-height);
+}
+
+li.timeline-grid h3 {
+  font-weight: 500;
+  color: rgb(var(--default-slate-rgb));
+}
+
+li.timeline-grid header :not(h3) {
+  font-weight: 400;
+  font-size: var(--text-base-font-size);
+  line-height: var(--text-base-line-height);
+  grid-column: 2;
+  letter-spacing: 0.05em;
+  color: rgb(var(--color-slate-500));
+}
+
+li.timeline-grid::before,
+li.timeline-grid::after {
+  all: revert;
+  content: '';
+  display: block;
+  grid-area: 1 / 1 / 1/ 1;
+  justify-self: center;
+  margin-top: 0.5em;
+}
+
+li.timeline-grid:not(:last-child):before {
+  width: 1px;
+  height: calc(100% + var(--list-gap));
+  border-left: 1px dashed rgb(var(--career-timeline-bar-rgb));
+}
+
+li.timeline-grid::after {
+  height: var(--circumference);
+  width: var(--circumference);
+  background-color: rgb(var(--default-slate-rgb));
+  border-radius: 50%;
+}
+
+ol.with-date {
+  --list-gap: 2.75rem;
+  margin-top: 2rem;
+}
+
+ol .bubble-list {
+  margin-bottom: 1rem;
+}
