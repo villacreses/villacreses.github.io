@@ -1,0 +1,50 @@
+---
+layout: layouts/feature
+style_src: career
+permalink: career.html
+title: Career History
+description:
+  Explore my complete career history, from education to work experience and hackathons. Discover the skills and 
+  technologies I've mastered along the way.
+heading_description: 
+  This page covers my full professional journey—from my earliest roles to where I am today. It’s a complete record of 
+  my work history and the milestones that have shaped my career in tech. For a curated selection of my most recent and 
+  relevant experience, check out [my latest resume](/assets/files/resume.pdf).
+---
+  <article>
+    {%- for section in career -%}
+    <section>
+      <div class="header-container timeline-grid">
+        <i class="{{ section.icon }}" aria-hidden="true" role="presentation"></i>
+        <h2>{{ section.heading }}</h2>
+      </div>
+      <ol{% if section.class %} class="{{ section.class }}"{% endif %} role="list">
+        {%- for item in section.items -%}
+        <li class="timeline-grid">
+          <section aria-labelledby="item-{{ forloop.index0 }}-title">
+            <header>
+              <h3 id="item-{{ forloop.index0 }}-title">{{ item.title }}</h3>
+              {% if item.subtitle %}
+                <p class="subtitle">{{ item.subtitle }}</p>
+              {% endif %}
+              {% if item.date %}
+                <p class="date">{{ item.date }}</p>
+              {% endif %}
+            </header>
+            <div class="prose">
+              {{ item.description | markdown | safe }}
+            </div>
+            {% if item.skills %}
+            <ul class="bubble-list" role="list">
+              {% for skill in item.skills %}
+              <li>{{ skill }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </section>
+        </li>
+        {%- endfor -%}
+      </ol>
+    </section>
+    {%- endfor -%}
+  </article>
