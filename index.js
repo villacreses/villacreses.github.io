@@ -12,6 +12,7 @@ function onDOMLoaded() {
 
   window.addEventListener("pageshow", () => {
     NavMenuToggle.onpageshow();
+    DarkToggle.onpageshow();
   });
 
   // setupRemoveImgOnError();

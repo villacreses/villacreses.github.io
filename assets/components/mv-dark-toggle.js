@@ -41,8 +41,16 @@ class DarkToggle extends BooleanToggle {
   }
 }
 
+const elementName = 'mv-dark-toggle';
+
 export default {
   register: () => {
-    customElements.define('mv-dark-toggle', DarkToggle);
+    customElements.define(elementName, DarkToggle);
+  },
+  onpageshow: () => {
+    const useDarkMode = DarkToggle.userPrefersDark();
+    const toggle = document.querySelector(`${elementName} input`);
+    
+    if (toggle.checked !== useDarkMode) toggle.click();
   }
 };

@@ -1,0 +1,91 @@
+main {
+  --grid-icon-width: 1rem;
+  --grid-gap: 0.5rem;
+}
+
+h2 {
+  font-size: var(--text-2xl-font-size);
+  line-height: var(--text-2xl-line-height);
+}
+
+h3 {
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  display: grid;
+  grid-template-columns: 1.65rem 1fr;
+  align-items: center;
+}
+
+article>hgroup p {
+  font-size: var(--text-xs-font-size);
+  font-style: italic;
+  margin-top: 0.25rem;
+  padding-bottom: 0;
+  color: rgb(var(--text-prose-rgb));
+}
+
+article hgroup+p {
+  margin-top: 0.75rem;
+}
+
+section ul {
+  list-style: disc;
+}
+section li {
+  margin-left: calc(var(--grid-icon-width) + var(--grid-gap) + 1px);
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+section:first {
+  margin-top: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 1rem;
+}
+
+.books h4 {
+  color: rgb(var(--book-color-rgb));
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.035rem;
+  font-style: italic;
+}
+
+.books li {
+  margin-bottom: 0.85rem;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: var(--grid-icon-width) 1fr;
+  gap: var(--grid-gap);
+}
+
+.list-grid > i {
+  display: block;
+  font-size: 0.85rem;
+  height: var(--grid-icon-width);
+  width: var(--grid-icon-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li.list-grid * {
+  grid-column: 2;
+}
+
+li.list-grid::before,
+li.list-grid::after {
+  all: revert;
+  /* content: '';
+  display: block;
+  grid-area: 1 / 1 / 1/ 1;
+  justify-self: center;
+  margin-top: 0.5em; */
+}
