@@ -28,6 +28,13 @@ export default async function(eleventyConfig) {
     },
   });
 
+  eleventyConfig.addFilter("formatDateISO", dateObj => {
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // getMonth is zero-based
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  });
+  
   eleventyConfig.addNunjucksFilter("asPageTitle", function(content) {
     const initContent = content || site.title;
     return initContent === site.title ? initContent : `${initContent} | ${site.title}`;

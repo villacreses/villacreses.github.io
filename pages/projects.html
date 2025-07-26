@@ -1,0 +1,73 @@
+---
+published: false
+layout: layouts/feature
+style_src: projects
+permalink: /projects.html
+title: Projects
+description: >
+  Explore a selection of my projects, showcasing my skills in software development, problem-solving, and innovation.
+heading_description: >
+  This page showcases a selection of my projects, including personal, academic, and professional work. Each project highlights my skills in software development, problem-solving, and innovation. For a more comprehensive view of my work, check out my <a href="/assets/files/resume.pdf" target="_blank">latest resume</a>.
+---
+  <table class="standard">
+    <thead>
+      <tr>
+        <th scope="col" class="date">Date</th>
+        <th scope="col">Project</th>
+        <th scope="col">Links</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for project in projects -%}
+      <tr>
+        <td class="date prose">{{ project.date | formatDateISO }}</td>
+        <td class="details">
+          <div class="title">{{ project.title }}</div>
+          {%- if project.description -%}
+          <div class="description">{{ project.description }}</div>
+          {%- endif -%}
+        </td>
+        <td class="links">
+          <ul>
+            {%- if project.url_github -%}
+            <li>
+              <a
+                href="{{ project.url_github }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub repo for this project"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true" role="presentation"></i> 
+              </a>
+            </li>
+            {%- endif -%}
+            {%- if project.url_demo -%}
+            <li>
+              <a
+                href="{{ project.url_demo }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Live demo"
+              >
+                <i class="fa-solid fa-eye" aria-hidden="true" role="presentation"></i>
+              </a>
+            </li>
+            {%- endif -%}
+            {%- if project.url_note -%}
+            <li>
+              <a
+                href="{{ project.url_note }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Note"
+              >
+                <i class="fa-solid fa-file-alt" aria-hidden="true" role="presentation"></i>
+              </a>
+            </li>
+            {%- endif -%}
+          </ul>
+        </td>
+      </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>

@@ -1,0 +1,61 @@
+.date {
+  --width: 6rem;
+  width: var(--width);
+  min-width: var(--width);
+
+  @media (min-width: 48rem) {
+    --width: 7.5rem;
+  }
+  @media (min-width: 64rem) {
+    --width: 8rem;
+  }
+}
+
+td.date {
+  font-size: var(--text-sm-font-size);
+  line-height: var(--text-sm-line-height);
+  word-wrap: none;
+  white-space: nowrap;
+}
+
+td {
+  &.details {
+    line-height: 1.375;
+    width: 100%;
+
+    .title {
+      font-weight: 600;
+    }
+    
+    .description {
+      font-weight: 300;
+      font-size: var(--text-xs-font-size);
+      line-height: var(--text-xs-line-height);
+      font-style: italic;
+      color: rgb(var(--color-slate-500))
+    }
+  }
+}
+
+
+td.links {
+  --width: 4rem;
+  width: var(--width);
+  min-width: var(--width);
+  
+  @media (min-width: 40rem) {
+    --width: 6rem;
+  }
+  
+  @media (min-width: 64rem) {
+    --width: 8rem;
+  }
+  
+  ul {
+    font-size: var(--text-lg-font-size);
+    line-height: var(--text-lg-line-height);
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+}
