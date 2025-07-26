@@ -31,8 +31,12 @@ export default async function(eleventyConfig) {
     return md.render(content);
   });
 
-  eleventyConfig.addPassthroughCopy("index.css");
   eleventyConfig.addPassthroughCopy("assets/styles/**/*.css");
+  eleventyConfig.addPassthroughCopy("assets/**/*.js");
+  eleventyConfig.addPassthroughCopy("index.css");
+  eleventyConfig.addPassthroughCopy("index.js");
+
+  eleventyConfig.addWatchTarget("assets/styles/**/*.scss");
 
   return {
     htmlTemplateEngine: "njk",

@@ -65,7 +65,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   max-width: 80rem;
-  margin: 0;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -96,9 +96,9 @@ body {
   &:has(#menu-toggle:checked) {
     overflow: hidden;
     
-    main * {
-      position: initial;
-    }
+    // main * {
+    //   position: initial;
+    // }
 
     @media (min-width: 40rem) {
       overflow: auto;
