@@ -1,0 +1,29 @@
+---
+layout: layouts/base
+style_src: posts
+---
+<main>
+  <article>
+    <header>
+      <nav class="back-to-collection">
+        <small>
+          <a href="/{{ collection }}">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true" role="presentation"></i>
+            {{collection | capitalize}}
+          </a>
+        </small>
+      </nav>
+      <h1>{{title}}</h1>
+      <dl class="metadata">
+        <dt class="sr-only">Published:</dt>
+        <dd>{{ page.date | formatDateISO }}</dd>
+        <dt class="sr-only">Estimated reading time</dt>
+        <dd>{{ (readingTime / 200) | midpointRound }} minute read</dd>
+      </dl>
+    </header>
+    <div id="main-content" class="prose">
+      {{ content | markdown | safe }}
+    </div>
+  </article>
+</main>
+<script src="/assets/scripts/prism.js"></script>

@@ -1,0 +1,102 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--text-6xl-font-size);
+  line-height: var(--text-6xl-line-height);
+}
+
+h2 {
+  font-size: var(--text-5xl-font-size);
+  line-height: var(--text-5xl-line-height);
+}
+
+h3 {
+  font-size: var(--text-4xl-font-size);
+  line-height: var(--text-4xl-line-height);
+}
+
+h4 {
+  font-size: var(--text-3xl-font-size);
+  line-height: var(--text-3xl-line-height);
+}
+
+h5 {
+  font-size: var(--text-2xl-font-size);
+  line-height: var(--text-2xl-line-height);
+}
+
+h6 {
+  font-size: var(--text-xl-font-size);
+  line-height: var(--text-xl-line-height);
+}
+
+article ol, article ul {
+  padding-left: 1rem;
+  margin-left: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+article ul {
+  list-style-type: disc;
+}
+
+.prose li {
+  margin-bottom: 0.25rem;
+}
+
+article ol {
+  list-style-type: decimal;
+}
+
+em {
+  margin-right: 0.125rem;
+}
+
+blockquote {
+  padding: .125rem 0 .125rem .75rem;
+  margin: 1rem 0 .75rem 0.5rem;
+  border-left: 0.25rem solid rgb(var(--blockquote-border-rgb));
+  font-style: italic;
+  font-size: var(--text-lg-font-size);
+  line-height: var(--text-lg-line-height);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote em {
+  font-style: normal;
+}
+
+.footnotes {
+  border-top: 1px solid rgb(var(--color-neutral-700));
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: var(--text-sm-font-size);
+  line-height: var(--text-sm-line-height)
+}
+
+.footnotes::before {
+  content: "Footnotes";
+  display: block;
+  font-weight: 700;
+  letter-spacing: 0.075rem;
+  margin-bottom: 0.5rem;
+  font-size: var(--text-lg-font-size);
+  line-height: var(--text-lg-line-height);
+}
+
+a.footnote::before {
+  content: "[";
+  margin-right: 0.05rem;
+}
+
+a.footnote::after {
+  content: "]";
+  margin-left: 0.05rem;
+}

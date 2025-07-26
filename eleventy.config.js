@@ -33,6 +33,15 @@ export default async function(eleventyConfig) {
     const day = String(dateObj.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   });
+  eleventyConfig.addFilter("midpointRound", (num) => {
+    const whole = Math.floor(num);
+    const decimal = num - whole;
+
+    if (whole === 0) return "<1";
+    if (decimal > 0.25 && decimal < 0.75) return whole + 0.5;
+    else if (decimal <= 0.25) return whole;
+    else return whole + 1;
+  });
   
   eleventyConfig.addNunjucksFilter("asPageTitle", function(content) {
     const initContent = content || site.title;
