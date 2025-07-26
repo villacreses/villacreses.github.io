@@ -1,0 +1,92 @@
+---
+layout: layouts/base
+permalink: /qr.html
+omit_seo: true
+title: QR Links
+sitemap: false
+---
+
+<main class="compact">
+  <section>
+    <h2 class="qr-title">Resume</h2>
+    <div class="qr-container">
+      {% include "fragments/qr-resume.njk" %}
+    </div>
+  </section>
+  <section>
+    <h2 class="qr-title">Website</h2>
+    <div class="qr-container">
+      {% include "fragments/qr-website.njk" %}
+    </div>
+  </section>
+</main>
+
+<style>
+.top-bumper {
+  min-height: 0;
+  height: 0 !important;
+}
+
+html{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+
+}
+
+.qr-title {
+  font-size: var(--text-5xl-font-size);
+  line-height: var(--text-5xl-line-height);
+}
+
+.qr-container {
+  width: 80vw;
+  max-width: 30rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .qr-container {
+    border: 3px solid rgb(var(--color-gray-800));
+  }
+}
+
+[data-mv-theme=LIGHT] .qr-container,
+body:not(:has(#menu-toggle:checked)) .qr-container {
+  border: 3px solid rgb(var(--color-gray-800));
+}
+</style>
+<script>
+  window.addEventListener('scroll', () => {
+  clearTimeout(window.snapTimeout);
+  window.snapTimeout = setTimeout(() => {
+    const sections = document.querySelectorAll('main > section');
+    const scrollY = window.scrollY;
+    let nearest = null;
+    let minDist = Infinity;
+
+    sections.forEach(section => {
+      const offset = section.offsetTop;
+      const dist = Math.abs(scrollY - offset);
+      if (dist < minDist) {
+        minDist = dist;
+        nearest = offset;
+      }
+    });
+
+    if (minDist < 100) { // <— custom snap sensitivity threshold
+      window.scrollTo({ top: nearest, behavior: 'smooth' });
+    }
+  }, 100);
+});
+</script>
