@@ -83,6 +83,7 @@ li.timeline-grid header .date {
   top: -1.25em;
 }
 
+li.timeline-grid header .date,
 li.timeline-grid header .date * {
   font-size: var(--text-xs-font-size);
   line-height: var(--text-xs-line-height);

@@ -3,17 +3,17 @@
   items:
     - title: Master of Computer Science
       subtitle: Arizona State University
-      description: |
+      description: >
         Expected graduation: Autumn 2026. Master of Computer Science with a concentration in Big Data.
     - title: Fullstack Academy of Code
       subtitle: Spring 2018 cohort
-      description: |
+      description: >
         Full-time immersive program focused on full-stack web development. I built several end-to-end applications using 
         modern JavaScript frameworks and gained hands-on experience with agile workflows, pair programming, and technical 
         interviews.
     - title: Bachelor of Arts - Applied Mathematics
       subtitle: CUNY Queens College
-      description: |
+      description: >
         Concentrations in Computer Science and Operations Research. Founded the QC Tech Club to teach fellow students 
         mobile app development—an area underrepresented in the CS curriculum at the time.
 - heading: Work Experience
@@ -23,7 +23,7 @@
     - title: AI Data Annotator
       subtitle: Self-Employed
       date: 2024 - Present
-      description: |
+      description: >
         I support the development of English-language AI agents by evaluating and refining their responses for clarity, 
         tone, and accessibility across varying levels of language proficiency. My work includes adjusting verbosity 
         based on context and ensuring that AI communication remains inclusive, accurate, and socially responsible. I 
@@ -32,7 +32,7 @@
     - title: Senior Software Engineer
       subtitle: GoDaddy.com
       date: 2022 - 2024
-      description: |
+      description: >
         At GoDaddy, I led two major modernization efforts: migrating the frontend from Ember.js to Next.js—rolled 
         out seamlessly with no disruption to merchants—and separately, overhauling the DevOps pipeline using Docker 
         and GitHub Actions to improve release reliability. I also rebuilt the pricing infrastructure to give 
@@ -53,7 +53,7 @@
     - title: Software Engineer
       subtitle: Meta Platforms (Facebook)
       date: 2021 - 2022
-      description: |
+      description: >
         At Meta, I worked on a company-wide metrics platform that standardized how teams defined and accessed performance 
         data. On the backend, I improved the reliability of the Metric Authoring API, reducing latency and making it 
         easier to define and query metrics. On the frontend, I scaled the internal web portal to support growing data 
@@ -67,7 +67,7 @@
     - title: Software Engineer - Apps Team
       subtitle: doc.ai
       date: 2020 - 2020
-      description: |
+      description: >
         doc.ai built a suite of AI-powered healthcare apps, and I joined the team developing their new flagship product: a 
         medical trials app. I built a WYSIWYG editor that let pharmaceutical companies design custom journaling flows—no 
         coding required—which trial participants could then access through the app to submit data in study-specific formats. 
@@ -83,7 +83,7 @@
     - title: Full Stack Engineer
       subtitle: Knovva Academy
       date: 2018 - 2020
-      description: |
+      description: >
         At Knovva, I built internal dashboards powered by live data to support recruiting, customer management, and analytics 
         across the company’s international programs. I also led a major frontend refactor, applying atomic design principles 
         to drastically reduce code duplication and improve maintainability.
@@ -103,21 +103,21 @@
     - title: One Minute Hackathon – NY Tech Week 2025
       subtitle: 1st Place Winner – Life Sciences / Healthcare Category
       date: June 2025
-      description: |
+      description: >
         In just four hours, my team designed and built Oculus AI, a healthcare-focused tool that prioritized safe handling of 
         sensitive data using Pensar AI. It was my first real dive into working with AI tools beyond tutorials—an intense, hands-on 
         sprint that pushed me to apply new technologies under pressure and deliver something meaningful in record time.
     - title: Neo4j's GraphHack 2018
       subtitle: 1st Place Winner
       date: September 2018
-      description: |
+      description: >
         GraphHack was my second hackathon and a pivotal experience in bridging my bootcamp learning with real-world application. 
         My team built a prototype using unfamiliar tools under tight deadlines, which sharpened my adaptability and gave me the 
         confidence to tackle new technologies head-on.
     - title: NY Sextech Hackathon 2018
       subtitle: 1st Place Winner
       date: August 2018
-      description: |
+      description: >
         To promote better public education, my team built a video platform where youth could explore questions about human sexuality 
         with guidance from health educators. Our project won first place and was featured in
         [Brooklyn Magazine](https://www.bkmag.com/2018/09/06/4-brooklyn-entrepreneurs-on-how-their-style-impacts-business/),

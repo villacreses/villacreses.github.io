@@ -47,6 +47,10 @@ export default async function(eleventyConfig) {
     const initContent = content || site.title;
     return initContent === site.title ? initContent : `${initContent} | ${site.title}`;
   });
+  eleventyConfig.addNunjucksFilter("debug", function(content) {
+    console.log(content)
+    return content;
+  });
   eleventyConfig.addNunjucksFilter("defaultStr", function(content, defaultContent) {
     return content || defaultContent;
   });
