@@ -1,0 +1,5 @@
+{% set pages = ['/', '/career', '/now'] | notEqual(page.url) %}
+
+{% for p in pages %}
+  <link rel="prefetch" href="{{p}}" as="document">
+{% endfor %}

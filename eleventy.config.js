@@ -2,6 +2,7 @@ import markdownIt from "markdown-it";
 import yaml from "js-yaml";
 import * as sass from "sass";
 import path from "node:path";
+import site from './_data/site.js';
 
 const md = new markdownIt();
 
@@ -27,9 +28,20 @@ export default async function(eleventyConfig) {
     },
   });
 
+  eleventyConfig.addNunjucksFilter("asPageTitle", function(content) {
+    const initContent = content || site.title;
+    return initContent === site.title ? initContent : `${initContent} | ${site.title}`;
+  });
+  eleventyConfig.addNunjucksFilter("defaultStr", function(content, defaultContent) {
+    return content || defaultContent;
+  });
   eleventyConfig.addNunjucksFilter("markdown", function(content) {
     return md.render(content);
   });
+  eleventyConfig.addNunjucksFilter("notEqual", function (arr, userString) {
+		return arr.filter(str => str !== userString);
+	});
+
 
   eleventyConfig.addPassthroughCopy("assets/styles/**/*.css");
   eleventyConfig.addPassthroughCopy("assets/**/*.js");

@@ -1,0 +1,15 @@
+{% if omit_seo %}
+<meta name="robots" content="noindex, nofollow">
+{% else %}
+<meta name="description" content="{{description | defaultStr(site.description)}}">
+<meta name="og:description" content="{{description | defaultStr(site.description)}}">
+<meta property="og:title" content="{{title | asPageTitle}}">
+<meta property="twitter:title" content="{{title | asPageTitle}}">
+<meta name="author" content="Mario Villacreses">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://mariovillacreses.com{{page.url}}">
+<meta property="og:url" content="https://mariovillacreses.com{{page.url}}">
+<meta property="og:site_name" content="Mario Villacreses">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+{% endif %}
