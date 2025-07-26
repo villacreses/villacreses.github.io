@@ -1,5 +1,5 @@
 ---
-layout: layouts/note
+layout: layouts/post
 collection: notes
 style_src: posts
 pagination:
@@ -12,4 +12,4 @@ eleventyComputed:
   date: "{{ note.frontmatter.date }}"
   readingTime: "{{ note.content | wordcount }}"
 ---
-{{note.content}}
+{{note.content | markdown | safe }}
