@@ -1,10 +1,9 @@
-import markdownIt from "markdown-it";
+
 import yaml from "js-yaml";
 import * as sass from "sass";
 import path from "node:path";
 import site from './_data/site.js';
-
-const md = new markdownIt();
+import {markdownLib as md} from './lib/markdown.js'
 
 export default async function(eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
