@@ -10,9 +10,16 @@ class DarkToggle extends BooleanToggle {
 
   constructor() {
     super();
-    this.input.checked = DarkToggle.userPrefersDark();
+
+    const isDark = DarkToggle.userPrefersDark();
+    this.input.checked = isDark;
+
+    const root = document.documentElement;
+    root.classList.add(isDark ? 'dark-mode' : 'light-mode');
+
     this.syncAcrossSessions();
   }
+
 
   static userPrefersDark() {
     const theme = sessionStorage.getItem(sessionStorageKey) || null;
@@ -26,7 +33,9 @@ class DarkToggle extends BooleanToggle {
   syncAcrossSessions() {
     window.addEventListener('storage', (event) => {
       if (event.key === sessionStorageKey) {
-        this.input.checked = event.newValue === 'DARK';
+        const isDark = event.newValue === 'DARK';
+        this.input.checked = isDark;
+        this._updateRootClass(isDark);
       }
     });
 
@@ -38,6 +47,13 @@ class DarkToggle extends BooleanToggle {
 
   onCheckedStateChange(isChecked) {
     DarkToggle._storeThemeInSession(isChecked);
+    this._updateRootClass(isChecked)
+  }
+  
+  _updateRootClass(setToDark) {
+    const root = document.documentElement;
+    root.classList.remove('light-mode', 'dark-mode');
+    root.classList.add(setToDark ? 'dark-mode' : 'light-mode');
   }
 }
 

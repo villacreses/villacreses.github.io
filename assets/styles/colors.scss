@@ -220,20 +220,19 @@
   --caution-font-rgb: var(--color-red-200);
 }
 
-:root{
+:root {
   @include light-mode;
-  
-  &:has(#mv-dark-toggle:checked) {
+
+  &.dark-mode {
     @include dark-mode;
+  }
+  &.light-mode {
+    @include light-mode; // Optional explicitness
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light-mode):not(.dark-mode) {
     @include dark-mode;
-    
-    &:has(#mv-dark-toggle:not(:checked)) {
-      @include light-mode;
-    }
   }
 }
