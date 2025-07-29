@@ -1,8 +1,5 @@
 import matter from "gray-matter";
 
-
-const path = "_notes/markdown-sampler.md";
-const [_, filename] = path.match(/_notes\/(.+)\.md$/);
 export default async function getAllNotes() {
   const repo = "villacreses/writing";
   const branch = "main";

@@ -1,5 +1,5 @@
-@import url('./prism.css');
-@import url('./markdown.css');
+@import url('../prism.css');
+@import url('../markdown.css');
 
 .top-bumper {
   min-height: 118px;
