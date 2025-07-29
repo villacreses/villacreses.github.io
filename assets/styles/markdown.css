@@ -100,3 +100,18 @@ a.footnote::after {
   content: "]";
   margin-left: 0.05rem;
 }
+
+[id]:target {
+  scroll-margin-top: calc(var(--topnav-height) + 3rem);
+}
+
+li[id^="fn"]:target {
+  background: rgba(238, 238, 155, 0.2); /* soft yellow */
+  /* border: 1px solid #facc15; */
+  transition: background-color 0.8s ease-in-out;
+  padding: 0.0625rem 0.125rem;
+}
+
+li[id^="fn"] :last-child {
+  margin-bottom: 0;
+}
