@@ -1,0 +1,192 @@
+@view-transition {
+  navigation: auto;
+}
+:root {
+  --z-index-max: 99999;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transform-bounce: translateY(-3px) scale(1.003);
+  --topnav-height: 53px;
+  /* https://v3.tailwindcss.com/docs/font-size */
+  --text-xs-font-size: 0.75rem;
+  --text-xs-line-height: 1rem;
+  --text-sm-font-size: 0.875rem;
+  --text-sm-line-height: 1.25rem;
+  --text-base-font-size: 1rem;
+  --text-base-line-height: 1.5rem;
+  --text-lg-font-size: 1.125rem;
+  --text-lg-line-height: 1.75rem;
+  --text-xl-font-size: 1.25rem;
+  --text-xl-line-height: 1.75rem;
+  --text-2xl-font-size: 1.5rem;
+  --text-2xl-line-height: 2rem;
+  --text-3xl-font-size: 1.875rem;
+  --text-3xl-line-height: 2.25rem;
+  --text-4xl-font-size: 2.25rem;
+  --text-4xl-line-height: 2.5rem;
+  --text-5xl-font-size: 3rem; /* 48px */
+  --text-5xl-line-height: 1;
+  --text-6xl-font-size: 3.75rem; /* 60px */
+  --text-6xl-line-height: 1;
+  --text-7xl-font-size: 4.5rem; /* 72px */
+  --text-7xl-line-height: 1;
+  --text-8xl-font-size: 6rem; /* 96px */
+  --text-8xl-line-height: 1;
+  --text-9xl-font-size: 8rem; /* 128px */
+  --text-9xl-line-height: 1;
+  font-display: swap;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+}
+
+body, html {
+  min-height: 100vh;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  letter-spacing: 0.005em;
+}
+
+body {
+  --padding-x: 1rem;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+@media (min-width: 485px) {
+  body {
+    --padding-x: 1.5rem;
+  }
+}
+@media (min-width: 40rem) {
+  body {
+    --padding-x: 3rem;
+  }
+}
+@media (min-width: 48rem) {
+  body {
+    --padding-x: 4.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  body {
+    --padding-x: 6rem;
+  }
+}
+@media (min-width: 80rem) {
+  body {
+    --padding-x: 8rem;
+  }
+}
+body:has(#menu-toggle:checked) {
+  overflow: hidden;
+}
+@media (min-width: 40rem) {
+  body:has(#menu-toggle:checked) {
+    overflow: auto;
+  }
+}
+
+main {
+  flex-grow: 1;
+  margin: auto;
+}
+main.compact {
+  max-width: 80ch;
+}
+
+a {
+  color: rgb(var(--link-color-rgb));
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+}
+a:hover {
+  color: rgb(var(--link-color-pale-rgb));
+}
+
+p > a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  position: relative;
+  bottom: 0.2em;
+  background-color: rgb(var(--link-color-pale-rgb));
+  transition: var(--transition);
+}
+
+p > a:hover::after {
+  width: 100%;
+}
+
+h1 {
+  font-size: var(--text-3xl-font-size);
+  line-height: var(--text-3xl-line-height);
+  letter-spacing: 0.01rem;
+  font-weight: 800;
+  letter-spacing: 0.075rem;
+}
+@media (min-width: 365px) {
+  h1 {
+    font-size: var(--text-4xl-font-size);
+    line-height: var(--text-4xl-line-height);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+hr {
+  color: rgb(var(--hr-rgb));
+  margin: 0 -0.75rem;
+}
+
+/* ======================================== 
+ * =========== Utility classes ============
+ * ======================================== */
+.prose,
+.prose p,
+.prose ul,
+.prose ol {
+  color: rgb(var(--text-prose-rgb));
+}
+
+p.prose, .prose p {
+  margin-bottom: 0.75rem;
+}
+
+.prose li {
+  margin-bottom: 0.75rem;
+}
+
+.lead {
+  margin: 1.5rem 0 0.5rem 0;
+  color: rgb(var(--text-lead-rgb));
+  padding-bottom: 0.75rem;
+  font-size: var(--text-lg-font-size);
+  line-height: var(--text-lg-line-height);
+  font-weight: 500;
+}
+
+@media (min-width: 40rem) {
+  .mobile-only {
+    display: none;
+  }
+}
