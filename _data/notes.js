@@ -14,17 +14,15 @@ export default async function getAllNotes() {
     markdownFiles.map(async file => {
       const raw = await fetch(file.download_url).then(payload => payload.text());
       const { data: frontmatter, content } = matter(raw);
-      const [_, slug] = file.path.match(/_notes\/(.+)\.md$/);
       
       return {
-        name: file.name,
-        slug,
+        slug: file.name.split('.md')[0],
         frontmatter,
         content
       };
     })
   );
-  
+
   const sorted =  fetched.sort((a, b) => b.frontmatter.date - a.frontmatter.date)
   
   return sorted;
