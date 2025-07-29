@@ -99,10 +99,6 @@ body {
   
   &:has(#menu-toggle:checked) {
     overflow: hidden;
-    
-    // main * {
-    //   position: initial;
-    // }
 
     @media (min-width: 40rem) {
       overflow: auto;
@@ -151,14 +147,13 @@ h1 {
   letter-spacing: 0.01rem;
   font-weight: 800;
   letter-spacing: 0.075rem;
-}
 
-@media(min-width: 365px) {
-  h1 {
+  @media(min-width: 365px) {
     font-size: var(--text-4xl-font-size);
     line-height: var(--text-4xl-line-height);
   }
 }
+
 
 img {
   display: block;

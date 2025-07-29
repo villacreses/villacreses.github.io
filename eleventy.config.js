@@ -4,6 +4,8 @@ import * as sass from "sass";
 import path from "node:path";
 import site from './_data/site.js';
 import {markdownLib as md} from './lib/markdown.js';
+import htmlmin from "html-minifier-terser";
+import CleanCSS from "clean-css";
 
 export default async function(eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
@@ -67,6 +69,21 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("index.js");
 
   eleventyConfig.addWatchTarget("assets/styles/**/*.scss");
+  
+  eleventyConfig.addTransform("htmlmin", function (content) {
+		if ((this.page.outputPath || "").endsWith(".html")) {
+			return htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+        html5: true,
+        minifyCSS: true,
+        minifyJS: true,
+			});
+		}
+
+		return content;
+	});
 
   return {
     htmlTemplateEngine: "njk",
