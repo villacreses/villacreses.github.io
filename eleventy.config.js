@@ -3,7 +3,7 @@ import yaml from "js-yaml";
 import * as sass from "sass";
 import path from "node:path";
 import site from './_data/site.js';
-import {markdownLib as md} from './lib/markdown.js'
+import {markdownLib as md} from './lib/markdown.js';
 
 export default async function(eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
@@ -60,7 +60,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("notEqual", function (arr, userString) {
 		return arr.filter(str => str !== userString);
 	});
-
 
   eleventyConfig.addPassthroughCopy("assets/styles/**/*.css");
   eleventyConfig.addPassthroughCopy("assets/**/*.js");
