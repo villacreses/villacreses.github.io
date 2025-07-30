@@ -67,6 +67,7 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("assets/styles/**/*.css");
   eleventyConfig.addPassthroughCopy("assets/**/*.js");
+  eleventyConfig.addPassthroughCopy("assets/files");
   eleventyConfig.addPassthroughCopy("index.css");
   eleventyConfig.addPassthroughCopy("index.js");
   eleventyConfig.addPassthroughCopy("CNAME");
