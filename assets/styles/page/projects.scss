@@ -1,3 +1,9 @@
+@mixin column-break {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
 .date {
   --width: 6rem;
   width: var(--width);
@@ -11,18 +17,38 @@
   }
 }
 
-td.date {
-  font-size: var(--text-sm-font-size);
-  line-height: var(--text-sm-line-height);
-  word-wrap: none;
+.date {
+  font-size: var(--text-xs-font-size);
+  line-height: var(--text-xs-line-height);
+  // line-height: 1.375;
   white-space: nowrap;
+  margin-top: 0.5rem;
+  
+}
+
+tr td .date {
+  color: rgb(var(--color-slate-400));
+}
+%hide-last-col {
+  &:last-child {
+    display: none;
+    @include column-break {
+      display: inherit;
+    }
+  }
+}
+
+th {
+  @extend %hide-last-col;
 }
 
 td {
+  @extend %hide-last-col;
+  
   &.details {
     line-height: 1.375;
     width: 100%;
-
+    
     .title {
       font-weight: 600;
     }
@@ -34,6 +60,23 @@ td {
       font-style: italic;
       color: rgb(var(--color-slate-500))
     }
+  }
+}
+
+.details .project-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  margin-bottom: 0.125rem;
+  @include column-break {
+    display: none;
+  }
+  
+  a {
+    font-size: var(--text-xs-font-size);
+    line-height: var(--text-xs-line-height);
+    letter-spacing: .01rem;
+    font-weight: 500;
   }
 }
 
@@ -57,5 +100,10 @@ td.links {
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  .table-small {
+    display: none;
   }
 }

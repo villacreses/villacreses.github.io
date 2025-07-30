@@ -31,6 +31,9 @@ export default async function(eleventyConfig) {
     },
   });
 
+  eleventyConfig.addFilter("formatDateMonthYear", dateObj => {
+    return dateObj.toLocaleString('default', { month: 'long', year: 'numeric'});
+  })
   eleventyConfig.addFilter("formatDateISO", dateObj => {
     const year = dateObj.getFullYear();
     const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // getMonth is zero-based

@@ -270,7 +270,7 @@ table.standard {
     @extend %left-padding;
   }
   td {
-    padding: 1rem 1rem 1rem 0;
+    padding-right: 1rem;
     vertical-align: top;
     
     @extend %left-padding;
@@ -279,6 +279,11 @@ table.standard {
     tr {
       &:not(:last-of-type) {
         border-bottom: 1px solid rgba(var(--color-slate-300), 0.1);
+      }
+      
+      td {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
       }
     }
   }

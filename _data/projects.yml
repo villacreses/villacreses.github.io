@@ -1,6 +1,26 @@
-- title: Sample Project
-  description: This is a sample project desccription. It describes the project, but only in a small blurb.
+- title: This website
+  description: >
+    This site serves as my online professional presence and personal playground for refining frontend best practices, accessibility, and performance. 
+    Built with Eleventy and modular tooling, it lets me experiment with semantic design, markdown rendering, and legacy-aware publishing.
   url_github: https://github.com/villacreses/villacreses.github.io
-  url_demo: https://villacreses.github.io
-  url_note: /notes/sample-project
-  date: 2023-10-01
+  date: 2025-07-30
+- title: Chronos
+  date: 2018-05-01
+  description: >
+    Capstone project at Fullstack Academy. Chronos is a data visualization interface that allows users to create and share interactive graphics.
+  url_demo: https://chronos-d08ff.firebaseapp.com/
+  url_github: https://github.com/Capstone-Chronos/chronos
+  tags:
+    - React
+    - Redux
+    - D3.js
+- title: 8-Bit Bargains
+  date: 2018-04-01
+  description: >
+    My first collaborative project made at Fullstack Academy. 8-bit Bargains is a simple eCommerce platform for classic video game cartridges.
+  url_github: https://github.com/8BitBargains/8bitBargains
+  tags:
+    - React
+    - Redux
+    - Express.js
+    - Stripe
