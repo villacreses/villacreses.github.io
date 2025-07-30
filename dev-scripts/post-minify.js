@@ -29,7 +29,7 @@ const walk = dir =>
         console.log(`Minified JS: ${file}`);
       }
 
-      if (file.endsWith(".css")) {
+      if (file.endsWith(".css") && !file.endsWith("index.css")) {
         const code = await readFile(file, "utf8");
         const output = new CleanCSS().minify(code);
         if (output.styles) await writeFile(file, output.styles);
