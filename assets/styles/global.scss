@@ -97,7 +97,7 @@ body {
     --padding-x: 8rem;
   }
   
-  &:has(#menu-toggle:checked) {
+  &:has(#mv-nav-menu-toggle:checked) {
     overflow: hidden;
 
     @media (min-width: 40rem) {

@@ -33,15 +33,12 @@ class DarkToggle extends BooleanToggle {
   syncAcrossSessions() {
     window.addEventListener('storage', (event) => {
       if (event.key === sessionStorageKey) {
-        const isDark = event.newValue === 'DARK';
-        this.input.checked = isDark;
-        this._updateRootClass(isDark);
+        this.syncCheckState(event.newValue === 'DARK')
       }
     });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-      this.input.checked = event.matches;
-      this.onCheckedStateChange(event.matches);
+      this.syncCheckState(event.matches);
     });
   }
 
@@ -57,15 +54,13 @@ class DarkToggle extends BooleanToggle {
   }
 }
 
-const elementName = 'mv-dark-toggle';
-
 export default {
   register: () => {
-    customElements.define(elementName, DarkToggle);
+    customElements.define(DarkToggle.inputId, DarkToggle);
   },
   onpageshow: () => {
     const useDarkMode = DarkToggle.userPrefersDark();
-    const toggle = document.querySelector(`${elementName} input`);
+    const toggle = document.querySelector(`${DarkToggle.inputId} input`);
     
     if (toggle.checked !== useDarkMode) toggle.click();
   }

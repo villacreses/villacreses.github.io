@@ -1,7 +1,7 @@
 import BooleanToggle from "./mv-boolean-toggle.js ";
 
 class NavMenuToggle extends BooleanToggle {
-  static get inputId() { return 'menu-toggle'; }
+  static get inputId() { return 'mv-nav-menu-toggle'; }
   
   get uncheckedClass() { return 'fa-solid fa-bars'; }
   get checkedClass() { return 'fa-solid fa-xmark'; }
@@ -43,14 +43,12 @@ class NavMenuToggle extends BooleanToggle {
   }
 }
 
-const elementName = 'mv-nav-menu-toggle';
-
 export default {
   register: () => {
-    customElements.define(elementName, NavMenuToggle);
+    customElements.define(NavMenuToggle.inputId, NavMenuToggle);
   },
   onpageshow: () => {
-    const menuToggle = document.querySelector(`${elementName} input[type="checkbox"]`);
+    const menuToggle = document.querySelector(`${NavMenuToggle.inputId} input[type="checkbox"]`);
     if (menuToggle && menuToggle.checked) {
       menuToggle.click();
     }

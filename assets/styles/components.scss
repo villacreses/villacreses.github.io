@@ -104,7 +104,7 @@
     }
   }
 
-  #top-header:has(#menu-toggle:checked) & {
+  #top-header:has(#mv-nav-menu-toggle:checked) & {
     display: flex;
     justify-content: center;
     align-items: center;

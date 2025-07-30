@@ -60,6 +60,12 @@ export default class BooleanToggle extends HTMLElement {
     });
   }
 
+  syncCheckState(boolToMatch) {
+    if (this.input.checked !== boolToMatch) {
+      this.input.click()
+    }
+  }
+
   onCheckedStateChange(isChecked) {
     // To be overridden in subclass
   }
