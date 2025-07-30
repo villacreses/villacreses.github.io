@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "eleventy --serve",
     "build": "eleventy",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/villacreses.github.io/"
+    "optimize": "node dev-scripts/post-minify.js",
+    "build:optimized": "eleventy && npm run optimize",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/villacreses.github.io/ && npm run optimize"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "clean-css": "^5.3.3",
     "gray-matter": "^4.0.3",
     "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.0",
@@ -33,6 +36,7 @@
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-prism": "^3.0.0",
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "terser": "^5.43.1"
   }
 }

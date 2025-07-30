@@ -5,7 +5,9 @@ import path from "node:path";
 import site from './_data/site.js';
 import {markdownLib as md} from './lib/markdown.js';
 import htmlmin from "html-minifier-terser";
-import CleanCSS from "clean-css";
+// import CleanCSS from "clean-css";
+import { minify } from 'terser';
+
 
 export default async function(eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
@@ -85,6 +87,19 @@ export default async function(eleventyConfig) {
 
 		return content;
 	});
+
+  eleventyConfig.addTransform("jsminify", async (content, outputPath) => {
+    if (outputPath && outputPath.endsWith(".js")) {
+      try {
+        const minified = await minify(content);
+        return minified.code;
+      } catch (err) {
+        console.error("JS minification error:", err);
+        return content;
+      }
+    }
+    return content;
+  });
 
   return {
     htmlTemplateEngine: "njk",
