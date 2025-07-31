@@ -61,6 +61,22 @@ export default async function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("defaultStr", function(content, defaultContent) {
     return content || defaultContent;
   });
+  eleventyConfig.addNunjucksFilter("careerOngoing", (content) => {
+    const order = {
+      'Work Experience': 1,
+      'Education': 2
+    };
+    
+    const filtered = content
+      .sort((a, b) => order[a.heading] - order[b.heading])
+      .map(({ icon, items, heading, quickStatLabel }) => items.reduce(
+        (acc, item) => 
+          item.shorthand ? acc.concat([icon, item.shorthand, quickStatLabel || heading]) : acc, []
+      ))
+      .filter(subArr => subArr.length);
+    
+    return filtered;
+  });
   eleventyConfig.addNunjucksFilter("markdown", function(content) {
     return md.render(content);
   });

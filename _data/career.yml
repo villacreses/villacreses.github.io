@@ -13,16 +13,19 @@
         interviews.
     - title: Bachelor of Arts - Applied Mathematics
       subtitle: CUNY Queens College
+      shorthand: B.A. Applied Math @ CUNY Queens College
       description: >
         Concentrations in Computer Science and Operations Research. Founded the QC Tech Club to teach fellow students 
         mobile app development—an area underrepresented in the CS curriculum at the time.
 - heading: Work Experience
   icon: fa-solid fa-suitcase
   class: with-date
+  quickStatLabel: Current Role
   items:
     - title: AI Data Annotator
       subtitle: Self-Employed
       date: 2024 - Present
+      shorthand: AI Data Annotator (freelance)
       description: >
         I support the development of English-language AI agents by evaluating and refining their responses for clarity, 
         tone, and accessibility across varying levels of language proficiency. My work includes adjusting verbosity 

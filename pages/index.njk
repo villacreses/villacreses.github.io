@@ -17,16 +17,13 @@ permalink: /
         <h1 class="font-extrabold">Mario Villacreses</h1>
         <h2 class="text-sm">Software Engineer &amp; Math Enthusiast</h2>
         <dl id="quick-stats" class="text-sm">
+          {% for iconClass, item, srLabel in (career | careerOngoing) %}
           <dt>
-            <i class="fa-solid fa-suitcase" aria-hidden="true" role="presentation"></i>
-            <span class="sr-only">Current role</span>
+            <i class="{{iconClass}}" aria-hidden="true" role="presentation"></i>
+            <span class="sr-only">{{srLabel}}</span>
           </dt>
-          <dd>Freelance Software Engineer</dd>
-          <dt>
-            <i aria-hidden="true" class="fa-solid fa-graduation-cap" aria-hidden="true" role="presentation"></i>
-            <span class="sr-only">Education</span>
-          </dt>
-          <dd>B.A. Applied Math @ CUNY Queens College</dd>
+          <dd>{{item}}</dd>
+          {% endfor %}
           <dt>
             <i class="fa-solid fa-location-dot" aria-hidden="true" role="presentation"></i>
             <span class="sr-only">Location</span>
@@ -35,6 +32,7 @@ permalink: /
         </dl>
         <hr />
       </header>
+      {# {{career | careerOngoing}} #}
       <section class="description">
         <p class="lead">
           Hey, I’m Mario! I’m a software engineer with six years of experience, currently freelancing 
