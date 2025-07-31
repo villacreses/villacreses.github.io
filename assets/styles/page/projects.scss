@@ -5,10 +5,16 @@
 }
 
 .date {
-  --width: 6rem;
-  width: var(--width);
+  --width: 4rem;
   min-width: var(--width);
-
+  font-size: var(--text-xs-font-size);
+  line-height: var(--text-xs-line-height);
+  white-space: nowrap;
+  margin-top: 0.5rem;
+  
+  @media (min-width: 48rem) {
+    --width: 6rem;
+  }
   @media (min-width: 48rem) {
     --width: 7.5rem;
   }
@@ -17,13 +23,14 @@
   }
 }
 
-.date {
-  font-size: var(--text-xs-font-size);
-  line-height: var(--text-xs-line-height);
-  // line-height: 1.375;
-  white-space: nowrap;
-  margin-top: 0.5rem;
-  
+thead { 
+  --backdrop-filter: blur(8px);
+  position: sticky;
+  top: var(--topnav-height);
+  z-index: 10;
+  background-color: rgba(var(--project-thead-rgb), 0.25);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  backdrop-filter: var(--backdrop-filter);
 }
 
 tr td .date {

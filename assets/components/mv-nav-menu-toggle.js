@@ -40,6 +40,8 @@ class NavMenuToggle extends BooleanToggle {
     ['main', '.home-link', 'footer'].forEach(selector => {
       document.querySelector(selector).setAttribute('aria-hidden', this.input.checked);
     });
+
+    document.querySelector('body').classList.toggle('menu-blur');
   }
 }
 

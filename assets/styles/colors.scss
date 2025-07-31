@@ -175,6 +175,8 @@
   --caution-primary-rgb: var(--color-red-400);
   --caution-secondary-rgb: var(--color-red-600);
   --caution-font-rgb: var(--color-red-100);
+
+  --project-thead-rgb: var(--color-blue-100);
 }
 
 @mixin dark-mode {
@@ -218,6 +220,8 @@
   --caution-primary-rgb: var(--color-red-400);
   --caution-secondary-rgb: var(--color-red-800);
   --caution-font-rgb: var(--color-red-200);
+
+  --project-thead-rgb: var(--color-navy-850);
 }
 
 :root {

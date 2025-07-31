@@ -106,6 +106,13 @@ body {
       overflow: auto;
     }
   }
+
+  &.menu-blur {
+    main * {
+      z-index: -1;
+      position: relative;
+    }
+  }
 }
 
 main {

@@ -241,39 +241,37 @@ mv-nav-menu-toggle {
 }
 
 table.standard {
+  --padding-outer: 0.5rem;
+  --padding-right: 1rem;
+  
+  @media (min-width: 40rem) {
+    --padding-outer: 1rem;
+    --padding-right: 2rem;
+  }
+
   width: 100%;
   border-collapse: collapse;
   text-align: left;
   border-spacing: 10px;
 
-  %left-padding {
+  %outer-padding {
     &:first-of-type {
-      padding-left: 1rem;
+      padding-left: var(--padding-outer);
     }
   }
-  thead { 
-    --backdrop-filter: blur(8px);
-    position: sticky;
-    top: var(--topnav-height);
-    z-index: 10;
-    background-color: rgba(var(--color-navy-850), 0.45);
-    -webkit-backdrop-filter: var(--backdrop-filter);
-    backdrop-filter: var(--backdrop-filter);
-    padding-left: 1rem;
-  }
   th{ 
-    padding: 1rem 2rem 1rem 0;
+    padding: 1rem var(--padding-right) 1rem 0;
     font-size: var(--text-sm-font-size);
     line-height: var(--text-sm-line-height);
     font-weight: 600;
     
-    @extend %left-padding;
+    @extend %outer-padding;
   }
   td {
-    padding-right: 1rem;
+    padding-right: var(--padding-right);
     vertical-align: top;
     
-    @extend %left-padding;
+    @extend %outer-padding;
   }
   tbody {
     tr {
