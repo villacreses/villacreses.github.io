@@ -244,15 +244,15 @@ table.standard {
   --padding-outer: 0.5rem;
   --padding-right: 1rem;
   
-  @media (min-width: 40rem) {
-    --padding-outer: 1rem;
-    --padding-right: 2rem;
-  }
-
   width: 100%;
   border-collapse: collapse;
   text-align: left;
   border-spacing: 10px;
+
+  @media (min-width: 40rem) {
+    --padding-outer: 1rem;
+    --padding-right: 2rem;
+  }
 
   %outer-padding {
     &:first-of-type {
