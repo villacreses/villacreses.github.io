@@ -193,7 +193,7 @@ p.prose, .prose p {
   margin-bottom: .75rem;
 }
 
-.lead {
+.lead, p.lead {
   margin: 1.5rem 0 .5rem 0;
   color: rgb(var(--text-lead-rgb));
   padding-bottom: .75rem;

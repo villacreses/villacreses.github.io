@@ -1,0 +1,35 @@
+subheading: Software Engineer & Math Enthusiast
+location: New York City
+actionLinks:
+  - href: assets/files/resume.pdf
+    icon: fa-regular fa-file-pdf
+    label: Download my resume
+  - href: mailto:MarioVillacreses@outlook.com
+    icon: fa-regular fa-envelope
+    label: Send me an email
+  - href: https://github.com/villacreses
+    icon: fa-brands fa-github
+    label: Follow me on Github
+  - href: https://linkedin.com/in/villacreses
+    icon: fa-brands fa-linkedin
+    label: Add me on LinkedIn
+description: >
+  Hey, I’m Mario! I’m a software engineer with six years of experience, currently 
+  freelancing while pursuing a master’s in computer science.
+  { .lead }
+
+
+  Coming from a working-class background, I’ve always seen the web as more than just a platform—it’s a pathway. 
+  I’m drawn to work that lowers barriers and helps self-learners thrive—because access, when paired with 
+  curiosity, can change everything. 
+
+
+  That belief has shaped how I build. Over the years, I’ve designed tools, untangled systems, and worked across 
+  industries to make technology feel more human. From fast-moving startups to household names, each chapter has 
+  sharpened how I think, what I create, and how I collaborate.
+
+
+  Want to dive deeper? Explore my [career history](/career), see my [current priorities](/now), 
+  or reach out through the links below!
+
+  
