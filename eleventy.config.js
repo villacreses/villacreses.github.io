@@ -31,7 +31,8 @@ export default async function(eleventyConfig) {
     },
   });
 
-  eleventyConfig.addFilter("formatDateMonthYear", dateObj => {
+  eleventyConfig.addFilter("formatDateMonthYear", dateInput => {
+    const dateObj = dateInput instanceof Date ? dateInput : new Date(dateInput);
     return dateObj.toLocaleString('default', { month: 'long', year: 'numeric'});
   })
   eleventyConfig.addFilter("formatDateISO", dateObj => {
@@ -121,8 +122,11 @@ export default async function(eleventyConfig) {
     return content;
   });
 
+  eleventyConfig.setLibrary("md", md);
+
   return {
     htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
     templateFormats: ["html", "njk", "md", "scss"]
   };
 };
