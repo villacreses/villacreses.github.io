@@ -2,6 +2,7 @@
 layout: layouts/feature
 stylesheets:
   - page/now
+  - callout
 permalink: now.html
 title: Now
 description: >
@@ -17,7 +18,7 @@ heading_description: >
       <h2 class="font-semibold">So what am I currently doing?</h2>
       <p>
         <span>Last updated:</span>
-        <time datetime="2025-05-24T12:13Z-8:00">May 2025</time>
+        <time datetime="{{ lastUpdated }}">{{ lastUpdated | formatDateMonthYear}}</time>
       </p>
     </hgroup>
     <div class="prose">{{ content | safe }}</div>

@@ -8,14 +8,14 @@ permalink: /
     <article>
       <header>
         <img
-          src="https://imgix.cosmicjs.com/4d6b4d70-399a-11f0-b62e-c5cf00b00352-mario_small.jpg?w=144&h=144"
+          src="{{ homepage.profileImage.src }}"
           alt="Profile Image"
           title="Mario Villacreses"
-          height="144"
-          width="144"
+          height="{{ homepage.profileImage.height }}"
+          width="{{ homepage.profileImage.width }}"
           data-remove-on-error
         />
-        <h1 class="font-extrabold">Mario Villacreses</h1>
+        <h1 class="font-extrabold">{{ site.title }}</h1>
         <h2 class="text-sm">{{ homepage.subheading }}</h2>
         <dl id="quick-stats" class="text-sm">
           {% for iconClass, item, srLabel in (career | careerOngoing) %}
@@ -34,7 +34,7 @@ permalink: /
         <hr />
       </header>
       <section class="description prose">
-        {{ homepage.description | markdown | safe}}
+        {{ content | safe }}
       </section>
       <address id="action-links" class="font-semibold">
         <ul>
