@@ -1,7 +1,7 @@
 ---
 layout: layouts/feature
 title: Notes
-permalink: /notes.html
+permalink: /writing/notes.html
 stylesheets:
   - page/notes
 description:
@@ -15,7 +15,7 @@ heading_description:
   {% for note in notes %}
   <li>
     <time datetime="{{ note.frontmatter.date }}" class="prose">{{ note.frontmatter.date | formatDateISO }}</time>
-    <a href="/notes/{{ note.slug }}" class="note-link">
+    <a href="/writing/notes/{{ note.slug }}" class="note-link">
       <span>{{ note.frontmatter.title }}</span>
     </a>
   </li>

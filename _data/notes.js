@@ -24,7 +24,7 @@ export default async function getAllNotes() {
   );
 
   const sorted =  fetched.sort((a, b) => b.frontmatter.date - a.frontmatter.date)
-  
+
   return sorted;
 }
 
