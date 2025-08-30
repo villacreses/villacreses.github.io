@@ -1,0 +1,38 @@
+main {
+  ul {
+    list-style: none;
+    margin: auto;
+
+    @media (min-width: 485px) {
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 48rem) {
+      padding: 0 2rem;
+    }
+  }
+  
+  li {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 1.5rem;
+    
+    time {
+      font-size: 0.875rem;
+      white-space: nowrap;
+      align-self: self-start;
+      margin-top: .125rem;
+    }
+    
+    a {
+      font-weight: 600;
+      letter-spacing: 0.075rem;
+    }
+
+    @media (min-width: 40rem) {
+      grid-template-columns: auto 1fr;
+      margin-bottom: 1rem;
+    }
+  }
+}

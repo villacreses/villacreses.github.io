@@ -1,0 +1,138 @@
+main {
+  --circumference: 8px;
+  --grid-icon-width: 0.75rem;
+  
+  @media (min-width: 485px) {
+    --grid-icon-width: 2rem;
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: var(--grid-icon-width) 1fr;
+  gap: 0.75rem;
+}
+
+.header-container {
+  margin-bottom: 1rem;
+  color: rgb(var(--home-text-stats-rgb));
+  
+  * {
+    align-self: center;
+  }
+  i {
+    display: block;
+    height: var(--grid-icon-width);
+    width: var(--grid-icon-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: var(--text-lg-font-size);
+  line-height: var(--text-lg-line-height);
+}
+
+ol {
+  --list-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--list-gap);
+  
+  &.work {
+    --list-gap: 3.5rem;
+    margin-top: 2rem;
+  }
+  &.with-date {
+    --list-gap: 2.75rem;
+    margin-top: 2rem;
+  }
+  .bubble-list {
+    margin-bottom: 1rem;
+  }
+}
+
+%timeline-track {
+  all: revert;
+  content: '';
+  display: block;
+  grid-area: 1 / 1 / 1/ 1;
+  justify-self: center;
+  margin-top: 0.5em;
+}
+
+li.timeline-grid {
+  font-size: var(--text-xl-font-size);
+  line-height: var(--text-xl-line-height);
+  
+  * {
+    grid-column: 2;
+  }
+  
+  header {
+    margin-bottom: 0.25rem;
+    position: relative;
+    
+    &~* {
+      font-size: var(--text-sm-font-size);
+      line-height: var(--text-sm-line-height);
+    }
+    
+    %date-styles {
+      font-size: var(--text-xs-font-size);
+      line-height: var(--text-xs-line-height);
+    }
+    
+    h3 {
+        font-weight: 500;
+        color: rgb(var(--default-slate-rgb));
+      }
+
+    .date {
+      @extend %date-styles;
+      position: absolute;
+      top: -1.25em;
+      
+      * {
+        @extend %date-styles;
+      }
+    }
+
+    :not(h3) {
+      font-weight: 400;
+      font-size: var(--text-base-font-size);
+      line-height: var(--text-base-line-height);
+      grid-column: 2;
+      letter-spacing: 0.05em;
+      color: rgb(var(--color-slate-500));
+    }
+  }
+  
+  &::before {
+    @extend %timeline-track;
+  }
+  &::after {
+    @extend %timeline-track;
+    height: var(--circumference);
+    width: var(--circumference);
+    background-color: rgb(var(--default-slate-rgb));
+    border-radius: 50%;
+  }
+  
+  &:not(:last-child):before {
+    width: 1px;
+    height: calc(100% + var(--list-gap));
+    border-left: 1px dashed rgb(var(--career-timeline-bar-rgb));
+  }
+}
