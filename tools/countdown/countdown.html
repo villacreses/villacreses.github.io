@@ -1,0 +1,99 @@
+---
+layout: layouts/base
+permalink: tools/countdown.html
+---
+<main>
+  
+  <mv-countdown-form></mv-countdown-form>
+  <hr />
+  <div id="counter-container"></div>
+</main>
+<template id="counter">
+  <div class="counter">
+    <header>
+      <span class="label"></span>
+      <div class="actions">
+        <i class="fa-solid fa-trash"></i>
+      </div>
+    </header>
+    <div class="elapsed-container">
+      <span class="elapsed">- s</span>
+    </div>
+    <div class="post-label"></div>
+  </div>
+</template>
+<script>
+  
+</script>
+<script src="./countdown/countdown.js" type="module"></script>
+<style>
+  main {
+    width: 100%;
+  }
+  
+  input[name=label] {
+    border-radius: 0.5rem;
+    border: 1px solid rgb(var(--foreground-rgb));
+    padding: 0.25rem 0.5rem;
+  }
+
+  hr {
+    margin: 1rem 0;
+  }
+
+  #counter-container {
+    width: 100%;
+  
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .counter {
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 0.5rem;
+    background-color: rgb(var(--card-bg-color));
+  }
+
+  .counter header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .counter header i {
+    cursor: pointer;
+  }
+
+  .counter .label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: var(--text-sm-font-size);
+    line-height: var(--text-sm-line-height);
+    margin-bottom: 0.5rem;
+  }
+  
+  .elapsed-container {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-2xl-font-size);
+    line-height: var(--text-2xl-line-height);
+  }
+  
+  .elapsed {
+    margin-right: 0.5rem;
+  }
+  
+  .post-label {
+    font-weight: 300;
+    font-size: var(--text-sm-font-size);
+    line-height: var(--text-sm-line-height);
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+</style>
