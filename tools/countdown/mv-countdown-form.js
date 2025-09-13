@@ -50,26 +50,38 @@ export default class CountdownForm extends HTMLElement {
     this.datestring = stamp;
     this.timestring = stamp;
   }
+  
+  /**
+   * @param {Date} dateObj
+   */
+  static buildDatestring(dateObj) {
+    return [
+      dateObj.getFullYear(),
+      String(dateObj.getMonth() + 1).padStart(2, '0'),
+      String(dateObj.getDate()).padStart(2, '0')
+    ].join('-')
+  }
+
+  /**
+   * @param {Date} dateObj
+   */
+  static buildTimestring(dateObj) {
+    const hours = String(dateObj.getHours()).padStart(2, '0');
+    const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+    return `${hours}:${minutes}`;
+  }
 
   /**
    * @param {Date} dateObj
    */
   set timestring(dateObj) {
-    const hours = String(dateObj.getHours()).padStart(2, '0');
-    const minutes = String(dateObj.getMinutes()).padStart(2, '0');
-    this.timeInput.value = `${hours}:${minutes}`;
+    this.timeInput.value = CountdownForm.buildTimestring(dateObj);
   } 
 
   /**
    * @param {Date} dateObj
    */
   set datestring(dateObj) {
-    const datestring = [
-      dateObj.getFullYear(),
-      String(dateObj.getMonth() + 1).padStart(2, '0'),
-      String(dateObj.getDate()).padStart(2, '0')
-    ].join('-')
-
-    this.dateInput.value = datestring;
+    this.dateInput.value = CountdownForm.buildDatestring(dateObj);
   }
 }
