@@ -94,6 +94,10 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addWatchTarget("assets/styles/**/*.scss");
   
+  eleventyConfig.addShortcode("icon", function(classname) {
+    return `<i class="${classname}" aria-hidden="true" role="presentation"></i>`;
+  });
+
   eleventyConfig.addTransform("htmlmin", function (content) {
 		if ((this.page.outputPath || "").endsWith(".html")) {
 			return htmlmin.minify(content, {
