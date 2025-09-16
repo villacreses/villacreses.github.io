@@ -5,7 +5,8 @@ pagination:
   data: notes
   size: 1
   alias: note
-permalink: "/writing/notes/{{ note.slug }}.html"
+# permalink: "/writing/notes/{{ note.slug }}.html"
+permalink: false
 eleventyComputed:
   title: "{{ note.frontmatter.title }}"
   date: "{{ note.frontmatter.date }}"
