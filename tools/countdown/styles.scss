@@ -1,0 +1,123 @@
+main {
+  width: 100%;
+}
+
+
+
+hr {
+  margin: 1rem 0;
+}
+
+#counter-container {
+  width: 100%;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  margin: 1rem auto 0;
+}
+
+.counter {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(var(--card-bg-color));
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    i {
+      cursor: pointer;
+    }
+  }
+
+  .label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: var(--text-sm-font-size);
+    line-height: var(--text-sm-line-height);
+    margin-bottom: 0.5rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.elapsed-container {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--text-2xl-font-size);
+  line-height: var(--text-2xl-line-height);
+}
+
+.elapsed {
+  margin-right: 0.5rem;
+}
+
+.post-label {
+  font-weight: 300;
+  font-size: var(--text-sm-font-size);
+  line-height: var(--text-sm-line-height);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+mv-countdown-form {
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+
+  form {
+    .container {
+      border-radius: 0.5rem;
+      border: 1px solid ;
+      padding: 0.25rem 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 60ch;
+
+      font-size: var(--text-lg-font-size);
+      line-height: var(--text-lg-line-height);
+      
+      .datetime {
+        white-space: nowrap;
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          border-left: 1px dotted rgb(var(--foreground-rgb));
+          padding-left: 0.5rem;
+
+          &::-webkit-calendar-picker-indicator {
+            filter: var(--foreground-filter);
+          }
+        }
+      }
+    }
+  
+    input {
+      font-weight: 600;
+      &:focus-visible {
+        border: none;
+        outline: none;
+      }
+      
+      &[name=label] {
+        flex: 1;
+        min-width: 350px;
+        padding-right: 0.5rem;
+      }
+    }
+
+    button[type=submit] {
+      color: rgb(var(--link-color-rgb));
+      cursor: pointer;
+      margin-left: 7px;
+      margin-top: 0.15rem;
+    }
+  }
+}

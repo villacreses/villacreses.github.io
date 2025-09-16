@@ -19,9 +19,13 @@ export default class CountdownForm extends HTMLElement {
   initBuildForm() {
     this.innerHTML = `
       <form>
-        <input type="date" name="date" title="Pick a date" />
-        <input type="time" name="time" title="Select a time">
-        <input type="text" name="label" title="Counter label" required />
+        <div class="container">
+          <input type="text" name="label" title="Counter label" maxlength="25" minlength="3" required />
+          <div class="datetime">
+            <input type="date" name="date" title="Pick a date" />
+            <input type="time" name="time" title="Select a time">
+          </div>
+        </div>
         <button id="add-counter" type="submit">Add counter</button>
       </form>
     `;
