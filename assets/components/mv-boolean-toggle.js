@@ -14,40 +14,17 @@ export default class BooleanToggle extends HTMLElement {
 
   buildElements() {
     this.classList.add('boolean-toggle');
-    this.input = document.createElement('input');
-    this.label = document.createElement('label');
-    this.uncheckedIcon = document.createElement('i');
-    this.checkedIcon = document.createElement('i');
-    this.accessibleText = document.createElement('span');
+    this.innerHTML = `
+      <input type="checkbox" hidden id="${this.constructor.inputId}">
+      <label for="${this.constructor.inputId}" role="button" tabindex="0" aria-label="${this.accessibleTextContent}">
+        <i class="${this.uncheckedClass} unchecked" aria-hidden="true"></i>
+        <i class="${this.checkedClass} checked" aria-hidden="true"></i>
+        <span class="sr-only">${this.accessibleTextContent}</span>
+      </label>
+    `;
 
-    this.input.type = 'checkbox';
-    this.input.hidden = true;
-    this.input.id = this.constructor.inputId;
-
-    this.label.htmlFor = this.constructor.inputId;
-    this.label.role = 'button';
-    this.label.tabIndex = '0';
-    this.label.setAttribute('aria-label', this.accessibleTextContent);
-
-    if (this.uncheckedClass) {
-      this.uncheckedIcon.classList.add(...this.uncheckedClass.split(' '));
-    }
-    this.uncheckedIcon.classList.add('unchecked');
-
-    if (this.checkedClass) {
-      this.checkedIcon.classList.add(...this.checkedClass.split(' '));
-    }
-    this.checkedIcon.classList.add('checked');
-
-    this.accessibleText.textContent = this.accessibleTextContent;
-    this.accessibleText.classList.add('sr-only');
-
-    this.label.appendChild(this.uncheckedIcon);
-    this.label.appendChild(this.checkedIcon);
-    this.label.appendChild(this.accessibleText);
-
-    this.appendChild(this.input);
-    this.appendChild(this.label);
+    this.input = this.querySelector('input');
+    this.label = this.querySelector('label');
   }
 
   attachListeners() {
