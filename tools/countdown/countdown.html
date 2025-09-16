@@ -1,5 +1,6 @@
 ---
 layout: layouts/feature
+wide: true
 permalink: tools/countdown.html
 title: Countdown Timers
 description: A simple implementation of a browser timer.
@@ -8,17 +9,17 @@ heading_description: >
   leave this page and come back to find your countdown still active. All data is kept within your browser, so nobody else ever 
   sees your timers.
 ---
-<main>
-  <mv-countdown-form></mv-countdown-form>
-  <br />
-  <div id="counter-container"></div>
-</main>
+<mv-countdown-form></mv-countdown-form>
+<br />
+<div id="counter-container"></div>
 <template id="counter">
   <div class="counter">
     <header>
       <span class="label"></span>
       <div class="actions">
-        <i class="fa-solid fa-trash"></i>
+        <button type="button" class="delete">
+          <i class="fa-solid fa-trash" title="Delete Countdown"></i>
+        </button>
       </div>
     </header>
     <div class="elapsed-container">
@@ -27,8 +28,5 @@ heading_description: >
     <div class="post-label"></div>
   </div>
 </template>
-<script>
-  
-</script>
-<script src="./countdown/countdown.js" type="module"></script>
+<script src="./countdown/index.js" type="module"></script>
 <link rel="stylesheet" href="/tools/countdown/styles.css">

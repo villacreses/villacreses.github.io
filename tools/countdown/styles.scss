@@ -17,18 +17,28 @@ hr {
   margin: 1rem auto 0;
 }
 
+#counter-container::after {
+  content: 'E';
+  height: 116px;
+  border: 1px dotted red;
+}
+
 .counter {
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   background-color: rgb(var(--card-bg-color));
-
+  
   header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
     
     i {
       cursor: pointer;
+      font-size: var(--text-sm-font-size);
+      line-height: var(--text-sm-line-height);
     }
   }
 
@@ -38,7 +48,6 @@ hr {
     letter-spacing: 0.05rem;
     font-size: var(--text-sm-font-size);
     line-height: var(--text-sm-line-height);
-    margin-bottom: 0.5rem;
 
     white-space: nowrap;
     overflow: hidden;

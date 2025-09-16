@@ -1,22 +1,26 @@
-export default class CountdownForm extends HTMLElement {
-  static _isRegistered = false;
-  static elementTag = 'mv-countdown-form';
+import CountdownEnt from './mv-countdown-ent.js';
+import Countdown from './mv-countdown.js';
 
-  static register() {
-    if (!CountdownForm._isRegistered) {
-      customElements.define(CountdownForm.elementTag, CountdownForm);
-      CountdownForm._isRegistered = true;
-    }
+export default class CountdownForm extends CountdownEnt {
+  static elementTag = 'mv-countdown-form';
+  static counterContainer = document.getElementById("counter-container");
+  static eventName = {
+    ADD_COUNTDOWN: 'addcountdown'
   }
 
   constructor() {
     super();
-    this.initBuildForm();
-
-    this.resetTimestamp = this.resetTimestamp.bind(this);
+    this.setTimestamp = this.setTimestamp.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
-  initBuildForm() {
+  reset() {
+    const form = this.querySelector('form');
+    form.reset();
+    this.setTimestamp(new Date(Date.now()))
+  }
+
+  init() {
     this.innerHTML = `
       <form>
         <div class="container">
@@ -35,24 +39,29 @@ export default class CountdownForm extends HTMLElement {
     form.addEventListener("submit", (evt) => {
       evt.preventDefault();
       const formData = Object.fromEntries((new FormData(form)).entries());
-      form.reset();
-      this.resetTimestamp();
+      this.reset();
       
-      this.dispatchEvent(new CustomEvent('addcountdown', {
-        detail: { formData },
-        bubbles: true,
-      }));
+      const date = CountdownForm.dateFromFormData(formData)
+      new Countdown(date, formData.label);
     }); 
 
     this.dateInput = this.querySelector("input[name=date]");
     this.timeInput = this.querySelector("input[name=time]");
-    this.resetTimestamp();
+    this.setTimestamp(new Date(Date.now()));
   }
 
-  resetTimestamp() {
-    const stamp = new Date(Date.now());
-    this.datestring = stamp;
-    this.timestring = stamp;
+  /**
+   * @param {Date} dateObj
+   */
+  setTimestamp(dateObj) {
+    this.timeInput.value = CountdownForm.buildTimestring(dateObj);
+    this.dateInput.value = CountdownForm.buildDatestring(dateObj);
+  }
+
+  static dateFromFormData({date: dateString, time: timeString}) {
+    const [year, month, day] = dateString.split('-').map(Number);
+    const [hours, minutes] = timeString.split(':').map(Number);
+    return new Date(year, month - 1, day, hours, minutes);
   }
   
   /**
@@ -73,19 +82,5 @@ export default class CountdownForm extends HTMLElement {
     const hours = String(dateObj.getHours()).padStart(2, '0');
     const minutes = String(dateObj.getMinutes()).padStart(2, '0');
     return `${hours}:${minutes}`;
-  }
-
-  /**
-   * @param {Date} dateObj
-   */
-  set timestring(dateObj) {
-    this.timeInput.value = CountdownForm.buildTimestring(dateObj);
-  } 
-
-  /**
-   * @param {Date} dateObj
-   */
-  set datestring(dateObj) {
-    this.dateInput.value = CountdownForm.buildDatestring(dateObj);
   }
 }
