@@ -12,6 +12,16 @@ export default class BooleanToggle extends HTMLElement {
   get checkedClass() { return ''; } // Override in subclass
   get accessibleTextContent() { return ''; } // Override in subclass
 
+  get checked() {
+    return this.input.checked;
+  }
+
+  set checked(willBeChecked) {
+    if (this.input.checked !== willBeChecked) {
+      this.input.click();
+    }
+  }
+
   buildElements() {
     this.classList.add('boolean-toggle');
     this.innerHTML = `
@@ -28,7 +38,7 @@ export default class BooleanToggle extends HTMLElement {
   }
 
   attachListeners() {
-    this.input.addEventListener('change', () => this.onCheckedStateChange(this.input.checked));
+    this.input.addEventListener('change', this.onCheckedStateChange);
     this.label.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -37,13 +47,7 @@ export default class BooleanToggle extends HTMLElement {
     });
   }
 
-  syncCheckState(boolToMatch) {
-    if (this.input.checked !== boolToMatch) {
-      this.input.click()
-    }
-  }
-
-  onCheckedStateChange(isChecked) {
+  onCheckedStateChange(evt) {
     // To be overridden in subclass
   }
 }

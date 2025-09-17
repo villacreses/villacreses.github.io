@@ -7,11 +7,18 @@ class NavMenuToggle extends BooleanToggle {
   get checkedClass() { return 'fa-solid fa-xmark'; }
   get accessibleTextContent() { return 'Toggle navigation menu'; }
 
-  get clickableElementsSelector() {
-    return [
+  get clickableElements() {
+    const selector = [
       'a:not(#nav-links a):not(#page-footer small a)',
       'label[for=mv-dark-toggle]',
     ].join(',');
+
+    return Array.from(document.querySelectorAll(selector));
+  }
+
+  get elementsBlurred() {
+    return ['main', '.home-link', 'footer']
+      .map(selector => document.querySelector(selector))
   }
 
   constructor() {
@@ -19,26 +26,22 @@ class NavMenuToggle extends BooleanToggle {
     this.label.setAttribute('role', 'button');
     this.label.setAttribute('aria-controls', 'nav-links');
 
-    this.init();
-  }
-
-  init() {
     document.addEventListener("keydown", function (event) {
-      if ((event.key === "Escape" || event.key === "Esc") && this.input.checked) {
-        this.input.click();
+      if (event.key === "Escape" || event.key === "Esc") {
+        this.checked = false;
       }
     });
   }
 
-  onCheckedStateChange(isChecked) {
+  onCheckedStateChange() {
     // Update tabindex for links
-    Array.from(document.querySelectorAll(this.clickableElementsSelector)).forEach(a => {
-      a.setAttribute('tabindex', isChecked ? '-1' : '0');
+    this.clickableElements.forEach(a => {
+      a.setAttribute('tabindex', this.checked ? '-1' : '0');
     });
 
-    this.setAttribute('aria-expanded', this.input.checked);
-    ['main', '.home-link', 'footer'].forEach(selector => {
-      document.querySelector(selector).setAttribute('aria-hidden', this.input.checked);
+    this.setAttribute('aria-expanded', this.checked);
+    this.elementsBlurred.forEach(element => {
+      element.setAttribute('aria-hidden', this.checked);
     });
 
     document.querySelector('body').classList.toggle('menu-blur');

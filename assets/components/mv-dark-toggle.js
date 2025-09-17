@@ -13,44 +13,45 @@ class DarkToggle extends BooleanToggle {
 
     const isDark = DarkToggle.userPrefersDark();
     this.input.checked = isDark;
-
-    const root = document.documentElement;
-    root.classList.add(isDark ? 'dark-mode' : 'light-mode');
+    DarkToggle.rootClass = isDark;
 
     this.syncAcrossSessions();
   }
 
-
-  static userPrefersDark() {
-    const theme = sessionStorage.getItem(sessionStorageKey) || null;
-    return theme === 'DARK' || (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  static get storedTheme() {
+    return sessionStorage.getItem(sessionStorageKey) || null;
   }
 
-  static _storeThemeInSession(isDark) {
+  static set storedTheme(isDark) {
     sessionStorage.setItem(sessionStorageKey, isDark ? 'DARK' : 'LIGHT');
+  }
+
+  static set rootClass(setToDark) {
+    const root = document.documentElement;
+    root.classList.remove('light-mode', 'dark-mode');
+    root.classList.add(setToDark ? 'dark-mode' : 'light-mode');
+  }
+
+  static userPrefersDark() {
+    const {storedTheme} = DarkToggle;
+    return storedTheme === 'DARK' || (storedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
   }
 
   syncAcrossSessions() {
     window.addEventListener('storage', (event) => {
       if (event.key === sessionStorageKey) {
-        this.syncCheckState(event.newValue === 'DARK')
+        this.checked = event.newValue === 'DARK';
       }
     });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-      this.syncCheckState(event.matches);
+      this.checked = event.matches;
     });
   }
 
-  onCheckedStateChange(isChecked) {
-    DarkToggle._storeThemeInSession(isChecked);
-    this._updateRootClass(isChecked)
-  }
-  
-  _updateRootClass(setToDark) {
-    const root = document.documentElement;
-    root.classList.remove('light-mode', 'dark-mode');
-    root.classList.add(setToDark ? 'dark-mode' : 'light-mode');
+  onCheckedStateChange() {
+    DarkToggle.storedTheme = this.checked;
+    DarkToggle.rootClass = this.checked;
   }
 }
 
