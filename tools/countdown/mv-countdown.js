@@ -75,6 +75,12 @@ export default class Countdown extends CountdownEnt {
    */
   set timeElapsed(timeStr) {
     this.elapsedNode.textContent = timeStr;
+
+    if (timeStr.length > 20) {
+      this.toggleAttribute('long-datestring', true)
+    } else {
+      this.toggleAttribute('long-datestring', false)
+    }
   } 
 
   updateElapsedTime(timestampNowInMS) {
