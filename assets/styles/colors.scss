@@ -172,12 +172,13 @@
   --warning-primary-rgb: var(--color-yellow-400);
   --warning-secondary-rgb: var(--color-yellow-600);
   --warning-font-rgb: var(--color-yellow-950);
-
+  
   --caution-primary-rgb: var(--color-red-400);
   --caution-secondary-rgb: var(--color-red-600);
   --caution-font-rgb: var(--color-red-100);
-
+  
   --project-thead-rgb: var(--color-blue-100);
+  --card-bg-color: var(--color-green-300);
 }
 
 @mixin dark-mode {

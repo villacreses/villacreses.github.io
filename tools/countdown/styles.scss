@@ -10,6 +10,11 @@ hr {
   margin: 1rem 0;
 }
 
+.empty-message {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 #counter-container {
   width: 100%;
   display: grid;
@@ -18,12 +23,10 @@ hr {
   grid-template-rows: repeat(auto-fit, 130px);
   justify-content: center;
   margin: 1rem auto 0;
-}
 
-#counter-container::after {
-  content: 'E';
-  height: 116px;
-  border: 1px dotted red;
+  &:not(*)::after {
+    content: 'E';
+  }
 }
 
 mv-countdown {
@@ -89,6 +92,17 @@ mv-countdown {
   margin-top: 0.5rem;
 }
 
+h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  margin-top: 2rem;
+}
+
 mv-countdown-form {
   display: block;
   margin: 0 auto;
@@ -96,8 +110,19 @@ mv-countdown-form {
   @media (min-width: 48rem) {
     width: max-content;
   }
-  
+
   form {
+    h3 {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      @media (min-width: 48rem) {
+        text-align: left;
+      }
+    }
+
     .container {
       border-radius: var(--border-radius);
       padding: 0.25rem 0.5rem;
@@ -155,6 +180,12 @@ mv-countdown-form {
           @media (min-width: 48rem) {
             border: none;
             border-left: 1px dotted rgb(var(--foreground-rgb));
+            border-radius: 0;
+            padding-left: 0.5rem;
+            
+            &:not(:last-child) {
+              padding-right: 0.5rem;
+            }
           }
           
           &::-webkit-calendar-picker-indicator {

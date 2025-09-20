@@ -23,6 +23,7 @@ export default class CountdownForm extends CountdownEnt {
   init() {
     this.innerHTML = `
       <form>
+        <h3>Create a countdown</h3>
         <div class="container">
           <input type="text" name="label" title="Counter label" maxlength="25" minlength="3" required />
           <div class="datetime">

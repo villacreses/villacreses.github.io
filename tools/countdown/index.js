@@ -9,6 +9,7 @@ const manager = (function () {
     entries: () => [..._counters],
     refresh: () => {
       _counters = Array.from(document.querySelectorAll(Countdown.elementTag));
+      document.querySelector('.empty-message')?.toggleAttribute('hidden', _counters.length > 0);
     }
   }
 })()
