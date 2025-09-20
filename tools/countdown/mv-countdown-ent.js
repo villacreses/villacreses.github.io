@@ -1,0 +1,1 @@
+export default class t extends HTMLElement{static elementTag="";static _isRegistered=!1;static eventName={};constructor(){super(),this.init()}static register(){this._isRegistered||(customElements.define(this.elementTag,this),this._isRegistered=!0)}init(){}dispatch(t,e){this.dispatchEvent(new CustomEvent(t,{detail:e,bubbles:!0}))}}
