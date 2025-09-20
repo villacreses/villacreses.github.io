@@ -98,8 +98,8 @@ export default async function(eleventyConfig) {
   eleventyConfig.addWatchTarget("tools/**/*.scss");
   eleventyConfig.addWatchTarget("tools/**/*.html");
   
-  eleventyConfig.addShortcode("icon", function(classname) {
-    return `<i class="${classname}" aria-hidden="true" role="presentation"></i>`;
+  eleventyConfig.addShortcode("icon", function(...classname) {
+    return `<i class="${classname.join(' ')}" aria-hidden="true" role="presentation"></i>`;
   });
 
   eleventyConfig.addTransform("htmlmin", function (content) {
