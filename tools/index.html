@@ -1,0 +1,41 @@
+---
+layout: layouts/feature
+wide: true
+permalink: tools.html
+title: Tools
+description: Stuff
+heading_description: >
+  Stuff
+---
+<ul class="tool-container">
+  {%- for tool in tools -%}
+  <li>
+    <a href="{{tool.href}}">
+      {% icon tool.iconClass, "inverse" %}
+      <span>{{tool.name}}</span>
+    </a>
+  </li>
+  {%- endfor -%}
+</ul>
+
+<style>
+  .tool-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tool-container a i {
+    --size: 1.5rem;
+    font-size: var(--text-lg-font-size);
+    line-height: var(--text-lg-line-height);
+    height: var(--size);
+    width: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tool-container a span {
+    font-weight: 600;
+  }
+</style>

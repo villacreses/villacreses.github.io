@@ -130,9 +130,20 @@ a {
   display: inline-block;
   transition: var(--transition);
   
+  .inverse {
+    color: rgb(var(--background-start-rgb));
+    background-color: rgb(var(--link-color-rgb));  
+    transition: var(--transition);
+  }
+  
   &:hover {
     color: rgb(var(--link-color-pale-rgb));
+    
+    .inverse {
+      background-color: rgb(var(--link-color-pale-rgb));
+    }
   }
+  
 }
 
 p>a::after {
