@@ -85,7 +85,7 @@ export default async function(eleventyConfig) {
 		return arr.filter(str => str !== userString);
 	});
 
-  eleventyConfig.addPassthroughCopy("assets/styles/**/*.css");
+  eleventyConfig.addPassthroughCopy("assets/**/*.css");
   eleventyConfig.addPassthroughCopy("assets/**/*.js");
   eleventyConfig.addPassthroughCopy("assets/files");
   eleventyConfig.addPassthroughCopy("index.css");
@@ -94,7 +94,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("tools/**/*.js");
   eleventyConfig.addPassthroughCopy("tools/**/*.css");
 
-  eleventyConfig.addWatchTarget("assets/styles/**/*.scss");
+  eleventyConfig.addWatchTarget("assets/**/*.scss");
   eleventyConfig.addWatchTarget("tools/**/*.scss");
   
   eleventyConfig.addShortcode("icon", function(classname) {

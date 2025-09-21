@@ -1,3 +1,30 @@
+@mixin light-mode {
+  --text-h2-rgb: var(--color-slate-500);
+  --home-img-border-rgb: var(--color-slate-600);
+  --home-text-stats-rgb: var(--color-gray-600);
+}
+
+@mixin dark-mode {
+  --text-h2-rgb: var(--color-slate-400);
+  --home-img-border-rgb: var(--color-blue-100);
+  --home-text-stats-rgb: var(--color-slate-400);
+}
+
+:root {
+  @include light-mode;
+  &.dark-mode {
+    @include dark-mode;
+  }
+  &.light-mode {
+    @include light-mode;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-mode):not(.dark-mode) {
+    @include dark-mode;
+  }
+}
+
 article {
   display: flex;
   flex-direction: column;
