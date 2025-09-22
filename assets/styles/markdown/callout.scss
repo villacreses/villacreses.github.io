@@ -1,3 +1,62 @@
+@mixin light-mode {
+  --note-primary-rgb: var(--color-blue-400);
+  --note-secondary-rgb: var(--color-blue-600);
+  --note-font-rgb: var(--color-blue-200);
+  
+  --tip-primary-rgb: var(--color-green-400);
+  --tip-secondary-rgb: var(--color-green-600);
+  --tip-font-rgb: var(--color-green-200);
+  
+  --important-primary-rgb: var(--color-amethyst-500);
+  --important-secondary-rgb: var(--color-amethyst-700);
+  --important-font-rgb: var(--color-amethyst-200);   
+  
+  --warning-primary-rgb: var(--color-yellow-400);
+  --warning-secondary-rgb: var(--color-yellow-600);
+  --warning-font-rgb: var(--color-yellow-950);
+  
+  --caution-primary-rgb: var(--color-red-400);
+  --caution-secondary-rgb: var(--color-red-600);
+  --caution-font-rgb: var(--color-red-100);
+}
+
+@mixin dark-mode {
+  --note-primary-rgb: var(--color-blue-400);
+  --note-secondary-rgb: var(--color-blue-600);
+  --note-font-rgb: var(--color-blue-200);
+  
+  --tip-primary-rgb: var(--color-green-400);
+  --tip-secondary-rgb: var(--color-green-800);
+  --tip-font-rgb: var(--color-green-400);
+  
+  --important-primary-rgb: var(--color-amethyst-400);
+  --important-secondary-rgb: var(--color-amethyst-800);
+  --important-font-rgb: var(--color-amethyst-300);
+  
+  --warning-primary-rgb: var(--color-yellow-300);
+  --warning-secondary-rgb: var(--color-yellow-500);
+  --warning-font-rgb: var(--color-yellow-900);
+  
+  --caution-primary-rgb: var(--color-red-400);
+  --caution-secondary-rgb: var(--color-red-800);
+  --caution-font-rgb: var(--color-red-200);
+}
+
+:root {
+  @include light-mode;
+  &.dark-mode {
+    @include dark-mode;
+  }
+  &.light-mode {
+    @include light-mode;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-mode):not(.dark-mode) {
+    @include dark-mode;
+  }
+}
 
 .callout {
   --callout-primary-rgb: var(--foreground-rgb);
