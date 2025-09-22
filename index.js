@@ -1,1 +1,1 @@
-import e from"./assets/components/mv-dark-toggle.js";import o from"./assets/components/mv-nav-menu-toggle.js";function n(){e.register(),o.register(),window.addEventListener("pageshow",()=>{o.onpageshow(),e.onpageshow()})}document.addEventListener("DOMContentLoaded",n);
+import e from"./assets/shared/components/mv-dark-toggle.js";import o from"./assets/shared/components/mv-nav-menu-toggle.js";function s(){e.register(),o.register(),window.addEventListener("pageshow",()=>{o.onpageshow(),e.onpageshow()})}document.addEventListener("DOMContentLoaded",s);
