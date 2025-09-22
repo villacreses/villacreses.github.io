@@ -1,18 +1,3 @@
-- heading: Education
-  icon: fa-solid fa-graduation-cap
-  items:
-    - title: Fullstack Academy of Code
-      subtitle: Spring 2018 cohort
-      description: >
-        Full-time immersive program focused on full-stack web development. I built several end-to-end applications using 
-        modern JavaScript frameworks and gained hands-on experience with agile workflows, pair programming, and technical 
-        interviews.
-    - title: Bachelor of Arts - Applied Mathematics
-      subtitle: CUNY Queens College
-      shorthand: B.A. Applied Math @ CUNY Queens College
-      description: >
-        Concentrations in Computer Science and Operations Research. Founded the QC Tech Club to teach fellow students 
-        mobile app development—an area underrepresented in the CS curriculum at the time.
 - heading: Work Experience
   icon: fa-solid fa-suitcase
   class: with-date
@@ -95,6 +80,21 @@
         - Express.js
         - SCSS
         - AWS
+- heading: Education
+  icon: fa-solid fa-graduation-cap
+  items:
+    - title: Fullstack Academy of Code
+      subtitle: Spring 2018 cohort
+      description: >
+        Full-time immersive program focused on full-stack web development. I built several end-to-end applications using 
+        modern JavaScript frameworks and gained hands-on experience with agile workflows, pair programming, and technical 
+        interviews.
+    - title: Bachelor of Arts - Applied Mathematics
+      subtitle: CUNY Queens College
+      shorthand: B.A. Applied Math @ CUNY Queens College
+      description: >
+        Concentrations in Computer Science and Operations Research. Founded the QC Tech Club to teach fellow students 
+        mobile app development—an area underrepresented in the CS curriculum at the time.
 - heading: Hackathons
   icon: fa-solid fa-robot
   class: with-date
