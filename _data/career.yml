@@ -1,10 +1,6 @@
 - heading: Education
   icon: fa-solid fa-graduation-cap
   items:
-    - title: Master of Computer Science
-      subtitle: Arizona State University
-      description: >
-        Expected graduation: Autumn 2026. Master of Computer Science with a concentration in Big Data.
     - title: Fullstack Academy of Code
       subtitle: Spring 2018 cohort
       description: >
