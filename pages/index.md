@@ -2,8 +2,8 @@
 layout: layouts/page/home
 ---
 
-Hey, I’m Mario! I’m a software engineer with six years of experience, currently freelancing while 
-pursuing a master’s in computer science.
+Hey, I’m Mario! I’m a software engineer with six years of experience, currently freelancing but looking
+for new full-time opportunities.
 { .lead }
 
 Across my career, I've led high-impact engineering efforts—from modernizing product infrastructure 
