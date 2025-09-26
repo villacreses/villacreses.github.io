@@ -9,31 +9,23 @@ description: >
 heading_description: >
   This page showcases a selection of my projects, including personal, academic, and professional work. Each project highlights my skills in software development, problem-solving, and innovation. For a more comprehensive view of my work, check out my [latest resume](/assets/files/resume.pdf).
 ---
-  <table class="standard">
-    <thead>
-      <tr>
-        <th scope="col" class="date">Date</th>
-        <th scope="col">Project</th>
-        <th scope="col">Links</th>
-      </tr>
-    </thead>
-    <tbody>
-      {%- for project in projects -%}
-      <tr>
-        <td>
-          <span class="date">{{ project.date | formatDateMonthYear }}</span>
-        </td>
-        <td class="details">
-          <div class="title">{{ project.title }}</div>
+  <ul class="project-grid">
+    {%- for project in projects -%}
+    <li class="project-listing">
+      <section>
+        <header>
+          <h3>{{ project.title }}</h3>
           {% include "fragments/project-links.njk" %}
-          {%- if project.description -%}
-          <div class="description">{{ project.description }}</div>
-          {%- endif -%}
-        </td>
-        <td class="links">
-          {% include "fragments/project-links.njk" %}
-        </td>
-      </tr>
-      {%- endfor -%}
-    </tbody>
-  </table>
+        </header>
+        <p class="description">{{ project.description }}</p>
+        <footer>
+          <ul class="bubble-list">
+            {%- for tag in project.tags -%}
+            <li>{{tag}}</li>
+            {%- endfor -%}
+          </ul>
+        </footer>
+      </section>
+    </li>
+    {%- endfor -%}
+  </ul>

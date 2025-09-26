@@ -4,6 +4,10 @@
     Built with Eleventy and modular tooling, it lets me experiment with semantic design, markdown rendering, and legacy-aware publishing.
   url_github: https://github.com/villacreses/villacreses.github.io
   date: 2025-07-30
+  tags:
+    - Eleventy
+    - SCSS
+    - Nunjucks
 - title: Chronos
   date: 2018-05-01
   description: >
