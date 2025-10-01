@@ -96,6 +96,7 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addWatchTarget("assets/**/*.scss");
   eleventyConfig.addWatchTarget("tools/**/*.scss");
+  eleventyConfig.addWatchTarget("tools/**/*.html");
   
   eleventyConfig.addShortcode("icon", function(classname) {
     return `<i class="${classname}" aria-hidden="true" role="presentation"></i>`;

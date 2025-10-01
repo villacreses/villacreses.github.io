@@ -1,6 +1,6 @@
 ---
 layout: layouts/page/now
-lastUpdated: 2025-08-09T09:48-08:00
+lastUpdated: 2025-10-01T08:33-08:00
 ---
 
 Since leaving GoDaddy, I’ve focused on freelance development and deepening my technical foundation. This 
@@ -17,14 +17,14 @@ values and technical interests.
 
 ### {% icon "fa-solid fa-screwdriver-wrench" %} Working on
 
-- **Intellectual Curiosity:** I've taken full advantage of my flexible schedule to pursue a long overdue
-  catch-up with several pet projects, predominantly doing an exploratory deep dive into various mathematical
-  texts.
 - **Fitness Journey:** I've been practicing yoga with greater frequency over the past few months. My
   goal is to return to my pre-COVID levels of fitness, where I could maintain a 10 min/mi running 
   pace and bike at least 15 miles a day. 
-- **Portfolio pieces:** Within a few weeks, I'll start regularly addingnew projects to my portfolio.
+- **Portfolio pieces:** Within a few weeks, I'll start regularly adding new projects to my portfolio.
   These projects display mastery over various stages of full stack development.
+- **AWS Certifications:** I've felt for a long time that my resume does not fully reflect the extent of my 
+  knowledge of Amazon Web Services. To better signal this, I'll be obtaining certifications indicative of
+  my current experience, as well as where I want to be.
 
 ### {% icon "fa-solid fa-book-open-reader" %} Currently Reading
 
