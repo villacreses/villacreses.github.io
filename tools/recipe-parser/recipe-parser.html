@@ -1,0 +1,17 @@
+---
+layout: layouts/feature
+wide: true
+permalink: tools/recipe-parser.html
+title: Recipe Parser
+description: Paste the URL of a recipe and get it formatted to cut out the fluff.
+heading_description: >
+  Paste the URL of a recipe and get it formatted to cut out the fluff
+---
+
+<form method="post">
+  <label for="recipe-url">Post your recipe link here</label>
+  <input id="recipe-url" name="recipe-url" type="url" required />
+  <button type="submit">Submit</button>
+</form>
+
+<script src="./recipe-parser/index.js" type="module"></script>
