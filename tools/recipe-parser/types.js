@@ -67,4 +67,18 @@
  * @property {string} [totalTime]
  */
 
+/**
+ * @typedef {{
+ *  heading?: string;
+ *  steps: string[]
+ * }[]} ParsedInstructions
+ */
+
+/**
+ * @typedef {Object} FormattedRecipe
+ * @property {string} [name]
+ * @property {string} [author]
+ * @property {ParsedInstructions} [instructions]
+ */
+
 export {}
