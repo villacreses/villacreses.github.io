@@ -54,6 +54,10 @@ header.standard {
   position: relative;
   max-width: 80ch;
 
+  @media (min-width: 40rem) {
+    padding-bottom: 1.25rem;
+  }
+  
   &::after {
     content: '';
     min-width: 100%;
