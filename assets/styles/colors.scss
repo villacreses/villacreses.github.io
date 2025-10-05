@@ -17,6 +17,7 @@
 
 /* Light mode */
 @mixin light-mode {
+  --hr-rgb: var(--color-slate-400);
   --default-slate-rgb: var(--color-slate-600);
   --career-timeline-bar-rgb: var(--color-slate-400);
   --post-color-rgb: var(--color-neutral-400);
@@ -26,7 +27,6 @@
 
 @mixin dark-mode {
   --hr-rgb: var(--color-slate-700);
-
   --default-slate-rgb: var(--color-slate-300);
   --career-timeline-bar-rgb: var(--color-slate-600);
   --post-color-rgb: var(--color-neutral-500);
