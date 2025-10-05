@@ -1,0 +1,68 @@
+form .container {
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  max-width: 60ch;
+  gap: 0.75rem;
+  font-size: var(--text-xl-font-size);
+  line-height: var(--text-xl-line-height);
+  border: 1px solid;
+  
+  @media (min-width: 48rem) {
+    flex-wrap: wrap;
+    font-size: var(--text-lg-font-size);
+    line-height: var(--text-lg-line-height);
+  }
+  
+  input {
+    &[type=text], &[type=url] {
+      border: none;
+      flex: 1;
+      min-width: 325px;
+      padding-right: 0.5rem;
+    }
+    &:focus-visible {
+      border: none;
+      outline: none;
+    }
+    
+    @media (min-width: 48rem) {
+      padding: 0;
+
+    }
+  }
+
+  [type=submit] {
+    cursor: pointer;
+  }
+}
+
+#recipe-container {
+  h2 {
+    font-size: var(--text-2xl-font-size);
+    line-height: var(--text-2xl-line-height);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  
+  ul {
+    list-style-type: circle;
+  }
+  ol, ul {
+    padding-left: 1.5rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  section {
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+}

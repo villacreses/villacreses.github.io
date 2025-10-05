@@ -3,6 +3,7 @@
  * @typedef {import('./types.js').ESHowToStep} ESHowToStep
  * @typedef {import('./types.js').ESHowToSection} ESHowToSection
  * @typedef {import('./types.js').FormattedRecipe} FormattedRecipe
+ * @typedef {import('./types.js').ParsedIngredient} ParsedIngredient
  */
 
 /**
@@ -46,8 +47,14 @@ export function parseInstructions(instructions = [])  {
    * @param {ESHowToStep} v 
    * @returns {string}
    */
-  const mapToInstructionText = (v) => v.text || v.name || "";
+  const mapToInstructionText = (v) => {
+    if (typeof v === 'string') return v;
+    return v.text || v.name || "";
+  }
+
+
   const hasMultipleSections = instructions.every(item => {
+    if (typeof item === 'string') return false;
     if ('itemListElement' in item) return true; // I hate JSDocs
     else return false;
   });
@@ -199,7 +206,7 @@ const unitMap = {
 /**
  * Parses a basic ingredient string into structured parts.
  * @param {string} input
- * @returns {{ num: number, dem?: number, unit: string, item: string }}
+ * @returns {ParsedIngredient}
  */
 export function parseIngredient(inputRaw) {
   const input = normalizeFractions(inputRaw)

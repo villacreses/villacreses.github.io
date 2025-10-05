@@ -75,6 +75,10 @@
  */
 
 /**
+ * @typedef {{ num: number, dem?: number, unit: string, item: string }} ParsedIngredient
+ */
+
+/**
  * @typedef {Object} FormattedRecipe
  * @property {string} [name]
  * @property {string} [author]

@@ -10,8 +10,11 @@ heading_description: >
 
 <form method="post">
   <label for="recipe-url">Post your recipe link here</label>
-  <input id="recipe-url" name="recipe-url" type="url" required />
-  <button type="submit">Submit</button>
+  <div class="container">
+    <input id="recipe-url" name="recipe-url" type="url" required />
+    <button type="submit">Submit</button>
+  </div>
 </form>
-<section id="recipe-container"></section>
+<div id="recipe-container"></div>
 <script src="./recipe-parser/index.js" type="module"></script>
+<link rel="stylesheet" href="./recipe-parser/styles.css">
