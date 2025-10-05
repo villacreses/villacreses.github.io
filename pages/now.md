@@ -32,7 +32,9 @@ values and technical interests.
 
   My wife has been insisting for months that I read this series, and so far I'm grateful that 
   she did. The series' sustained relevance astounds me to no end.
-- #### **The Pragmatic Programmer** by Andrew Hunt & David Thomas
+- #### **How the Internet Became Commercial** by Shane Greenstein
 
-  Every once in a while, I like to refresh myself on the classics of software engineering.
+  Rarely does an author present the evolution of the Internet as not just a series of infrastructure improvements,
+  but as an ongoing conflict between idealists and various self-interested parties. Shane Greenstein compellingly 
+  balances both perspectives.
 {.books}
