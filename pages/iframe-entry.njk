@@ -1,22 +1,23 @@
 ---
-sitemap: false
-permalink: /90s.html
+collection: iframe-proxies
+pagination:
+  data: iframe-proxies
+  size: 1
+  alias: proxy
+permalink: "{{proxy.permalink}}"
 ---
-
 <!doctype html>
 <html lang="en">
-
 <head>
-  <title>Welcome to my Web Page! (Under Construction)</title>
+  <title>{{proxy.title}}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow">
 </head>
-
 <body>
   <iframe 
-  title="Mario's website, optimized for Netscape browser!"
-  src="https://mario90ssite.github.io/"
+  title="{{proxy.title}}"
+  src="{{proxy.src}}"
   referrerpolicy="no-referrer"
 ></iframe>
 <style>
