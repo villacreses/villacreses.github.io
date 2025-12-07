@@ -3,24 +3,24 @@
   class: with-date
   quickStatLabel: Current Role
   items:
-    - title: AI Data Annotator
+    - title: Freelance Software Engineer
       subtitle: Self-Employed
       date: 2024 - Present
-      shorthand: AI Data Annotator (freelance)
+      shorthand: Software Engineer (freelance)
       description: >
-        I support the development of English-language AI agents by evaluating and refining their responses for clarity, 
-        tone, and accessibility across varying levels of language proficiency. My work includes adjusting verbosity 
-        based on context and ensuring that AI communication remains inclusive, accurate, and socially responsible. I 
-        also review AI-generated answers to undergraduate-level math questions, verifying both accuracy and the relevance 
-        of the methods used.
+        As an independent consultant, I delivered high‑impact frontend solutions across multiple client projects, modernizing 
+        codebases, improving UI/UX, and accelerating feature delivery. I also supported AI agent development by reviewing 
+        mathematical outputs for accuracy and clarity, ensuring responses met compliance standards and remained reliable.
     - title: Senior Software Engineer
       subtitle: GoDaddy.com
       date: 2022 - 2024
       description: >
-        At GoDaddy, I led two major modernization efforts: migrating the frontend from Ember.js to Next.js—rolled 
-        out seamlessly with no disruption to merchants—and separately, overhauling the DevOps pipeline using Docker 
-        and GitHub Actions to improve release reliability. I also rebuilt the pricing infrastructure to give 
-        businesses greater flexibility in how they structured fees and transactions.
+        At GoDaddy, I drove the full migration of the merchant platform from Ember.js to Next.js—modernizing the stack with 
+        zero disruption to merchants. I owned the end‑to‑end delivery, from defining milestones to coordinating cross‑team 
+        rollout, while keeping stakeholders aligned through clear documentation. Alongside the migration, I boosted 
+        infrastructure efficiency by refining caching and leveraging Docker to accelerate deployments and cut storage 
+        overhead. I also partnered on API and pricing integrations, ensuring merchants experienced smooth, flexible 
+        interactions with web features.
       skills:
         - Javascript
         - Typescript
@@ -38,11 +38,12 @@
       subtitle: Meta Platforms (Facebook)
       date: 2021 - 2022
       description: >
-        At Meta, I worked on a company-wide metrics platform that standardized how teams defined and accessed performance 
-        data. On the backend, I improved the reliability of the Metric Authoring API, reducing latency and making it 
-        easier to define and query metrics. On the frontend, I scaled the internal web portal to support growing data 
-        demands across the organization. I also mentored interns on engineering best practices, helping them navigate 
-        Meta’s internal tools and development workflows.
+        At Meta, I worked hand‑in‑hand with designers, UX engineers, and project managers to bring meaningful improvements 
+        to the way teams interacted with performance data. On the backend, I strengthened the Metric Authoring API, making 
+        it faster and more reliable so teams could move away from legacy systems with ease. On the frontend, I reimagined 
+        the metric catalog’s codebase, creating a smoother, more intuitive experience that encouraged broader adoption. 
+        Beyond the technical work, I took pride in mentoring interns—helping them navigate Meta’s tools and workflows while 
+        instilling best practices in debugging, communication, and documentation.
       skills:
         - Javascript
         - GraphQL
@@ -52,11 +53,11 @@
       subtitle: doc.ai
       date: 2020 - 2020
       description: >
-        doc.ai built a suite of AI-powered healthcare apps, and I joined the team developing their new flagship product: a 
-        medical trials app. I built a WYSIWYG editor that let pharmaceutical companies design custom journaling flows—no 
-        coding required—which trial participants could then access through the app to submit data in study-specific formats. 
-        Separately, I created a real-time map visualizing COVID-19 transmission, which significantly boosted the company’s 
-        visibility during the early pandemic.
+        At doc.ai, I helped shape the flagship medical trials app by building a WYSIWYG editor that let pharmaceutical 
+        companies design custom journaling flows without code, making data submission simple for participants. I also led 
+        development of a UI library that cut feature build time by 60%, and streamlined analytics with Retool to improve 
+        metric tracking. During the early pandemic, I created a real‑time COVID‑19 map that boosted the company’s visibility 
+        and underscored the impact of our healthcare tools.
       skills:
         - React Native
         - Typescript
@@ -68,9 +69,10 @@
       subtitle: Knovva Academy
       date: 2018 - 2020
       description: >
-        At Knovva, I built internal dashboards powered by live data to support recruiting, customer management, and analytics 
-        across the company’s international programs. I also led a major frontend refactor, applying atomic design principles 
-        to drastically reduce code duplication and improve maintainability.
+        At Knovva, I partnered with a cloud architect to build internal dashboards and administrative tools that powered 
+        recruiting, customer management, and real‑time analytics across international programs. I also led a major frontend 
+        refactor, modernizing the codebase to cut non‑business code in half and improve page load times, applying atomic 
+        design principles that made the system leaner and more maintainable.
       skills:
         - Javascript
         - React
