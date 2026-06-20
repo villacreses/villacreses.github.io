@@ -1,3 +1,4 @@
+@use 'breakpoint';
 @use 'theme';
 @use 'text';
 
@@ -40,7 +41,7 @@ ul.project-grid {
   gap: 1.5rem;
   position: relative;
 
-  @media (min-width: 365px) {
+  @include breakpoint.up(3xs) {
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   }
 }

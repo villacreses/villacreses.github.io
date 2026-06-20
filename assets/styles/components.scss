@@ -1,3 +1,4 @@
+@use 'breakpoint';
 @use 'theme';
 @use 'text';
 
@@ -41,7 +42,7 @@ header.standard {
   position: relative;
   max-width: 80ch;
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     padding-bottom: 1.25rem;
   }
 
@@ -73,7 +74,7 @@ table.standard {
   text-align: left;
   border-spacing: 10px;
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     --padding-outer: 1rem;
     --padding-right: 2rem;
   }

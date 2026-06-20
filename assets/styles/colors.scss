@@ -117,19 +117,6 @@
   --color-link-green-pale-rgb: 86, 170, 165;
   --color-link-blue-rgb: 0, 100, 209;
   --color-link-blue-pale-rgb: 14, 150, 276;
-
-  /* These are just here for reference. Hopefully in the future we can
-   * use CSS variables in media queries. In the meantime, I will still
-   * try to avoid using anything beyond plain CSS.
-   */
-  --breakpoint-3xs: 365px;
-  --breakpoint-2xs: 485px;
-  --breakpoint-xs: 560px;
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
-  --breakpoint-xxl: 96rem;
 }
 
 @include theme.light {

@@ -1,10 +1,11 @@
+@use 'breakpoint';
 @use 'text';
 
 main {
   --circumference: 8px;
   --grid-icon-width: 0.75rem;
-  
-  @media (min-width: 485px) {
+
+  @include breakpoint.up(2xs) {
     --grid-icon-width: 2rem;
   }
 }

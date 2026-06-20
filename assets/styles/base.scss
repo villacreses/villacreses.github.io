@@ -1,3 +1,4 @@
+@use 'breakpoint';
 @use 'text';
 
 @view-transition {
@@ -5,6 +6,7 @@
 }
 
 :root {
+  @include breakpoint.css-vars;
   --z-index-max: 99999;
   --transition-timing: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: background-color var(--transition-timing),
@@ -55,24 +57,24 @@ body {
   
   &:has(#mv-nav-menu-toggle:checked) {
     overflow: hidden;
-    @media (min-width: 40rem) {
+    @include breakpoint.up(sm) {
       overflow: auto;
     }
   }
-  
-  @media (min-width: 485px) {
+
+  @include breakpoint.up(2xs) {
     --padding-x: 1.5rem;
   }
-  @media (min-width: 40rem) {
-    --padding-x: 3rem; 
+  @include breakpoint.up(sm) {
+    --padding-x: 3rem;
   }
-  @media (min-width: 48rem) {
+  @include breakpoint.up(md) {
     --padding-x: 4.5rem;
   }
-  @media (min-width: 64rem) {
+  @include breakpoint.up(lg) {
     --padding-x: 6rem;
   }
-  @media (min-width: 80rem) {
+  @include breakpoint.up(xl) {
     --padding-x: 8rem;
   }
 }
@@ -108,7 +110,7 @@ h1 {
   font-weight: 800;
   letter-spacing: 0.075rem;
 
-  @media(min-width: 365px) {
+  @include breakpoint.up(3xs) {
     @include text.size(4xl);
   }
 }
@@ -123,7 +125,7 @@ hr {
 }
 %prose-line-break {
   margin-bottom: .75rem;
-  @media(min-width: 40rem) {
+  @include breakpoint.up(sm) {
     margin-bottom: 1.25rem;
   }
 }
@@ -173,7 +175,7 @@ p {
   padding-bottom: .75rem;
   font-weight: 500;
 
-  @media(min-width: 40rem) {
+  @include breakpoint.up(sm) {
     margin: 1.75rem 0 .75rem 0;
   }
 }
@@ -186,7 +188,7 @@ p {
   font-weight: bold;
 }
 
-@media (min-width: 40rem) {
+@include breakpoint.up(sm) {
   .mobile-only {
     display: none;
   }

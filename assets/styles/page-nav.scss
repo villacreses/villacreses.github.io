@@ -1,3 +1,4 @@
+@use 'breakpoint';
 @use 'text';
 
 @mixin mobile-only {
@@ -67,7 +68,7 @@
       align-items: center;
       width: 30px;
 
-      @media (min-width: 40rem) {
+      @include breakpoint.up(sm) {
         @include text.size(2xl);
       }
     }
@@ -85,7 +86,7 @@
 
 mv-nav-menu-toggle {
   z-index: var(--z-index-max);
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     display: none;
   }
 }
@@ -107,7 +108,7 @@ mv-nav-menu-toggle {
     backdrop-filter: blur(5px);
   }
   
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     display: flex;
   }
   
@@ -126,7 +127,7 @@ mv-nav-menu-toggle {
         align-items: center;
       }
 
-      @media (min-width: 40rem) {
+      @include breakpoint.up(sm) {
         flex-direction: row;
         margin-right: var(--header-gap);
       }

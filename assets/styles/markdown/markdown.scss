@@ -1,3 +1,4 @@
+@use 'breakpoint';
 @use 'text';
 
 %heading {
@@ -10,7 +11,7 @@ h1 {
   @extend %heading;
   @include text.size(5xl);
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     @include text.size(6xl);
   }
 }
@@ -19,7 +20,7 @@ h2 {
   @extend %heading;
   @include text.size(4xl);
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     @include text.size(5xl);
   }
 }
@@ -28,7 +29,7 @@ h3 {
   @extend %heading;
   @include text.size(3xl);
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     @include text.size(4xl);
   }
 }
@@ -37,7 +38,7 @@ h4 {
   @extend %heading;
   @include text.size(2xl);
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     @include text.size(3xl);
   }
 }
@@ -46,7 +47,7 @@ h5 {
   @extend %heading;
   @include text.size(xl);
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     @include text.size(2xl);
   }
 }
@@ -55,7 +56,7 @@ h6 {
   @extend %heading;
   @include text.size(lg);
 
-  @media (min-width: 40rem) {
+  @include breakpoint.up(sm) {
     @include text.size(xl);
   }
 }
