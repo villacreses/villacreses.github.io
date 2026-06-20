@@ -1,3 +1,6 @@
-@import url('assets/shared/styles/index.css');
+@import url('./assets/styles/reset.css');
+@import url('./assets/styles/base.css');
 @import url('./assets/styles/colors.css');
+@import url('./assets/styles/fonts.css');
+@import url('./assets/styles/page-nav.css');
 @import url('./assets/styles/components.css');
