@@ -16,7 +16,7 @@ heading_description:
   {% for note in notes %}
   <li>
     <time datetime="{{ note.frontmatter.date }}" class="prose">{{ note.frontmatter.date | formatDateISO }}</time>
-    <a href="/writing/notes/{{ note.slug }}" class="note-link">
+    <a href="/writing/notes/{{ note.slug }}">
       <span>{{ note.frontmatter.title }}</span>
     </a>
   </li>

@@ -1,0 +1,4 @@
+@mixin size($size) {
+  font-size: var(--text-#{$size}-font-size);
+  line-height: var(--text-#{$size}-line-height);
+}

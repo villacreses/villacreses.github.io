@@ -1,26 +1,14 @@
-@mixin light-mode {
+@use 'theme';
+@use 'text';
+
+@include theme.light {
   --bubble-text-rgb: var(--color-gray-600);
   --bubble-bg-rgb: var(--color-gray-300);
 }
 
-@mixin dark-mode {
+@include theme.dark {
   --bubble-text-rgb: var(--color-slate-300);
   --bubble-bg-rgb: var(--color-slate-700);
-}
-
-:root {
-  @include light-mode;
-  &.dark-mode {
-    @include dark-mode;
-  }
-  &.light-mode {
-    @include light-mode;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root:not(.light-mode):not(.dark-mode) {
-    @include dark-mode;
-  }
 }
 
 .bubble-list {
@@ -31,12 +19,11 @@
   row-gap: 0.5rem;
 
   li {
+    @include text.size(xs);
     color: rgb(var(--bubble-text-rgb));
     background-color: rgb(var(--bubble-bg-rgb));
     padding: 0.125rem 0.5rem;
     border-radius: 6px;
-    font-size: var(--text-xs-font-size);
-    line-height: var(--text-xs-line-height);
     font-weight: 600;
     letter-spacing: 0.035em;
   }
@@ -57,7 +44,7 @@ header.standard {
   @media (min-width: 40rem) {
     padding-bottom: 1.25rem;
   }
-  
+
   &::after {
     content: '';
     min-width: 100%;
@@ -72,7 +59,7 @@ header.standard {
     margin-bottom: 1.25rem;
     text-align: center;
   }
-  p{ 
+  p{
     font-size: var(--text-sm-font-size);
   }
 };
@@ -80,7 +67,7 @@ header.standard {
 table.standard {
   --padding-outer: 0.5rem;
   --padding-right: 1rem;
-  
+
   width: 100%;
   border-collapse: collapse;
   text-align: left;
@@ -96,26 +83,23 @@ table.standard {
       padding-left: var(--padding-outer);
     }
   }
-  th{ 
-    padding: 1rem var(--padding-right) 1rem 0;
-    font-size: var(--text-sm-font-size);
-    line-height: var(--text-sm-line-height);
-    font-weight: 600;
-    
+  th{
     @extend %outer-padding;
+    @include text.size(sm);
+    padding: 1rem var(--padding-right) 1rem 0;
+    font-weight: 600;
   }
   td {
+    @extend %outer-padding;
     padding-right: var(--padding-right);
     vertical-align: top;
-    
-    @extend %outer-padding;
   }
   tbody {
     tr {
       &:not(:last-of-type) {
         border-bottom: 1px solid rgba(var(--color-slate-300), 0.1);
       }
-      
+
       td {
         padding-top: 1rem;
         padding-bottom: 1rem;

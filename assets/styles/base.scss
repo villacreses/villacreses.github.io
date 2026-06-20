@@ -1,3 +1,5 @@
+@use 'text';
+
 @view-transition {
   navigation: auto;
 }
@@ -101,15 +103,13 @@ img {
 }
 
 h1 {
-  font-size: var(--text-3xl-font-size);
-  line-height: var(--text-3xl-line-height);
+  @include text.size(3xl);
   letter-spacing: 0.01rem;
   font-weight: 800;
   letter-spacing: 0.075rem;
 
   @media(min-width: 365px) {
-    font-size: var(--text-4xl-font-size);
-    line-height: var(--text-4xl-line-height);
+    @include text.size(4xl);
   }
 }
 
@@ -167,13 +167,12 @@ p {
 }
 
 .lead, p.lead {
+  @include text.size(lg);
   margin: 1.75rem 0 .5rem 0;
   color: rgb(var(--text-lead-rgb));
   padding-bottom: .75rem;
-  font-size: var(--text-lg-font-size);
-  line-height: var(--text-lg-line-height);
   font-weight: 500;
-  
+
   @media(min-width: 40rem) {
     margin: 1.75rem 0 .75rem 0;
   }
