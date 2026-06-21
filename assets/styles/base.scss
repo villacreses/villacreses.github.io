@@ -87,9 +87,26 @@ a {
   text-decoration: none;
   display: inline-block;
   transition: var(--transition);
-  
+
   &:hover {
     color: rgb(var(--link-color-pale-rgb));
+  }
+}
+
+p > a {
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    position: relative;
+    bottom: .2em;
+    background-color: rgb(var(--link-color-pale-rgb));
+    transition: var(--transition);
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 }
 
@@ -139,26 +156,8 @@ hr {
   }
 }
 
-p {
-  &.prose {
-    @extend %prose-line-break;
-  }
-  &>a {
-    &::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 1px;
-      position: relative;
-      bottom: .2em;
-      background-color: rgb(var(--link-color-pale-rgb));
-      transition: var(--transition);
-    }
-    
-    &:hover::after {
-      width: 100%;
-    }
-  }    
+p.prose {
+  @extend %prose-line-break;
 }
 
 .lead, p.lead {

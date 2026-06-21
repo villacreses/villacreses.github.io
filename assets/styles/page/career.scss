@@ -92,9 +92,9 @@ li.timeline-grid {
     }
 
     h3 {
-        font-weight: 500;
-        color: rgb(var(--default-slate-rgb));
-      }
+      font-weight: 500;
+      color: rgb(var(--default-slate-rgb));
+    }
 
     .date {
       @extend %date-styles;

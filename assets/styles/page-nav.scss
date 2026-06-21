@@ -2,15 +2,9 @@
 @use 'layout';
 @use 'text';
 
-#navbar-blur~*,
-#top-header .container {
-  position: relative;
-  height: 100%;
-}
-
 #top-header {
   --header-gap: 1.5rem;
-  padding: .5rem 1.5rem .5rem 1.5rem;
+  padding: .5rem 1.5rem;
   height: var(--topnav-height);
   position: fixed;
   left: 0;
@@ -20,7 +14,7 @@
   max-width: 64rem;
   margin: auto;
   z-index: 10;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -32,18 +26,88 @@
     backdrop-filter: blur(40px);
     z-index: 0;
   }
-  
+
   a {
     font-weight: 500;
   }
 
+  #navbar-blur ~ * {
+    position: relative;
+    height: 100%;
+  }
+
   .container {
+    position: relative;
+    height: 100%;
     display: flex;
     padding: 0;
     margin: 0;
     justify-content: space-between;
     align-items: center;
     gap: var(--header-gap);
+  }
+
+  mv-nav-menu-toggle {
+    z-index: var(--z-index-max);
+
+    @include breakpoint.up(sm) {
+      display: none;
+    }
+  }
+
+  #nav-links {
+    display: none;
+
+    @include breakpoint.up(sm) {
+      display: flex;
+    }
+
+    @include breakpoint.down(sm) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--z-index-max);
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(var(--menu-bg-rgb), 0.8);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+
+    ul {
+      display: flex;
+
+      @include breakpoint.down(sm) {
+        --header-gap: 2.5rem;
+        @include text.size(3xl);
+      }
+
+      &.container {
+        @include breakpoint.down(sm) {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        @include breakpoint.up(sm) {
+          flex-direction: row;
+          margin-right: var(--header-gap);
+        }
+      }
+
+      a {
+        @include breakpoint.down(sm) {
+          font-weight: 700;
+          letter-spacing: 0.05rem;
+        }
+      }
+    }
+  }
+
+  &:has(#mv-nav-menu-toggle:checked) #nav-links {
+    @include layout.center;
   }
 }
 
@@ -63,7 +127,7 @@
         @include text.size(2xl);
       }
     }
-    
+
     &:hover i {
       color: rgb(var(--topnav-toggle-hover-rgb));
     }
@@ -75,73 +139,16 @@
   }
 }
 
-mv-nav-menu-toggle {
-  z-index: var(--z-index-max);
-  @include breakpoint.up(sm) {
-    display: none;
-  }
-}
-
-#nav-links {
-  display: none;
-
-  @include breakpoint.down(sm) {
-    position: absolute;
-    z-index: var(--z-index-max);
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(var(--menu-bg-rgb), 0.8);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-  }
-  
-  @include breakpoint.up(sm) {
-    display: flex;
-  }
-  
-  & ul {
-    display: flex;
-    
-    @include breakpoint.down(sm) {
-      --header-gap: 2.5rem;
-      @include text.size(3xl);
-    }
-    
-    &.container {
-      @include breakpoint.down(sm) {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      @include breakpoint.up(sm) {
-        flex-direction: row;
-        margin-right: var(--header-gap);
-      }
-    }
-    
-    a {
-      @include breakpoint.down(sm) {
-        font-weight: 700;
-        letter-spacing: 0.05rem;
-      }
-    }
-  }
-
-  #top-header:has(#mv-nav-menu-toggle:checked) & {
-    @include layout.center;
-  }
-}
-
 .top-bumper {
   min-height: 148px;
 }
 
 #page-footer {
+  %hide-text {
+    color: transparent;
+    cursor: default;
+  }
+
   padding-top: 5rem;
   padding-bottom: 2.5rem;
   position: relative;
@@ -150,17 +157,15 @@ mv-nav-menu-toggle {
   * {
     @include text.size(xs);
   }
-  &>div{ 
+
+  > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: rgb(var(--color-neutral-400));
   }
-  %hide-text {
-    color: transparent;
-    cursor: default;
-  }
-  small { 
+
+  small {
     @extend %hide-text;
     position: absolute;
     bottom: 5px;
@@ -168,7 +173,8 @@ mv-nav-menu-toggle {
     * {
       @extend %hide-text;
     }
-    a { 
+
+    a {
       text-decoration: underline;
       cursor: not-allowed;
     }

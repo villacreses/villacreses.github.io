@@ -60,10 +60,10 @@ header.standard {
     margin-bottom: 1.25rem;
     text-align: center;
   }
-  p{
+  p {
     font-size: var(--text-sm-font-size);
   }
-};
+}
 
 table.standard {
   --padding-outer: 0.5rem;
@@ -84,7 +84,7 @@ table.standard {
       padding-left: var(--padding-outer);
     }
   }
-  th{
+  th {
     @extend %outer-padding;
     @include text.size(sm);
     padding: 1rem var(--padding-right) 1rem 0;

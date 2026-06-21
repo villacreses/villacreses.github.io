@@ -66,11 +66,7 @@ li.project-listing {
     }
 
     h3 {
-      --font-size: var(--text-lg-font-size);
-      --line-height: var(--text-lg-line-height);
-
-      font-size: var(--font-size);
-      line-height: var(--line-height);
+      @include text.size(lg);
       letter-spacing: 0.05rem;
       font-weight: 700;
     }

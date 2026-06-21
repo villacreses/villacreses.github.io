@@ -23,15 +23,15 @@ article {
     color: rgb(var(--foreground-rgb));
   }
 
-  &>hgroup p {
+  > hgroup p {
     font-size: var(--text-xs-font-size);
     font-style: italic;
     margin-top: 0.25rem;
     padding-bottom: 0;
     color: rgb(var(--text-prose-rgb));
   }
-  
-  hgroup+* {
+
+  hgroup + * {
     margin-top: 0.75rem;
   }
   
@@ -65,7 +65,7 @@ article {
   grid-template-columns: var(--grid-icon-width) 1fr;
   gap: var(--grid-gap);
 
-  & > i {
+  > i {
     @include layout.center;
     font-size: 0.85rem;
     height: var(--grid-icon-width);
