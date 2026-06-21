@@ -1,8 +1,12 @@
+@use 'breakpoint';
+@use 'layout';
+@use 'text';
+
 main {
   --circumference: 8px;
   --grid-icon-width: 0.75rem;
-  
-  @media (min-width: 485px) {
+
+  @include breakpoint.up(2xs) {
     --grid-icon-width: 2rem;
   }
 }
@@ -27,21 +31,17 @@ article {
     align-self: center;
   }
   i {
-    display: block;
+    @include layout.center;
     height: var(--grid-icon-width);
     width: var(--grid-icon-width);
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 
 h2 {
+  @include text.size(lg);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-size: var(--text-lg-font-size);
-  line-height: var(--text-lg-line-height);
 }
 
 ol {
@@ -73,27 +73,24 @@ ol {
 }
 
 li.timeline-grid {
-  font-size: var(--text-xl-font-size);
-  line-height: var(--text-xl-line-height);
-  
+  @include text.size(xl);
+
   * {
     grid-column: 2;
   }
-  
+
   header {
     margin-bottom: 0.25rem;
     position: relative;
-    
+
     &~* {
-      font-size: var(--text-sm-font-size);
-      line-height: var(--text-sm-line-height);
+      @include text.size(sm);
     }
-    
+
     %date-styles {
-      font-size: var(--text-xs-font-size);
-      line-height: var(--text-xs-line-height);
+      @include text.size(xs);
     }
-    
+
     h3 {
         font-weight: 500;
         color: rgb(var(--default-slate-rgb));
@@ -103,16 +100,15 @@ li.timeline-grid {
       @extend %date-styles;
       position: absolute;
       top: -1.25em;
-      
+
       * {
         @extend %date-styles;
       }
     }
 
     :not(h3) {
+      @include text.size(base);
       font-weight: 400;
-      font-size: var(--text-base-font-size);
-      line-height: var(--text-base-line-height);
       grid-column: 2;
       letter-spacing: 0.05em;
       color: rgb(var(--color-slate-500));

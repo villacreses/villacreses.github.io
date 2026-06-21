@@ -1,5 +1,17 @@
+@use 'breakpoint';
+@use 'text';
+@use 'theme';
+
 :root {
   --border-radius: 0.35rem;
+}
+
+@include theme.light {
+  --card-bg-color: var(--color-green-300);
+}
+
+@include theme.dark {
+  --card-bg-color: var(--color-blue-600);
 }
 
 main {
@@ -31,10 +43,9 @@ hr {
 
 mv-countdown {
   &[long-datestring] .elapsed-container {
-    font-size: var(--text-xl-font-size);
-    line-height: var(--text-xl-line-height);
+    @include text.size(xl);
   }
-  
+
   .counter {
     padding: 0.75rem 1.5rem;
     border-radius: var(--border-radius);
@@ -43,28 +54,26 @@ mv-countdown {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
     header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.5rem;
-      
+
       i {
+        @include text.size(sm);
         cursor: pointer;
-        font-size: var(--text-sm-font-size);
-        line-height: var(--text-sm-line-height);
       }
     }
-    
+
     .label {
+      @include text.size(sm);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05rem;
-      font-size: var(--text-sm-font-size);
-      line-height: var(--text-sm-line-height);
-      
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -73,11 +82,10 @@ mv-countdown {
 }
 
 .elapsed-container {
+  @include text.size(2xl);
   display: flex;
   justify-content: center;
   font-weight: 700;
-  font-size: var(--text-2xl-font-size);
-  line-height: var(--text-2xl-line-height);
 }
 
 .elapsed {
@@ -85,9 +93,8 @@ mv-countdown {
 }
 
 .post-label {
+  @include text.size(sm);
   font-weight: 300;
-  font-size: var(--text-sm-font-size);
-  line-height: var(--text-sm-line-height);
   text-align: center;
   margin-top: 0.5rem;
 }
@@ -106,8 +113,8 @@ section {
 mv-countdown-form {
   display: block;
   margin: 0 auto;
-  width: 100%;  
-  @media (min-width: 48rem) {
+  width: 100%;
+  @include breakpoint.up(md) {
     width: max-content;
   }
 
@@ -118,27 +125,25 @@ mv-countdown-form {
       letter-spacing: 0.1rem;
       margin-bottom: 0.5rem;
       text-align: center;
-      @media (min-width: 48rem) {
+      @include breakpoint.up(md) {
         text-align: left;
       }
     }
 
     .container {
+      @include text.size(xl);
       border-radius: var(--border-radius);
       padding: 0.25rem 0.5rem;
       display: flex;
       flex-direction: column;
       max-width: 60ch;
       gap: 0.75rem;
-      font-size: var(--text-xl-font-size);
-      line-height: var(--text-xl-line-height);
-      
-      @media (min-width: 48rem) {
+
+      @include breakpoint.up(md) {
         border: 1px solid;
         flex-direction: row;
         flex-wrap: wrap;
-        font-size: var(--text-lg-font-size);
-        line-height: var(--text-lg-line-height);
+        @include text.size(lg);
       }
       
       input {
@@ -153,7 +158,7 @@ mv-countdown-form {
           padding-right: 0.5rem;
         }
         
-        @media (min-width: 48rem) {
+        @include breakpoint.up(md) {
           border: none;
           padding: 0;
 
@@ -169,7 +174,7 @@ mv-countdown-form {
         display: flex;
         gap: 1rem;
         
-        @media (min-width: 48rem) {
+        @include breakpoint.up(md) {
           justify-content: space-between;
           gap: 0;
         }
@@ -177,12 +182,12 @@ mv-countdown-form {
         input {
           flex: 1;
           
-          @media (min-width: 48rem) {
+          @include breakpoint.up(md) {
             border: none;
             border-left: 1px dotted rgb(var(--foreground-rgb));
             border-radius: 0;
             padding-left: 0.5rem;
-            
+
             &:not(:last-child) {
               padding-right: 0.5rem;
             }

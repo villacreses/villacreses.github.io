@@ -15,9 +15,9 @@ permalink: /
           width="{{ homepage.profileImage.width }}"
           data-remove-on-error
         />
-        <h1 class="font-extrabold">{{ site.title }}</h1>
-        <h2 class="text-sm">{{ homepage.subheading }}</h2>
-        <dl id="quick-stats" class="text-sm">
+        <h1>{{ site.title }}</h1>
+        <h2>{{ homepage.subheading }}</h2>
+        <dl id="quick-stats">
           {% for iconClass, item, srLabel in (career | careerOngoing) %}
           <dt>
             <i class="{{iconClass}}" aria-hidden="true" role="presentation"></i>
@@ -36,7 +36,7 @@ permalink: /
       <section class="description prose">
         {{ content | safe }}
       </section>
-      <address id="action-links" class="font-semibold">
+      <address id="action-links">
         <ul>
           {% for link in homepage.actionLinks %}
           <li>

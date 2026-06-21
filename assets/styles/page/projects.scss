@@ -1,35 +1,23 @@
-@mixin light-mode {
+@use 'breakpoint';
+@use 'theme';
+@use 'text';
+
+@include theme.light {
   --card-border-rgb: var(--color-gray-300);
   --card-bg-rgb: var(--color-neutral-100);
   --card-shadow-rgb: var(--color-navy-500);
 }
 
-@mixin dark-mode {
+@include theme.dark {
   --card-border-rgb: var(--color-navy-700);
   --card-bg-rgb: var(--color-navy-800);
   --card-shadow-rgb: var(--color-navy-400);
 }
 
-:root {
-  @include light-mode;
-  &.dark-mode {
-    @include dark-mode;
-  }
-  &.light-mode {
-    @include light-mode;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root:not(.light-mode):not(.dark-mode) {
-    @include dark-mode;
-  }
-}
-
 .description {
+  @include text.size(xs);
   flex: 1;
   font-weight: 300;
-  font-size: var(--text-xs-font-size);
-  line-height: var(--text-xs-line-height);
   font-style: italic;
   color: rgb(var(--color-slate-500))
 }
@@ -39,10 +27,9 @@
   flex-direction: row;
   gap: 1.25rem;
   margin-bottom: 0.125rem;
-  
+
   a {
-    font-size: var(--text-xs-font-size);
-    line-height: var(--text-xs-line-height);
+    @include text.size(xs);
     letter-spacing: .01rem;
     font-weight: 500;
   }
@@ -54,7 +41,7 @@ ul.project-grid {
   gap: 1.5rem;
   position: relative;
 
-  @media (min-width: 365px) {
+  @include breakpoint.up(3xs) {
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   }
 }
@@ -73,11 +60,11 @@ li.project-listing {
     margin: 0 auto;
 
     box-shadow: 3px 3px 15px 1px rgba(var(--card-shadow-rgb), 0.1);
-    
+
     header {
       margin-bottom: 0.5rem;
     }
-    
+
     h3 {
       --font-size: var(--text-lg-font-size);
       --line-height: var(--text-lg-line-height);
@@ -86,15 +73,6 @@ li.project-listing {
       line-height: var(--line-height);
       letter-spacing: 0.05rem;
       font-weight: 700;
-    }
-
-    .description {
-      flex: 1;
-      font-weight: 300;
-      font-size: var(--text-xs-font-size);
-      line-height: var(--text-xs-line-height);
-      font-style: italic;
-      color: rgb(var(--color-slate-500))
     }
 
     .bubble-list {

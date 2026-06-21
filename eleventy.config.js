@@ -22,7 +22,7 @@ export default async function(eleventyConfig) {
       if (parsed.name.startsWith("_")) return;
 
       const result = sass.compileString(inputContent, {
-        loadPaths: [parsed.dir || ".", this.config.dir.includes],
+        loadPaths: [parsed.dir || ".", this.config.dir.includes, "assets/styles"],
       });
 
       this.addDependencies(inputPath, result.loadedUrls);
