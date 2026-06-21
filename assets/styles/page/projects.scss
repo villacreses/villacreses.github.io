@@ -75,14 +75,6 @@ li.project-listing {
       font-weight: 700;
     }
 
-    .description {
-      @include text.size(xs);
-      flex: 1;
-      font-weight: 300;
-      font-style: italic;
-      color: rgb(var(--color-slate-500))
-    }
-
     .bubble-list {
       margin-top: 1rem;
     }
