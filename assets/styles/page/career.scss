@@ -1,4 +1,5 @@
 @use 'breakpoint';
+@use 'layout';
 @use 'text';
 
 main {
@@ -30,12 +31,9 @@ article {
     align-self: center;
   }
   i {
-    display: block;
+    @include layout.center;
     height: var(--grid-icon-width);
     width: var(--grid-icon-width);
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 

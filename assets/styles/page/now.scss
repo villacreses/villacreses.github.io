@@ -1,3 +1,4 @@
+@use 'layout';
 @use 'text';
 
 main {
@@ -65,13 +66,10 @@ article {
   gap: var(--grid-gap);
 
   & > i {
-    display: block;
+    @include layout.center;
     font-size: 0.85rem;
     height: var(--grid-icon-width);
     width: var(--grid-icon-width);
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 

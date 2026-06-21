@@ -1,4 +1,5 @@
 @use 'breakpoint';
+@use 'layout';
 @use 'theme';
 @use 'text';
 
@@ -15,10 +16,8 @@
 }
 
 article {
-  display: flex;
+  @include layout.center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 
   & > header {
@@ -43,10 +42,8 @@ article {
 
 #action-links {
   ul {
-    display: flex;
+    @include layout.center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
