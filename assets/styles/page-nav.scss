@@ -1,12 +1,6 @@
 @use 'breakpoint';
 @use 'text';
 
-@mixin mobile-only {
-  @media not all and (min-width: 40rem) {
-    @content;
-  }
-}
-
 #navbar-blur~*,
 #top-header .container {
   position: relative;
@@ -94,7 +88,7 @@ mv-nav-menu-toggle {
 #nav-links {
   display: none;
 
-  @include mobile-only {
+  @include breakpoint.down(sm) {
     position: absolute;
     z-index: var(--z-index-max);
     left: 0;
@@ -115,13 +109,13 @@ mv-nav-menu-toggle {
   & ul {
     display: flex;
     
-    @include mobile-only {
+    @include breakpoint.down(sm) {
       --header-gap: 2.5rem;
       @include text.size(3xl);
     }
     
     &.container {
-      @include mobile-only {
+      @include breakpoint.down(sm) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -134,7 +128,7 @@ mv-nav-menu-toggle {
     }
     
     a {
-      @include mobile-only {
+      @include breakpoint.down(sm) {
         font-weight: 700;
         letter-spacing: 0.05rem;
       }

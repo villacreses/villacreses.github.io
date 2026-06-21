@@ -16,6 +16,12 @@ $_sizes: (
   }
 }
 
+@mixin down($name) {
+  @media not all and (min-width: map.get($_sizes, $name)) {
+    @content;
+  }
+}
+
 // Emits :root { --breakpoint-*: ... } from $_sizes. Called once from base.scss.
 @mixin css-vars {
   @each $name, $value in $_sizes {

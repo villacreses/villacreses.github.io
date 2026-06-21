@@ -140,7 +140,6 @@
   --career-timeline-bar-rgb: var(--color-slate-400);
   --post-color-rgb: var(--color-neutral-400);
   --blockquote-border-rgb: var(--color-neutral-500);
-  --card-bg-color: var(--color-green-300);
 }
 
 @include theme.dark {
@@ -161,5 +160,4 @@
   --career-timeline-bar-rgb: var(--color-slate-600);
   --post-color-rgb: var(--color-neutral-500);
   --blockquote-border-rgb: var(--color-neutral-300);
-  --card-bg-color: var(--color-blue-600);
 }
