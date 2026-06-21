@@ -4,3 +4,16 @@
 @import url('./assets/styles/fonts.css');
 @import url('./assets/styles/page-nav.css');
 @import url('./assets/styles/components.css');
+
+/* Mirrors Font Awesome's .sr-only so labels stay hidden before the FA kit loads. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
