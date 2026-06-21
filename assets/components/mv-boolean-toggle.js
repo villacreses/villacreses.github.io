@@ -42,7 +42,7 @@ export default class BooleanToggle extends HTMLElement {
   }
 
   attachListeners() {
-    this.input.addEventListener('change', this.onCheckedStateChange);
+    this.input.addEventListener('change', this.onCheckedStateChange.bind(this));
     this.label.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();

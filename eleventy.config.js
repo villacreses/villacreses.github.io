@@ -5,8 +5,6 @@ import path from "node:path";
 import site from './_data/site.js';
 import {markdownLib as md} from './lib/markdown.js';
 import htmlmin from "html-minifier-terser";
-// import CleanCSS from "clean-css";
-import { minify } from 'terser';
 
 
 export default async function(eleventyConfig) {
@@ -54,10 +52,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("asPageTitle", function(content) {
     const initContent = content || site.title;
     return initContent === site.title ? initContent : `${initContent} | ${site.title}`;
-  });
-  eleventyConfig.addNunjucksFilter("debug", function(content) {
-    console.log(content)
-    return content;
   });
   eleventyConfig.addNunjucksFilter("defaultStr", function(content, defaultContent) {
     return content || defaultContent;
@@ -116,19 +110,6 @@ export default async function(eleventyConfig) {
 
 		return content;
 	});
-
-  eleventyConfig.addTransform("jsminify", async (content, outputPath) => {
-    if (outputPath && outputPath.endsWith(".js")) {
-      try {
-        const minified = await minify(content);
-        return minified.code;
-      } catch (err) {
-        console.error("JS minification error:", err);
-        return content;
-      }
-    }
-    return content;
-  });
 
   eleventyConfig.setLibrary("md", md);
 

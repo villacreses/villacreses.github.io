@@ -1,6 +1,6 @@
 import BooleanToggle from './mv-boolean-toggle.js';
 
-const sessionStorageKey = 'data-mv-theme';
+const sessionStorageKey = 'theme';
 
 class DarkToggle extends BooleanToggle {
   static get inputId() { return 'mv-dark-toggle'; }

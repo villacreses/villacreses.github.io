@@ -1,4 +1,4 @@
-import BooleanToggle from "./mv-boolean-toggle.js ";
+import BooleanToggle from "./mv-boolean-toggle.js";
 
 class NavMenuToggle extends BooleanToggle {
   static get inputId() { return 'mv-nav-menu-toggle'; }
@@ -26,7 +26,7 @@ class NavMenuToggle extends BooleanToggle {
     this.label.setAttribute('role', 'button');
     this.label.setAttribute('aria-controls', 'nav-links');
 
-    document.addEventListener("keydown", function (event) {
+    document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" || event.key === "Esc") {
         this.checked = false;
       }
