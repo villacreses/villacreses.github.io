@@ -4,6 +4,7 @@ import * as sass from "sass";
 import path from "node:path";
 import site from './_data/site.js';
 import {markdownLib as md} from './lib/markdown.js';
+import {careerOngoing} from './lib/filters.js';
 import htmlmin from "html-minifier-terser";
 
 
@@ -49,42 +50,29 @@ export default async function(eleventyConfig) {
     else return whole + 1;
   });
   
-  eleventyConfig.addNunjucksFilter("asPageTitle", function(content) {
+  eleventyConfig.addFilter("asPageTitle", function(content) {
     const initContent = content || site.title;
     return initContent === site.title ? initContent : `${initContent} | ${site.title}`;
   });
-  eleventyConfig.addNunjucksFilter("defaultStr", function(content, defaultContent) {
+  eleventyConfig.addFilter("defaultStr", function(content, defaultContent) {
     return content || defaultContent;
   });
-  eleventyConfig.addNunjucksFilter("careerOngoing", (content) => {
-    const order = {
-      'Work Experience': 1,
-      'Education': 2
-    };
-    
-    const filtered = content
-      .sort((a, b) => order[a.heading] - order[b.heading])
-      .map(({ icon, items, heading, quickStatLabel }) => items.reduce(
-        (acc, item) => 
-          item.shorthand ? acc.concat([icon, item.shorthand, quickStatLabel || heading]) : acc, []
-      ))
-      .filter(subArr => subArr.length);
-    
-    return filtered;
-  });
-  eleventyConfig.addNunjucksFilter("markdown", function(content) {
+  eleventyConfig.addFilter("careerOngoing", careerOngoing);
+  eleventyConfig.addFilter("markdown", function(content) {
     return md.render(content);
   });
-  eleventyConfig.addNunjucksFilter("notEqual", function (arr, userString) {
+  eleventyConfig.addFilter("notEqual", function (arr, userString) {
 		return arr.filter(str => str !== userString);
 	});
 
-  eleventyConfig.addPassthroughCopy("assets/**/*.css");
-  eleventyConfig.addPassthroughCopy("assets/**/*.js");
-  eleventyConfig.addPassthroughCopy("assets/files");
-  eleventyConfig.addPassthroughCopy("index.css");
-  eleventyConfig.addPassthroughCopy("index.js");
-  eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy({
+    "assets/**/*.css": true,
+    "assets/**/*.js": true,
+    "assets/files": true,
+    "index.css": true,
+    "index.js": true,
+    "CNAME": true,
+  });
 
   eleventyConfig.addWatchTarget("assets/**/*.scss");
   
