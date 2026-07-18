@@ -20,7 +20,7 @@ A streamlined personal website powered by Eleventy, engineered for clarity, spee
 
 ### 📝 Markdown Rendering
 
-Markdown content is rendered with a custom `markdown-it` stack enhanced for footnotes, callouts, syntax highlighting, and semantic attributes. Notes are fetched from GitHub, parsed with `gray-matter`, and routed cleanly via Eleventy templates. Typographic styles and callout variants are tailored for clarity, screen reader support, and dark mode compatibility—all anchored in a layout system that prioritizes readability and legacy-aware publishing.
+Markdown content is rendered with a custom `markdown-it` stack enhanced for footnotes, callouts, syntax highlighting, and semantic attributes, routed cleanly via Eleventy templates. Typographic styles and callout variants are tailored for clarity, screen reader support, and dark mode compatibility—all anchored in a layout system that prioritizes readability and legacy-aware publishing.
 
 ### 🌘 Dark Mode Support
 

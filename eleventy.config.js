@@ -85,12 +85,8 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("index.css");
   eleventyConfig.addPassthroughCopy("index.js");
   eleventyConfig.addPassthroughCopy("CNAME");
-  eleventyConfig.addPassthroughCopy("tools/**/*.js");
-  eleventyConfig.addPassthroughCopy("tools/**/*.css");
 
   eleventyConfig.addWatchTarget("assets/**/*.scss");
-  eleventyConfig.addWatchTarget("tools/**/*.scss");
-  eleventyConfig.addWatchTarget("tools/**/*.html");
   
   eleventyConfig.addShortcode("icon", function(classname) {
     return `<i class="${classname}" aria-hidden="true" role="presentation"></i>`;
