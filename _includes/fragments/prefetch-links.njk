@@ -1,4 +1,5 @@
-{%- set pages = ['/', '/career', '/now', '/projects'] | notEqual(page.url) -%}
+{%- set currentUrl = page.url | replace(".html", "") -%}
+{%- set pages = ['/', '/career', '/now', '/projects'] | notEqual(currentUrl) -%}
 {%- for p in pages -%}
   <link rel="prefetch" href="{{p}}" as="document">
 {%- endfor -%}
