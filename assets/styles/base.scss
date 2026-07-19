@@ -1,10 +1,6 @@
 @use 'breakpoint';
 @use 'text';
 
-@view-transition {
-  navigation: auto;
-}
-
 :root {
   @include breakpoint.css-vars;
   --z-index-max: 99999;
@@ -23,6 +19,7 @@
 html {
   @extend %min-height;
   letter-spacing: .005em;
+  scrollbar-gutter: stable;
 }
 
 body {

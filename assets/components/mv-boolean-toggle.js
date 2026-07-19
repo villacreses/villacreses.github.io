@@ -1,16 +1,12 @@
 export default class BooleanToggle extends HTMLElement {
   constructor() {
     super();
-    
-    this.buildElements();
+
+    this.hydrateElements();
     this.attachListeners();
   }
 
-  // Static getters for flexibility
   static get inputId() { return 'boolean-toggle-input'; }
-  get uncheckedClass() { return ''; } // Override in subclass
-  get checkedClass() { return ''; } // Override in subclass
-  get accessibleTextContent() { return ''; } // Override in subclass
 
   get checked() {
     return this.input.checked;
@@ -26,17 +22,9 @@ export default class BooleanToggle extends HTMLElement {
     customElements.define(this.inputId, this);
   }
 
-  buildElements() {
-    this.classList.add('boolean-toggle');
-    this.innerHTML = `
-      <input type="checkbox" hidden id="${this.constructor.inputId}">
-      <label for="${this.constructor.inputId}" role="button" tabindex="0" aria-label="${this.accessibleTextContent}">
-        <i class="${this.uncheckedClass} unchecked" aria-hidden="true"></i>
-        <i class="${this.checkedClass} checked" aria-hidden="true"></i>
-        <span class="sr-only">${this.accessibleTextContent}</span>
-      </label>
-    `;
-
+  // Markup (input, label, icons) is rendered server-side via the
+  // boolean-toggle.njk macro. This just wires up references to it.
+  hydrateElements() {
     this.input = this.querySelector('input');
     this.label = this.querySelector('label');
   }

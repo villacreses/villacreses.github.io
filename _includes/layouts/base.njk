@@ -1,4 +1,4 @@
-
+{% from "fragments/boolean-toggle.njk" import render as booleanToggle %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -52,8 +52,12 @@
       </ul>
     </nav>
     <div id="nav-actions" class="container">
-      <mv-dark-toggle></mv-dark-toggle>
-      <mv-nav-menu-toggle></mv-nav-menu-toggle>
+      <mv-dark-toggle class="boolean-toggle">
+        {{ booleanToggle('mv-dark-toggle', 'fa-solid fa-sun', 'fa-solid fa-moon', 'Toggle dark mode') }}
+      </mv-dark-toggle>
+      <mv-nav-menu-toggle class="boolean-toggle">
+        {{ booleanToggle('mv-nav-menu-toggle', 'fa-solid fa-bars', 'fa-solid fa-xmark', 'Toggle navigation menu') }}
+      </mv-nav-menu-toggle>
     </div>
   </header>
   <div class="top-bumper"></div>

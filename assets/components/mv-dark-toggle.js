@@ -4,9 +4,6 @@ const sessionStorageKey = 'theme';
 
 class DarkToggle extends BooleanToggle {
   static get inputId() { return 'mv-dark-toggle'; }
-  get uncheckedClass() { return 'fa-solid fa-sun'; }
-  get checkedClass() { return 'fa-solid fa-moon'; }
-  get accessibleTextContent() { return 'Toggle dark mode'; }
 
   constructor() {
     super();

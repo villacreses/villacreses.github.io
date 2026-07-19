@@ -1,0 +1,8 @@
+{% macro render(inputId, uncheckedClass, checkedClass, accessibleText, checked=false) %}
+<input type="checkbox" hidden id="{{inputId}}"{% if checked %} checked{% endif %}>
+<label for="{{inputId}}" role="button" tabindex="0" aria-label="{{accessibleText}}">
+  <i class="{{uncheckedClass}} unchecked" aria-hidden="true"></i>
+  <i class="{{checkedClass}} checked" aria-hidden="true"></i>
+  <span class="sr-only">{{accessibleText}}</span>
+</label>
+{% endmacro %}

@@ -47,6 +47,17 @@
     gap: var(--header-gap);
   }
 
+  mv-dark-toggle,
+  mv-nav-menu-toggle {
+    display: inline-flex;
+    width: 30px;
+    height: var(--text-3xl-line-height);
+
+    @include breakpoint.up(sm) {
+      height: var(--text-2xl-line-height);
+    }
+  }
+
   mv-nav-menu-toggle {
     z-index: var(--z-index-max);
 
@@ -132,9 +143,41 @@
       color: rgb(var(--topnav-toggle-hover-rgb));
     }
   }
+}
 
+// mv-nav-menu-toggle's icon follows checkbox state directly: its initial
+// state (closed/hamburger) is always correct at build time, no runtime
+// ambiguity the way theme preference has.
+mv-nav-menu-toggle {
   input:checked + label .unchecked,
   input:not(:checked) + label .checked {
+    display: none;
+  }
+}
+
+// mv-dark-toggle's icon is rendered statically (server-side), so its
+// checkbox can't know the stored/system theme preference at build time.
+// Drive its icon visibility off the resolved theme instead - already
+// applied synchronously in <head>, before first paint - so the correct
+// icon shows immediately with no dependency on index.js having run yet.
+// (Not using the theme.light/theme.dark mixins here: those assume a
+// "light is default, dark overrides" cascade for custom properties,
+// which doesn't hold for toggling display on two separate elements -
+// both branches need to be mutually exclusive.)
+:root.dark-mode mv-dark-toggle .unchecked {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-mode):not(.dark-mode) mv-dark-toggle .unchecked {
+    display: none;
+  }
+}
+
+:root.light-mode mv-dark-toggle .checked {
+  display: none;
+}
+@media not (prefers-color-scheme: dark) {
+  :root:not(.light-mode):not(.dark-mode) mv-dark-toggle .checked {
     display: none;
   }
 }
