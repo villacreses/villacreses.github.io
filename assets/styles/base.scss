@@ -73,6 +73,7 @@ body {
 main {
   flex-grow: 1;
   margin: auto;
+  width: 100%;
 
   &.compact {
     max-width: 80ch;
@@ -181,4 +182,9 @@ p.prose {
   .mobile-only {
     display: none;
   }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

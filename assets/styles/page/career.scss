@@ -3,7 +3,6 @@
 @use 'text';
 
 main {
-  --circumference: 8px;
   --grid-icon-width: 0.75rem;
 
   @include breakpoint.up(2xs) {
@@ -44,12 +43,9 @@ h2 {
   text-transform: uppercase;
 }
 
-ol {
+ul.timeline-track {
   --list-gap: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: var(--list-gap);
-  
+
   &.work {
     --list-gap: 3.5rem;
     margin-top: 2rem;
@@ -61,74 +57,46 @@ ol {
   .bubble-list {
     margin-bottom: 1rem;
   }
-}
 
-%timeline-track {
-  all: revert;
-  content: '';
-  display: block;
-  grid-area: 1 / 1 / 1/ 1;
-  justify-self: center;
-  margin-top: 0.5em;
-}
+  > li {
+    --grid-node-width: var(--grid-icon-width);
+    gap: 0.75rem;
+    @include text.size(xl);
 
-li.timeline-grid {
-  @include text.size(xl);
+    header {
+      margin-bottom: 0.25rem;
+      position: relative;
 
-  * {
-    grid-column: 2;
-  }
+      &~* {
+        @include text.size(sm);
+      }
 
-  header {
-    margin-bottom: 0.25rem;
-    position: relative;
+      %date-styles {
+        @include text.size(xs);
+      }
 
-    &~* {
-      @include text.size(sm);
-    }
+      h3 {
+        font-weight: 500;
+        color: rgb(var(--default-slate-rgb));
+      }
 
-    %date-styles {
-      @include text.size(xs);
-    }
-
-    h3 {
-      font-weight: 500;
-      color: rgb(var(--default-slate-rgb));
-    }
-
-    .date {
-      @extend %date-styles;
-      position: absolute;
-      top: -1.25em;
-
-      * {
+      .date {
         @extend %date-styles;
+        position: absolute;
+        top: -1.25em;
+
+        * {
+          @extend %date-styles;
+        }
+      }
+
+      :not(h3) {
+        @include text.size(base);
+        font-weight: 400;
+        grid-column: 2;
+        letter-spacing: 0.05em;
+        color: rgb(var(--color-slate-500));
       }
     }
-
-    :not(h3) {
-      @include text.size(base);
-      font-weight: 400;
-      grid-column: 2;
-      letter-spacing: 0.05em;
-      color: rgb(var(--color-slate-500));
-    }
-  }
-  
-  &::before {
-    @extend %timeline-track;
-  }
-  &::after {
-    @extend %timeline-track;
-    height: var(--circumference);
-    width: var(--circumference);
-    background-color: rgb(var(--default-slate-rgb));
-    border-radius: 50%;
-  }
-  
-  &:not(:last-child):before {
-    width: 1px;
-    height: calc(100% + var(--list-gap));
-    border-left: 1px dashed rgb(var(--career-timeline-bar-rgb));
   }
 }
