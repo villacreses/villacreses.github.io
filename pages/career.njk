@@ -19,9 +19,9 @@ heading_description:
         <i class="{{ section.icon }}" aria-hidden="true" role="presentation"></i>
         <h2>{{ section.heading }}</h2>
       </div>
-      <ol{% if section.class %} class="{{ section.class }}"{% endif %} role="list">
+      <ul class="timeline-track{% if section.class %} {{ section.class }}{% endif %}" role="list">
         {%- for item in section.items -%}
-        <li class="timeline-grid">
+        <li>
           <section aria-labelledby="item-{{ forloop.index0 }}-title">
             <header>
               <h3 id="item-{{ forloop.index0 }}-title">{{ item.title }}</h3>
@@ -45,7 +45,7 @@ heading_description:
           </section>
         </li>
         {%- endfor -%}
-      </ol>
+      </ul>
     </section>
     {%- endfor -%}
   </article>

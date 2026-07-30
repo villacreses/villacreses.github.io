@@ -1,78 +1,70 @@
-@use 'breakpoint';
-@use 'theme';
 @use 'text';
-
-@include theme.light {
-  --card-border-rgb: var(--color-gray-300);
-  --card-bg-rgb: var(--color-neutral-100);
-  --card-shadow-rgb: var(--color-navy-500);
-}
-
-@include theme.dark {
-  --card-border-rgb: var(--color-navy-700);
-  --card-bg-rgb: var(--color-navy-800);
-  --card-shadow-rgb: var(--color-navy-400);
-}
-
-.description {
-  @include text.size(xs);
-  flex: 1;
-  font-weight: 300;
-  font-style: italic;
-  color: rgb(var(--color-slate-500))
-}
+@use 'layout';
 
 .project-links {
-  display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
-  margin-bottom: 0.125rem;
+  @include text.size(lg);
 
-  a {
-    @include text.size(xs);
-    letter-spacing: .01rem;
-    font-weight: 500;
+  li {
+    margin-right: 0.5rem;
   }
 }
 
-ul.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  position: relative;
-
-  @include breakpoint.up(3xs) {
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+.project-grid.timeline-track {
+  --list-gap: 2.5em;
+  --circumference: 1.35rem;
+  max-width: 60ch;
+  
+  &>li::after {
+    --border-radius: 6px;
+    --bullet-offset: 4px;
   }
 }
 
-li.project-listing {
-  & > section {
-    background-color: rgb(var(--card-bg-rgb));
-    border: 1px solid rgb(var(--card-border-rgb));
-    border-top-width: 2px;
-    padding: .75rem;
-    border-radius: 10px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    max-width: 60ch;
-    margin: 0 auto;
+.project {
+  header {
+    position: relative;
+    margin-bottom: 0.75rem;
 
-    box-shadow: 3px 3px 15px 1px rgba(var(--card-shadow-rgb), 0.1);
+    svg {
+      width: var(--circumference);
+      height: var(--circumference);
+      margin-right: 0.5rem;
+      color: inherit;
 
-    header {
-      margin-bottom: 0.5rem;
+      position: absolute;
+      left: -1.93rem;
+      top: 4px;
+    }
+  }
+  .title {
+    @include text.size(xl);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  
+  figure{
+    img {
+      height: 200px;
+      width: auto;
+      // float: right;
+    }
+  }
+  .prose {
+    @include text.size(sm);
+    margin-bottom: 0.75rem;
+  }
+
+  footer {
+    margin-top: 0.75rem;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
 
-    h3 {
-      @include text.size(lg);
-      letter-spacing: 0.05rem;
-      font-weight: 700;
-    }
-
-    .bubble-list {
-      margin-top: 1rem;
+    span {
+      @include text.size(sm);
+      font-weight: 600;
     }
   }
 }
