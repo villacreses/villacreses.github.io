@@ -69,6 +69,7 @@ export default async function(eleventyConfig) {
     "assets/**/*.css": true,
     "assets/**/*.js": true,
     "assets/files": true,
+    "assets/images": true,
     "index.css": true,
     "index.js": true,
     "CNAME": true,
